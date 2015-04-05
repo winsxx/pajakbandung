@@ -44,17 +44,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		    </div>
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		      <ul class="menu nav navbar-nav ">
+		      <ul class="menu nav navbar-nav landing ">
 		        <li class="active"><a href="landing.php">beranda</a></li>
 		        <li><a href="feature.html">tentang kami</a></li>
 		        <li><a href="blog.html">login</a></li>
 		      </ul>
 		      <form class="navbar-form navbar-right" role="search">
-		        <div class="form-group my_search">
-		          <input type="text" class="form-control" placeholder="Search">
-		        </div>
-		        <button type="submit" class="btn btn-default btn-search">Search</button>
-		      </form>
+	        	<div class="form-group my_search landing">
+		          		<input type="text" class="form-control" placeholder="Search">
+		        	<button type="submit" class="btn btn-default">Search</button>
+		    	</div>
+	        </form>
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
 		</nav>
