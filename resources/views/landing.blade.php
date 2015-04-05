@@ -78,7 +78,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					  <p>Informasi lebih lanjut mengenai perpajakan di kota Bandung.</p>
 				     <div class="rd_more1">
 						<a href="single-page.html"><button class="btn_style">Baca</button></a>
-					</div>					
+					</div>
 				</div>
 				<div class="col-md-6 grid1_of_3">
 					<h2>Daftar NPWPD</h2>
@@ -86,7 +86,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					  <p>Daftarkan NPWPD untuk usaha anda dengan cepat dan mudah</p>
 				      <div class="rd_more1">
 						<a href="single-page.html"><button class="btn_style">daftar</button></a>
-					</div>					
+					</div>
 				</div>
 			    <div class="clearfix"></div>
 	</div>
@@ -125,7 +125,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li><a class="icon4" href="#"></a></li>
 						<li><a class="icon5" href="#"></a></li>
 						<div class="clearfix"></div>
-					</ul>	
+					</ul>
 				</div>
 			</div>
 			<div class="col-md-7 copy">
