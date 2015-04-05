@@ -42,19 +42,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		      </button>
 		      <a class="navbar-brand" href="landing.php"><img src="images/logo.png" alt="" class="img-responsive"/> </a>
 		    </div>
+		    <div class="title"><h2> Dinas Pelayanan Pajak Kota Bandung </h2></div>
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		      <ul class="menu nav navbar-nav landing ">
+		      <ul class="menu nav navbar-nav navbar-right ">
 		        <li class="active"><a href="landing.php">beranda</a></li>
-		        <li><a href="feature.html">tentang kami</a></li>
-		        <li><a href="blog.html">login</a></li>
+		        <li><a href="about.php">tentang kami</a></li>
+		        <li><a href="login.php">login</a></li>
 		      </ul>
-		      <form class="navbar-form navbar-right" role="search">
-	        	<div class="form-group my_search landing">
-		          		<input type="text" class="form-control" placeholder="Search">
-		        	<button type="submit" class="btn btn-default">Search</button>
-		    	</div>
-	        </form>
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
 		</nav>
@@ -62,7 +57,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="row slider text-center">
 			<div class="col-md-8">
 					<div class="col-md-10 slider_text">
-						<h2>Dinas Pelayanan Pajak Kota Bandung</h2>
+						<h2> Website Resmi Dinas Pelayanan Pajak Kota Bandung</h2>
 						<h3>Ayo Bayar Pajak Tepat Waktu</h3>
 					</div>
 				</div>
