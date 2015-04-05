@@ -15,7 +15,13 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
-Route::controllers([
+Route::get('KelolaPajak', 'PajakController@showKelola');
+
+Route::get('SptpdView', 'PajakController@showSptpd');
+
+Route::get('StatusPajak', 'PajakController@showStatus');
+
+/*Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
-]);
+]);*/
