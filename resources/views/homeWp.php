@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Creation a industrial bootstrap Website Template | Single-Page :: w3layouts</title>
+<title>Pelayanan Pajak</title>
 <!-- Bootstrap -->
 <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
@@ -71,50 +71,74 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </div>
 <div class="main"><!-- start main -->
 <div class="container">
-	
+	<div class="company_ad">
+		<h2> Daftar pajak anda </h2>
+	</div>
+	<div class="row pajak-container">
+		<div class="col-md-5 list-pajak">
+			<div class="grid_list_pajak">
+				<div class="images_pajak">
+					<p>H</p>
+				</div>
+				<div class="grid_pajak">
+				  	<h3><a href = "#.php">Pajak Hotel </a></h3>	   
+	 			</div>
+			 	<div class="clearfix"></div>
+			</div>
+			<div class="grid_list_pajak">
+				<div class="images_pajak">
+					<p>R</p>
+				</div>
+				<div class="grid_pajak">
+				  	<h3><a href = "#.php">Pajak Restoran </a></h3>	   
+	 			</div>
+	 			<div class="clearfix"></div>
+			</div>
+			<div class="grid_list_pajak">
+				<div class="images_pajak">
+					<p>H</p>
+				</div>
+				<div class="grid_pajak">
+				  	<h3><a href = "#.php">Pajak Hotel </a></h3>	   
+	 			</div>
+			 	<div class="clearfix"></div>
+			</div>
+			<div class="grid_list_pajak">
+				<div class="images_pajak">
+					<p>R</p>
+				</div>
+				<div class="grid_pajak">
+				  	<h3><a href = "#.php">Pajak Restoran </a></h3>	   
+	 			</div>
+			 	<div class="clearfix"></div>
+			</div>
+		</div>
+		
+		<div class="col-md-5">
+			<div class="btn-add-pajak"> 
+				<p>Anda memiliki usaha baru? Daftarkan pajak usaha anda pada link berikut </p>
+			</div>
+			<button class="btn btn-default btn-add-pajak" href="#">Daftar Pajak Baru</button>
+		</div>
+	</div>
 </div>
 </div>
 <div class="footer_bg"><!-- start footre -->
 	<div class="container">
 		<div class="row  footer">
-			<div class="col-md-3 span1_of_4">
-				<h4>about us</h4>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry .....</p>
-				<h5>Address</h5>
-				<p class="top">500 Lorem Ipsum Dolor Sit,</p>
-				<p>22-56-2-9 Sit Amet,</p>
-				<p>USA</p>
-				<p>Phone:(00) 222 666 444</p>
-				<p>Fax: (000) 000 00 00 0</p>
+			<div class="col-md-6 span1_of_4">
+				<h4>Tentang Kami</h4>
+				<p>Dinas Pelayanan Pajak Kota Bandung</p>
+				<h5>Alamat</h5>
+				<p class="top">Jl. Wastukencana No.2,</p>
+				<p>Bandung,</p>
+				<p>Telepon:(022) 7215323</p>
+				<p>Twitter: @disyanjakkotbdg</p>
 			</div>
-			<div class="col-md-3 span1_of_4">
-				<h4>latest posts</h4>
-				<span><a href="#"> Fusce scelerisque massa vitae </a></span>
-				<p>25 april 2013</p>
-				<span><a href="#">Pellentesque bibendum ante </a></span>
-				<p>15 march 2013</p>
-				<span><a href="#">Maecenas quis ipsum sed magna </a></span>
-				<p>25 april 2013</p>
-			</div>
-			<div class="col-md-3 span1_of_4">
-				<h4>latest comments</h4>
-				<span><a href="#">It is a long established fact that a reader will looking layout.</a></span>
-				<span><a href="#">There are many variations of passages of Lorem Ipsum available words.</a></span>
-				<span><a href="#">It is a long established fact that a reader will looking layout.</a></span>
-			</div>
-			<div class="col-md-3 span1_of_4">
-				<h4>photostream</h4>
-				<ul class="f_nav list-unstyled">
-					<li><a href="#"><img src="images/f_pic1.jpg" alt="" class="img-responsive"/></a></li>
-					<li><a href="#"><img src="images/f_pic3.jpg" alt="" class="img-responsive"/> </a></li>
-					<li><a href="#"><img src="images/f_pic4.jpg" alt="" class="img-responsive"/> </a></li>
-					<li><a href="#"><img src="images/f_pic5.jpg" alt="" class="img-responsive"/> </a></li>
-					<li><a href="#"><img src="images/f_pic7.jpg" alt="" class="img-responsive"/> </a></li>
-					<li><a href="#"><img src="images/f_pic1.jpg" alt="" class="img-responsive"/> </a></li>
-					<li><a href="#"><img src="images/f_pic6.jpg" alt="" class="img-responsive"/> </a></li>
-					<li><a href="#"><img src="images/f_pic8.jpg" alt="" class="img-responsive"/> </a></li>
-					<li><a href="#"><img src="images/f_pic2.jpg" alt="" class="img-responsive"/> </a></li>
-				</ul>
+			<div class="col-md-6 span1_of_4">
+				<h4>Informasi Terbaru</h4>
+				<span><a href="#"> Tata Cara Pembayaran Pajak </a></span>
+				<span><a href="#">Daftar Peraturan Daerah (Download)</a></span>
 			</div>
 			<div class="clearfix"></div>
 		</div>

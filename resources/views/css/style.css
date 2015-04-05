@@ -51,6 +51,10 @@ body {
 	margin-left: 0%;
 }
 
+.pajak-container{
+	margin-bottom: 10%;
+}
+
 .navbar-nav {
 	margin-top:-4%;
 	margin-left: 25%;
@@ -194,6 +198,10 @@ body {
 .grid_list{
 	display: block;
 }
+.grid_list_pajak{
+	display: block;
+	margin-top: 7%;
+}
 .grids_btm.top{
 	padding: 4% 0;
 	border-top: 1px ridge rgb(241, 241, 241);
@@ -206,6 +214,19 @@ body {
 	padding:4%;
 }
 .images_1_of_1 p{
+	text-align: center;
+	font-size: 5em;
+	color: #ffffff;
+	line-height:66px;
+	margin: 0;
+}
+.images_pajak{
+	width:24%;
+	float:left;
+	background: #354B77;
+	padding:0%;
+}
+.images_pajak p{
 	text-align: center;
 	font-size: 5em;
 	color: #ffffff;
@@ -226,7 +247,32 @@ body {
 	text-transform: uppercase;
 	margin: 0;
 }
-.grid_1_of_1 p {
+
+.grid_pajak p {
+	font-size: 14px;
+	line-height: 1.8em;
+	color: #434C5E;
+}
+
+.grid_pajak{
+	width:76%;
+	float:left;
+	background: #E5EAF3;
+	padding:4%;
+}
+.grid_pajak h3{
+	color: #354B77;
+	font-size: 1.8em;
+	font-weight: normal;
+	line-height: 31px;
+	text-transform: uppercase;
+	margin: 0;
+}
+.grid_pajak h3:hover{
+	color: #F15F43;
+}
+
+.grid_pajak p {
 	font-size: 14px;
 	line-height: 1.8em;
 	color: #434C5E;
@@ -245,6 +291,25 @@ body {
 .btn-crud{
 	margin-top: 5%;
 	margin-left: 5%;
+}
+
+.btn-add-pajak{
+	margin-top: 10%;
+	margin-left: 30%;
+	margin-bottom: 0%;
+	font-size: 20px;
+	height: 50px;
+}
+.btn-add-pajak p{
+	margin-left: -15% !important;
+	font-family: 'Open Sans';
+	color: #354B77;
+	text-align: center;
+}
+
+.list-pajak{
+	margin-top: 0%;
+	margin-left: 3%;
 }
 
 /* start footer */
