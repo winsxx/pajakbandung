@@ -37,7 +37,7 @@ Tambah Pengelola Pajak
 							<input type="text" class="form-control" name="no_ktp" value="{{ old('email') }}">
 						</div>
 					</div>
-			  		<div class="col-md-offset-6">
+			  		<div class="col-md-offset-7">
 			  			<button type="submit" class="btn btn-default btn-crud">Tambah Pengelola</button>
 			  		</div>
 			  	</form>

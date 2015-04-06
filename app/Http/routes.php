@@ -65,6 +65,10 @@ Route::get('tutuppajak', function(){
 	return view('tutuppajak');
 });
 
+Route::get('tutupnpwpd',function(){
+	return view('tutupnpwpd');
+});
+
 /*Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
