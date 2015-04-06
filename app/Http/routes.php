@@ -19,6 +19,14 @@ Route::get('sptpdview', 'PajakController@showSptpd');
 
 Route::get('statuspajak', 'PajakController@showStatus');
 
+Route::get('tutupnpwpd','WajibPajakController@tutupnpwpd');
+
+Route::get('hapusnpwpd','WajibPajakController@hapusnpwpd');
+
+Route::get('editnpwpd','WajibPajakController@editnpwpd');
+
+Route::get('tambahnpwpd','WajibPajakController@tambahnpwpd');
+
 Route::get('homewp', function(){
 	return view('homeWp');
 });
@@ -68,8 +76,8 @@ Route::get('tutuppajak', function(){
 	return view('tutuppajak');
 });
 
-Route::get('tutupnpwpd',function(){
+/*Route::get('tutupnpwpd',function(){
 	return view('tutupnpwpd');
-});
+});*/
 
 

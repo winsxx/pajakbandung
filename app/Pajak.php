@@ -13,4 +13,8 @@ class Pajak extends Model {
         return $this->belongsTo('WajibPajak', 'npwpd_pemilik');
     }
 
+    public function collaborator(){
+        return $this->belongsToMany('Penduduk','kolaborator','id','no_pajak');
+    }
+
 }
