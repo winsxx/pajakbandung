@@ -29,6 +29,49 @@ Route::get('homedinas', function(){
 	return view('DinasHome');
 });
 
+
 Route::controllers([
 	'/' => 'Auth\AuthController',
 ]);
+
+Route::get('kelolapajak', function(){
+	return view('DinasPajak');
+});
+
+Route::get('kelolanpwpd', function(){
+	return view('DinasNpwpd');
+});
+
+Route::get('kelolasptpd', function(){
+	return view('DinasSptpd');
+});
+
+/*Route::get('login', function(){
+	return view('auth.login');
+});
+
+Route::get('daftar', function(){
+	return view('auth.register');
+});*/
+
+Route::get('setting',function(){
+	return view('SettingWp');
+});
+
+Route::get('settingpajak',function(){
+	return view('SettingPajak');
+});
+
+Route::get('tambahpengelola',function(){
+	return view('tambahpengelola');
+});
+
+Route::get('tutuppajak', function(){
+	return view('tutuppajak');
+});
+
+Route::get('tutupnpwpd',function(){
+	return view('tutupnpwpd');
+});
+
+

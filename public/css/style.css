@@ -124,9 +124,67 @@ body {
 	color:#ffffff;
 	background: #354B77;
 }
-.btn-search{
+
+.btn-default{
 	margin-top: 0%;
 }
+
+.btn-hor{
+	margin-right: 50%;
+}
+
+.btn-browse{
+	font-size: 12px;
+	width: auto;
+	padding: 1% 2% 1% 2%;
+}
+
+.panel-default{
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+.panel-heading{
+	font-size: 12pt;
+	text-transform: uppercase;
+	text-decoration: bold;
+}
+
+.control-label{
+	font-size: 10pt;
+}
+
+.dokumen{
+	margin-top: 20px;
+}
+
+.finalize-regis{
+	position: relative;
+	margin-top: 400px;
+}
+
+.check-usaha{
+	font-size: 12pt;
+}
+
+.panel-setting{
+	margin-top: -10px;
+	margin-left: -30px;
+	font-size: 14px;
+	max-height: 100%;
+	height: 500px;
+	overflow-y: scroll;
+}
+
+.panel-setting a:hover{
+	text-decoration:none;
+	color: #F15F43;
+}
+
+.label-dok{
+	font-size: 15px;
+}
+
 /* start slider */
 .slider{
 	margin-top: 6%;	
@@ -211,7 +269,7 @@ body {
 	width:24%;
 	float:left;
 	background: #354B77;
-	padding:4%;
+	padding:2.5%;
 }
 .images_1_of_1 p{
 	text-align: center;
