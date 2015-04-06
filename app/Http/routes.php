@@ -45,6 +45,9 @@ Route::get('login', function(){
 	return view('auth.login');
 });
 
+Route::get('daftar', function(){
+	return view('auth.register');
+});
 /*Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

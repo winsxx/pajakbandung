@@ -133,6 +133,12 @@ body {
 	margin-right: 50%;
 }
 
+.btn-browse{
+	font-size: 12px;
+	width: auto;
+	padding: 1% 2% 1% 2%;
+}
+
 .panel-default{
 	margin-top: 5%;
 	margin-bottom: 5%;
@@ -145,6 +151,19 @@ body {
 
 .control-label{
 	font-size: 10pt;
+}
+
+.dokumen{
+	margin-top: 20px;
+}
+
+.finalize-regis{
+	position: relative;
+	margin-top: 400px;
+}
+
+.check-usaha{
+	font-size: 12pt;
 }
 /* start slider */
 .slider{
