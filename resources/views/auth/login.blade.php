@@ -1,5 +1,7 @@
-@extends('app')
-
+@extends('master')
+@section('title')
+Login
+@endsection
 @section('content')
 <div class="container-fluid">
 	<div class="row">
@@ -22,7 +24,7 @@
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
+							<label class="col-md-4 control-label">NPWPD</label>
 							<div class="col-md-6">
 								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
 							</div>
@@ -47,9 +49,14 @@
 
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
-								<button type="submit" class="btn btn-primary">Login</button>
-
-								<a class="btn btn-link" href="{{ url('/password/email') }}">Forgot Your Password?</a>
+								<div row>
+									<div class="col-md-3 btn-hor">
+										<a class="btn btn-default" href="{{ url('/password/email') }}">Forgot Your Password?</a>
+									</div>
+									<div class="col-md-3">
+										<button type="submit" class="btn btn-default">Login</button>
+									</div>
+								</div>
 							</div>
 						</div>
 					</form>

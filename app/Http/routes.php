@@ -29,6 +29,22 @@ Route::get('homedinas', function(){
 	return view('DinasHome');
 });
 
+Route::get('kelolapajak', function(){
+	return view('DinasPajak');
+});
+
+Route::get('kelolanpwpd', function(){
+	return view('DinasNpwpd');
+});
+
+Route::get('kelolasptpd', function(){
+	return view('DinasSptpd');
+});
+
+Route::get('login', function(){
+	return view('auth.login');
+});
+
 /*Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

@@ -124,8 +124,27 @@ body {
 	color:#ffffff;
 	background: #354B77;
 }
-.btn-search{
+
+.btn-default{
 	margin-top: 0%;
+}
+
+.btn-hor{
+	margin-right: 50%;
+}
+
+.panel-default{
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+.panel-heading{
+	font-size: 12pt;
+	text-transform: uppercase;
+}
+
+.control-label{
+	font-size: 10pt;
 }
 /* start slider */
 .slider{
@@ -211,7 +230,7 @@ body {
 	width:24%;
 	float:left;
 	background: #354B77;
-	padding:4%;
+	padding:2.5%;
 }
 .images_1_of_1 p{
 	text-align: center;
