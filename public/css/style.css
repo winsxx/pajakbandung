@@ -181,6 +181,10 @@ body {
 	color: #F15F43;
 }
 
+.label-dok{
+	font-size: 15px;
+}
+
 /* start slider */
 .slider{
 	margin-top: 6%;	

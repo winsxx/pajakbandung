@@ -57,6 +57,14 @@ Route::get('settingpajak',function(){
 	return view('SettingPajak');
 });
 
+Route::get('tambahpengelola',function(){
+	return view('tambahpengelola');
+});
+
+Route::get('tutuppajak', function(){
+	return view('tutuppajak');
+});
+
 /*Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
