@@ -29,7 +29,6 @@ Route::get('homedinas', function(){
 	return view('DinasHome');
 });
 
-/*Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);*/
+Route::controllers([
+	'/' => 'Auth\AuthController',
+]);
