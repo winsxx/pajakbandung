@@ -12,8 +12,8 @@ Pengaturan Akun
 </div>
 <div class="row details setting">
 	<ul class="col-md-4 nav nav-pills nav-stacked">
-	  <li role="presentation" class="active"><a href="#"><h4>Pajak</h4></a></li>
-	  <li role="presentation"><a href="#"><h4>NPWPD</h4></a></li>
+	  <li role="presentation" class="active"><a href="setting"><h4>Pajak</h4></a></li>
+	  <li role="presentation"><a href="tutupnpwpd"><h4>NPWPD</h4></a></li>
 	</ul>
 	<div class="col-md-8">
 		<div class="panel panel-default panel-setting">
@@ -22,8 +22,8 @@ Pengaturan Akun
 			</div>
 			<div class="panel-body">
 				<ol>
-					<h3><a href = "#" > <li>Pajak Hotel </a></h3>
-					<h3><a href = "#" > <li>Pajak Restoran </a></h3>
+					<h3><a href = "settingpajak" > <li>Pajak Hotel </a></h3>
+					<h3><a href = "settingpajak" > <li>Pajak Restoran </a></h3>
 				</ol>
 			</div>
 		</div>
