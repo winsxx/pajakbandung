@@ -21,13 +21,15 @@ Pengaturan Pajak
 				<h2> Pajak Hotel </h2>
 			</div>
 			<div class="panel-body">
-				<h3> Pengelola pajak anda <h3>
-				<ul class="list-group">
+				<h3> Pengelola pajak anda saat ini : <h3>
+				<ul class="list-group col-md-offset-1">
 				    <li class="list-group-item">Mr. Lalala</li>
 				    <li class="list-group-item">Mr. BBBBBBB</li>
 				    <li class="list-group-item">Mr. asdadsadsa</li>
 				    <li class="list-group-item">Mr. jsbdadbas</li>
 			  	</ul>
+			  	<button class="btn btn-default btn-crud">Tambah Pengelola</button>
+				<button class="btn btn-default btn-crud">Tutup Pajak</button>
 			</div>
 		</div>
 	</div>

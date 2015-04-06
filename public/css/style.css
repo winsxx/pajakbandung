@@ -147,6 +147,7 @@ body {
 .panel-heading{
 	font-size: 12pt;
 	text-transform: uppercase;
+	text-decoration: bold;
 }
 
 .control-label{
