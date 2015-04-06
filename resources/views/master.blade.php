@@ -46,26 +46,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="menu nav navbar-nav navbar-right ">
-                            <li class="active"><a href="landing.php">beranda</a></li>
-                            <li><a href="about.php">tentang kami</a></li>
-                            <li><a href="login.php">login</a></li>
+                            <li class="active"><a href="/">beranda</a></li>
+                            <li><a href="/about">tentang kami</a></li>
+                            <li><a href="/login">login</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->
             </nav>
         </div>
         <div class="row slider text-center">
-            <div class="col-md-8">
-                <div class="col-md-10 slider_text">
-                    <h2> Website Resmi Dinas Pelayanan Pajak Kota Bandung</h2>
-                    <h3>Ayo Bayar Pajak Tepat Waktu</h3>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="slider_img">
-                    <img src="images/pic1.png" alt="" class="img-responsive"/>
-                </div>
-            </div>
+            @yield('slider')
         </div>
     </div>
 </div>
