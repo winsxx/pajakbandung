@@ -12,7 +12,7 @@ class RegisterRequest extends FormRequest {
     public function rules()
     {
         return [
-            'no_ktp' => 'required|unique:users',
+            'no_ktp' => 'required|unique:penduduk',
             'nama' => 'required',
             'password' => 'required|confirmed|min:8',
         ];
