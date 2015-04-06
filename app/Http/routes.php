@@ -48,6 +48,15 @@ Route::get('login', function(){
 Route::get('daftar', function(){
 	return view('auth.register');
 });
+
+Route::get('setting',function(){
+	return view('SettingWp');
+});
+
+Route::get('settingpajak',function(){
+	return view('SettingPajak');
+});
+
 /*Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

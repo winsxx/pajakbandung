@@ -31,7 +31,7 @@ Daftar NPWPD
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
+							<label class="col-md-4 control-label">E-Mail Pemilik</label>
 							<div class="col-md-6">
 								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
 							</div>
@@ -60,6 +60,13 @@ Daftar NPWPD
 
 						<div class="form-group">
 							<label class="col-md-4 control-label">Telepon Usaha</label>
+							<div class="col-md-6">
+								<input type="text" class="form-control" name="tel_usaha">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-4 control-label">Email Usaha</label>
 							<div class="col-md-6">
 								<input type="text" class="form-control" name="tel_usaha">
 							</div>
@@ -127,9 +134,10 @@ Daftar NPWPD
 							<li> Surat Ijin Usaha </li>
 							<li> Fotocopy KTP </li>
 	  					</ol>
-	  					<button type="submit" class="btn btn-browse col-md-offset-9">
-							Pilih File
-						</button>
+	  					<div class="col-md-offset-1 form-group">
+						    <label for="dok_daftar">File input</label>
+					    	<input type="file" id="dok_daftar">
+						 </div>
 					</div>
 				</div>
 				<div class ="finalize-regis col-md-offset-1">

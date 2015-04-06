@@ -23,7 +23,7 @@ Dinas Pelayanan Pajak Kota Bandung
 		  <img src="images/info.png" class="img-responsive"/>
 		  <p>Informasi lebih lanjut mengenai perpajakan di kota Bandung.</p>
 	     <div class="rd_more1">
-			<a href="single-page.html"><button class="btn_style">Baca</button></a>
+			<a href="about"><button class="btn_style">Baca</button></a>
 		</div>
 	</div>
 	<div class="col-md-6 grid1_of_3">
@@ -31,7 +31,7 @@ Dinas Pelayanan Pajak Kota Bandung
 		  <img src="images/akun.png" class="img-responsive"/>
 		  <p>Daftarkan NPWPD untuk usaha anda dengan cepat dan mudah</p>
 	      <div class="rd_more1">
-			<a href="single-page.html"><button class="btn_style">daftar</button></a>
+			<a href="daftar"><button class="btn_style">daftar</button></a>
 		</div>
 	</div>
 	    <div class="clearfix"></div>
