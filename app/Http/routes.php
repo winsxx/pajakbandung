@@ -15,11 +15,9 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
-Route::get('KelolaPajak', 'PajakController@showKelola');
+Route::get('sptpdview', 'PajakController@showSptpd');
 
-Route::get('SptpdView', 'PajakController@showSptpd');
-
-Route::get('StatusPajak', 'PajakController@showStatus');
+Route::get('statuspajak', 'PajakController@showStatus');
 
 Route::get('homewp', function(){
 	return view('homeWp');
@@ -28,6 +26,11 @@ Route::get('homewp', function(){
 Route::get('homedinas', function(){
 	return view('DinasHome');
 });
+
+
+Route::controllers([
+	'/' => 'Auth\AuthController',
+]);
 
 Route::get('kelolapajak', function(){
 	return view('DinasPajak');
@@ -41,13 +44,13 @@ Route::get('kelolasptpd', function(){
 	return view('DinasSptpd');
 });
 
-Route::get('login', function(){
+/*Route::get('login', function(){
 	return view('auth.login');
 });
 
 Route::get('daftar', function(){
 	return view('auth.register');
-});
+});*/
 
 Route::get('setting',function(){
 	return view('SettingWp');
@@ -69,7 +72,4 @@ Route::get('tutupnpwpd',function(){
 	return view('tutupnpwpd');
 });
 
-/*Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);*/
+

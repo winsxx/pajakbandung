@@ -47,8 +47,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="menu nav navbar-nav navbar-right ">
                             <li class="active"><a href="/">beranda</a></li>
-                            <li><a href="/about">tentang kami</a></li>
-                            <li><a href="/login">login</a></li>
+                            @if (Auth::Check() == false)
+                                <li><a href="/about">tentang kami</a></li>
+                                <li><a href="/login">login</a></li>
+                            @else
+                                <li><a href="/notfication">notifikasi</a></li>
+                                <li><a href="/configuration">pengaturan</a></li>
+                                <li><a href="/logout">logout</a></li>
+                            @endif
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->
