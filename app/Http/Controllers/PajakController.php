@@ -9,15 +9,15 @@ class PajakController extends Controller {
 
 	//
 	public function showKelola(){
-		return view('kevin.kelolapajak');
+		return view('kelolapajak');
 	}
 	
 	public function showSptpd(){
-		return view('kevin.sptpdview');
+		return view('sptpdview');
 	}
 	
 	public function showStatus(){
-		return view('kevin.statuspajak');
+		return view('statuspajak');
 	}
 
 }
