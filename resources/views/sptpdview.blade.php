@@ -21,16 +21,23 @@
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
         <div class="form-group">
-            <label class="col-md-4 control-label">Nama Objek Usaha</label>
+            <label class="col-md-4 control-label">No SPTPD</label>
             <div class="col-md-6">
-                <input type="text" class="form-control" name="nama_objek_usaha" value="{{ old('nama_objek_usaha') }}">
+                <input type="text" class="form-control" name="no_sptpd" value="{{ old('no_sptpd') }}">
             </div>
         </div>
 
         <div class="form-group">
-            <label class="col-md-4 control-label">Alamat Objek Usaha</label>
+            <label class="col-md-4 control-label">No Pajak</label>
             <div class="col-md-6">
-                <input class="form-control" name="alamat_objek_usaha" value="{{ old('alamat_objek_usaha') }}">
+                <input class="form-control" name="no_pajak" value="{{ old('no_pajak') }}">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label">Tahun</label>
+            <div class="col-md-6">
+                <input class="form-control" name="tahun" value="{{ old('tahun') }}">
             </div>
         </div>
 
