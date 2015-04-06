@@ -15,11 +15,9 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
-Route::get('KelolaPajak', 'PajakController@showKelola');
+Route::get('sptpdview', 'PajakController@showSptpd');
 
-Route::get('SptpdView', 'PajakController@showSptpd');
-
-Route::get('StatusPajak', 'PajakController@showStatus');
+Route::get('statuspajak', 'PajakController@showStatus');
 
 Route::get('homewp', function(){
 	return view('homeWp');
