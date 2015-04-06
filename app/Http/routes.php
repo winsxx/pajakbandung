@@ -35,6 +35,11 @@ Route::get('homedinas', function(){
 	return view('DinasHome');
 });
 
+
+Route::controllers([
+	'/' => 'Auth\AuthController',
+]);
+
 Route::get('kelolapajak', function(){
 	return view('DinasPajak');
 });
@@ -47,13 +52,13 @@ Route::get('kelolasptpd', function(){
 	return view('DinasSptpd');
 });
 
-Route::get('login', function(){
+/*Route::get('login', function(){
 	return view('auth.login');
 });
 
 Route::get('daftar', function(){
 	return view('auth.register');
-});
+});*/
 
 Route::get('setting',function(){
 	return view('SettingWp');
@@ -75,7 +80,4 @@ Route::get('tutuppajak', function(){
 	return view('tutupnpwpd');
 });*/
 
-/*Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);*/
+
