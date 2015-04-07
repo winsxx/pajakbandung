@@ -8,47 +8,51 @@ Kelola SPTPD
 @endsection
 @section('content')
 <div class="row details"><!-- start details -->
-	<div class="col-md-7">
+	<div class="col-md-12">
 		<table class="table table-hover table-condensed mytable">
 	        <thead>
 	            <tr>
-	                <th style="width: 10%;">No</th>
-	                <th style="width: 35%">No SPTPD</th>
-	                <th style="width: 30%">Nama Usaha</th>
-	                <th style="width: 35%">Jenis Pajak</th>
-	                <th style="width: 25%"></th>
+	                <th style="width: 5%;">No</th>
+	                <th style="width: 15%">No SPTPD</th>
+	                <th style="width: 15%">Jenis Pajak</th>
+	                <th style="width: 15%">Nama Usaha</th>
+	                <th style="widht: 20%">Status SKPD</th>
+	                <th style="width: 30%"></th>
 	            </tr>
 	        </thead>
 	        <tbody>
 	            <tr>
 	                <td>1</td>
 	                <td>12345</td>
+	                <td>Pajak Hotel</td>
 	                <td>Hotel lalal</td>
-	                <td>Pajak hotel</td>
-	                <td class="vcenter"><input type="checkbox" id="blahA" value="1"/></td>
+	                <td>Sudah Dikirim</td>
+	                <td class="vcenter" style="text-align:right;">
+	                	<a href="#">lihat berkas</a> | <a href="#">kirim SKPD</a> | <a href="#">hapus</a>
+	                </td>
 	            </tr>
 	            <tr>
-	                <td>2</td>
+	                <td>1</td>
 	                <td>12345</td>
+	                <td>Pajak Hotel</td>
 	                <td>Hotel lalal</td>
-	                <td>Pajak hotel</td>
-	                <td class="vcenter"><input type="checkbox" id="blahA" value="1"/></td>
+	                <td>Sudah Dikirim</td>
+	                <td class="vcenter" style="text-align:right;">
+	                	<a href="#">lihat berkas</a> | <a href="#">kirim SKPD</a> | <a href="#">hapus</a>
+	                </td>
 	            </tr>
 	            <tr>
-	                <td>3</td>
+	                <td>1</td>
 	                <td>12345</td>
+	                <td>Pajak Hotel</td>
 	                <td>Hotel lalal</td>
-	                <td>Pajak hotel</td>
-	                <td class="vcenter"><input type="checkbox" id="blahA" value="1"/></td>
-	            </tr>
+	                <td>Sudah Dikirim</td>
+	                <td class="vcenter" style="text-align:right;">
+	                	<a href="#">lihat berkas</a> | <a href="#">kirim SKPD</a> | <a href="#">hapus</a>
+	                </td>
+            	</tr>
 	        </tbody>
 	    </table>
-	</div>
-	<div class="col-md-5">
-		<button class="btn btn-default btn-crud">Ubah</button>
-		<button class="btn btn-default btn-crud">Hapus</button>
-		<button class="btn btn-default btn-crud">Tambah</button>
-		
 	</div>
 </div>
 @endsection

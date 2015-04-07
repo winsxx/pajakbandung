@@ -269,7 +269,7 @@ body {
 	width:24%;
 	float:left;
 	background: #354B77;
-	padding:2.5%;
+	padding:3%;
 }
 .images_1_of_1 p{
 	text-align: center;
@@ -307,7 +307,7 @@ body {
 }
 
 .grid_pajak p {
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 1.8em;
 	color: #434C5E;
 }
@@ -343,7 +343,7 @@ body {
 }
 
 .mytable{
-	font-size: 14pt;
+	font-size: 12pt;
 }
 
 .btn-crud{
