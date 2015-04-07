@@ -40,9 +40,13 @@ class Authenticate {
 			}
 			else
 			{
-				return redirect()->guest('auth/login');
+				return redirect()->guest('login');
 			}
 		}
+
+        if ($this->auth->user()->hasNpwpd()){
+            return redirect(url('/home'));
+        }
 
 		return $next($request);
 	}

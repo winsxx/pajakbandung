@@ -3,7 +3,7 @@
 Pengaturan Akun
 @endsection
 @section('breadcrumb')
-<li><a href="/homedinas">Beranda</a></li>
+<li><a href="/homewp">Beranda</a></li>
 <li class="active">Pengaturan</li>
 @endsection
 @section('content')
@@ -23,7 +23,6 @@ Pengaturan Akun
 			<div class="panel-body">
 				<ol>
 					<h3><a href = "settingpajak" > <li>Pajak Hotel </a></h3>
-					<h3><a href = "settingpajak" > <li>Pajak Restoran </a></h3>
 				</ol>
 			</div>
 		</div>
