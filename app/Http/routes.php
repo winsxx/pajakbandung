@@ -35,9 +35,6 @@ Route::get('homedinas', function(){
 	return view('DinasHome');
 });
 
-
-
-
 Route::get('kelolapajak', function(){
 	return view('DinasPajak');
 });
