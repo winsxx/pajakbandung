@@ -28,7 +28,9 @@ Route::get('logout', 'Auth\AuthController@getLogout');
 /*WajibPajak*/
 Route::get('daftar', ['uses' => 'WajibPajakController@getDaftarNpwpd','middleware' => 'auth']);
 Route::post('daftar', ['uses' => 'WajibPajakController@postDaftarNpwpd','middleware' => 'auth']);
-
+Route::get('setting',['uses' => 'WajibPajakController@getSettingPajak','middleware' => 'wajibpajak']);
+Route::get('tutupnpwpd',['uses' => 'WajibPajakController@getTutupNpwpd','middleware' => 'wajibpajak']);
+Route::post('tutupnpwpd',['uses' => 'WajibPajakController@postTutupNpwpd','middleware' => 'wajibpajak']);
 /*
 Route::get('statuspajak', 'PajakController@showStatus');
 

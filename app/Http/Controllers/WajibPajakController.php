@@ -3,25 +3,9 @@
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class WajibPajakController extends Controller {
-
-	//
-	public function tutupnpwpd(){
-		return view('tutupnpwpd');
-	}
-
-	public function editnpwpd(){
-		return view('editnpwpd');
-	}
-
-	public function hapusnpwpd(){
-		return view('hapusnpwpd');
-	}
-
-	public function tambahnpwpd(){
-		return view('tambahnpwpd');
-	}
 
     public function getDaftarNpwpd(){
         return view('wajibpajak.registernpwpd');
@@ -52,6 +36,38 @@ class WajibPajakController extends Controller {
 
         $wp->save();
         return redirect('/');
+    }
 
+    public function getSettingPajak(){
+        $daftarPajak =  Auth::user()->wajibpajak->pajak;
+        return view('wajibpajak.settingnpwpd')->with('daftarPajak',$daftarPajak);
+    }
+
+    public function getTutupNpwpd(){
+        return view('wajibpajak.tutupnpwpd');
+    }
+
+    public function postTutupNpwpd(Request $request){
+        if(! $request->hasFile('dokumen')){
+            $error = ['dokumen' => 'Harus upload file'];
+            return redirect('tutupnpwpd')->withErrors($error);
+        }
+        $dokumen = $request->file('dokumen');
+        if( !$dokumen->isValid()){
+            $error = ['dokumen' => 'Upload file gagal'];
+            return redirect('tutupnpwpd')->withErrors($error);
+        }
+        if($dokumen->getClientOriginalExtension()!='pdf'){
+            $error = ['dokumen' => 'File harus berupa pdf'];
+            return redirect('tutupnpwpd')->withErrors($error);
+        }
+        $filename = 'tutup_'.Auth::user()->wajibpajak->npwpd.'.pdf';
+        $dokumen->move('file', $filename);
+
+        $wp = Auth::user()->wajibpajak;
+        $wp->lokasi_file = $filename;
+        $wp->status = 'proses_nonaktif';
+        $wp->save();
+        return Redirect::to('tutupnpwpd');
     }
 }
