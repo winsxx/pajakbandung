@@ -20,4 +20,7 @@ class PajakController extends Controller {
 		return view('statuspajak');
 	}
 
+	public function addCollaborator(){
+		//Pajak::find
+	}
 }

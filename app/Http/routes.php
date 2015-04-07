@@ -49,14 +49,16 @@ Route::get('kelolasptpd', function(){
 
 /*Route::get('login', function(){
 	return view('auth.login');
-});
-
-Route::get('daftar', function(){
-	return view('auth.register');
 });*/
 
+Route::get('daftar', function(){
+	return view('wajibpajak.register');
+});
+
 Route::get('setting',function(){
-	return view('SettingWp');
+	//$data = Auth::User()->kolaborasiPajak();
+	//return view('SettingWp')->with('daftarpajak', $data);
+	return view('SettingWp');	
 });
 
 Route::get('settingpajak',function(){
@@ -71,10 +73,11 @@ Route::get('tutuppajak', function(){
 	return view('tutuppajak');
 });
 
+Route::post('tambahpengelola','PajakController@addCollaborator');  
 /*Route::get('tutupnpwpd',function(){
 	return view('tutupnpwpd');
 });*/
 
 Route::controllers([
-	'/' => 'Auth\AuthController',
+    '/' => 'Auth\AuthController',
 ]);
