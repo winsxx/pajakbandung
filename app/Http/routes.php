@@ -12,17 +12,22 @@
 */
 
 /*MainMenuController*/
-Route::get('/', 'MainMenuController@getIndex');
-Route::get('home', 'MainMenuController@getWpHome');
-Route::get('admin/home', 'MainMenuController@getDinasHome');
+Route::get('/', ['uses' => 'MainMenuController@getIndex']);
+Route::get('home', ['uses' => 'MainMenuController@getWpHome', 'middleware' => 'wajibpajak']);
+Route::get('admin/home', ['uses' => 'MainMenuController@getDinasHome','middleware' => 'admin']);
 
 
 /*Auth*/
-Route::get('login', 'Auth\AuthController@getLogin');
-Route::post('login', 'Auth\AuthController@postLogin');
-Route::get('register', 'Auth\AuthController@getRegister');
-Route::post('register', 'Auth\AuthController@postRegister');
+Route::get('login', ['uses' => 'Auth\AuthController@getLogin', 'middleware' => 'guest']);
+Route::post('login', ['uses' => 'Auth\AuthController@postLogin','middleware' => 'guest']);
+Route::get('register', ['uses' => 'Auth\AuthController@getRegister','middleware' => 'guest']);
+Route::post('register', ['uses' => 'Auth\AuthController@postRegister','middleware' => 'guest']);
 Route::get('logout', 'Auth\AuthController@getLogout');
+
+
+/*WajibPajak*/
+Route::get('daftar', ['uses' => 'WajibPajakController@getDaftarNpwpd','middleware' => 'auth']);
+Route::post('daftar', ['uses' => 'WajibPajakController@postDaftarNpwpd','middleware' => 'auth']);
 
 /*
 Route::get('statuspajak', 'PajakController@showStatus');
@@ -82,4 +87,4 @@ Route::post('wajibpajak/register', 'WajibPajakController@daftarnpwpd');
 	return view('tutupnpwpd');
 });*/
 
-
+Route::get('debug', 'MainMenuController@testing');
