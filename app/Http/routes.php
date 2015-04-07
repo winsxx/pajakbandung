@@ -35,11 +35,6 @@ Route::get('homedinas', function(){
 	return view('DinasHome');
 });
 
-
-Route::controllers([
-	'/' => 'Auth\AuthController',
-]);
-
 Route::get('kelolapajak', function(){
 	return view('DinasPajak');
 });
@@ -80,4 +75,6 @@ Route::get('tutuppajak', function(){
 	return view('tutupnpwpd');
 });*/
 
-
+Route::controllers([
+	'/' => 'Auth\AuthController',
+]);
