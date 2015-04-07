@@ -14,29 +14,32 @@ Tambah Pengelola Pajak
 </div>
 <div class="row details setting">
 	<ul class="col-md-4 nav nav-pills nav-stacked">
-	  <li role="presentation" class="active"><a href="setting"><h4>Pajak</h4></a></li>
-	  <li role="presentation"><a href="tutupnpwpd"><h4>NPWPD</h4></a></li>
+	  <li role="presentation" class="active"><a href="/setting"><h4>Pajak</h4></a></li>
+	  <li role="presentation"><a href="/tutupnpwpd"><h4>NPWPD</h4></a></li>
 	</ul>
 	<div class="col-md-8">
 		<div class="panel panel-default panel-setting">
 			<div class="panel-heading">
-				<h2>Tambah Pengelola Pajak Hotel </h2>
+				<h2>Tambah Pengelola Pajak {{$pajak->jenis_pajak}}</h2>
 			</div>
 			<div class="panel-body">
-			  	<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}">
+                @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <strong>Penambahan kolaborator gagal!<br><br>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                    </div>
+                @endif
+			  	<form class="form-horizontal" role="form" method="POST" action="/settingpajak/{{$pajak->id}}/tambahpengelola">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-					<div class="form-group">
-						<label class="col-md-4 control-label">Nama Pengelola</label>
-						<div class="col-md-6">
-							<input type="text" class="form-control" name="nama" value="{{ old('name') }}">
-						</div>
-					</div>
 
 					<div class="form-group">
 						<label class="col-md-4 control-label">No KTP Pengelola</label>
 						<div class="col-md-6">
-							<input type="text" class="form-control" name="no_ktp" value="{{ old('email') }}">
+							<input type="text" class="form-control" name="no_ktp" value="{{ old('no_ktp') }}">
 						</div>
 					</div>
 			  		<div class="col-md-offset-7">
