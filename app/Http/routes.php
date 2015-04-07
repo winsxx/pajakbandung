@@ -74,6 +74,8 @@ Route::get('tutuppajak', function(){
 	return view('tutuppajak');
 });
 
+Route::post('wajibpajak/register', 'WajibPajakController@daftarnpwpd');
+
 /*Route::get('tutupnpwpd',function(){
 	return view('tutupnpwpd');
 });*/

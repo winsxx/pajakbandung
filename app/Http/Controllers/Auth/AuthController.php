@@ -59,7 +59,7 @@ class AuthController extends Controller {
         $this->user->save();
 
         $this->auth->login($this->user);
-        return redirect('/');
+        return redirect('/homeWp');
     }
 
     /**
@@ -82,7 +82,7 @@ class AuthController extends Controller {
     {
         if ($this->auth->attempt($request->only('no_ktp', 'password')))
         {
-            return redirect('/');
+            return redirect('/homewp');
         }
 
         return redirect('/login')->withErrors([

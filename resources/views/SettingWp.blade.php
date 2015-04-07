@@ -3,7 +3,7 @@
 Pengaturan Akun
 @endsection
 @section('breadcrumb')
-<li><a href="/homedinas">Beranda</a></li>
+<li><a href="/homewp">Beranda</a></li>
 <li class="active">Pengaturan</li>
 @endsection
 @section('content')
