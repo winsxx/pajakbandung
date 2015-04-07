@@ -32,7 +32,7 @@ class AuthController extends Controller {
         $this->user = $user;
         $this->auth = $auth;
 
-        $this->middleware('guest', ['except' => ['getLogout']]);
+        //$this->middleware('guest', ['except' => ['getLogout']]);
     }
 
     /**
@@ -59,7 +59,7 @@ class AuthController extends Controller {
         $this->user->save();
 
         $this->auth->login($this->user);
-        return redirect('/homeWp');
+        return redirect('/home');
     }
 
     /**
@@ -82,7 +82,7 @@ class AuthController extends Controller {
     {
         if ($this->auth->attempt($request->only('no_ktp', 'password')))
         {
-            return redirect('/homewp');
+            return redirect('/home');
         }
 
         return redirect('/login')->withErrors([
