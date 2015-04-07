@@ -25,7 +25,7 @@ class AuthenticateWajibPajak {
             return redirect(url('/login'));
         }
         if (! $this->auth->user()->hasNpwpd()){
-            return redirect(url('/daftar'));
+            return redirect(url('/'));
         }
 		return $next($request);
 	}

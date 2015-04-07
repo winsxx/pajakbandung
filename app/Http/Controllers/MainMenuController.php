@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use App\Penduduk;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MainMenuController extends Controller {
 
@@ -21,7 +22,7 @@ class MainMenuController extends Controller {
     }
 
     public function testing(){
-        //return dd(Penduduk::find(123)->kolaborasiPajak());
+        return Auth::user()->wajibpajak()->get()->first()->npwpd;
     }
 
 }

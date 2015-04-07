@@ -46,6 +46,10 @@ class Penduduk extends Model implements AuthenticatableContract, CanResetPasswor
         return count($temp)>0;
     }
 
+    public function wajibpajak(){
+        return $this->hasOne('\App\WajibPajak','no_ktp_pemilik','no_ktp');
+    }
+
     public function isAdmin(){
         return $this->admin;
     }
