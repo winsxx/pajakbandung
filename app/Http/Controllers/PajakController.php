@@ -50,4 +50,12 @@ class PajakController extends Controller {
         return redirect('/settingpajak/'.$pajak->id);
     }
 
+    public function getMohonTutup(){
+        return view('pajak.tutuppajak');
+    }
+
+    public function postMohonTutup(){
+        return view('pajak.tutuppajak');
+    }
+
 }

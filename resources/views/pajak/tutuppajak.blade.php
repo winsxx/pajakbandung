@@ -14,8 +14,8 @@ Menutup Pajak
 </div>
 <div class="row details setting">
 	<ul class="col-md-4 nav nav-pills nav-stacked">
-	  <li role="presentation" class="active"><a href="setting"><h4>Pajak</h4></a></li>
-	  <li role="presentation"><a href="tutupnpwpd"><h4>NPWPD</h4></a></li>
+	  <li role="presentation" class="active"><a href="/setting"><h4>Pajak</h4></a></li>
+	  <li role="presentation"><a href="/tutupnpwpd"><h4>NPWPD</h4></a></li>
 	</ul>
 	<div class="col-md-8">
 		<div class="panel panel-default panel-setting">

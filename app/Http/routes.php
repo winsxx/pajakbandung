@@ -37,6 +37,8 @@ Route::post('tutupnpwpd',['uses' => 'WajibPajakController@postTutupNpwpd','middl
 Route::get('settingpajak/{id}', ['uses' => 'PajakController@getSettingPajak','middleware' => 'wajibpajak']);
 Route::get('settingpajak/{id}/tambahpengelola', ['uses' => 'PajakController@getTambahPengelola','middleware' => 'wajibpajak']);
 Route::post('settingpajak/{id}/tambahpengelola', ['uses' => 'PajakController@postTambahPengelola','middleware' => 'wajibpajak']);
+Route::get('settingpajak/{id}/tutup', ['uses' => 'PajakController@getMohonTutup','middleware' => 'wajibpajak']);
+Route::post('settingpajak/{id}/tutup', ['uses' => 'PajakController@postMohonTutup','middleware' => 'wajibpajak']);
 /*
 Route::get('statuspajak', 'PajakController@showStatus');
 

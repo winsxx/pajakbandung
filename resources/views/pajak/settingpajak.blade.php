@@ -33,7 +33,7 @@ Pengaturan Pajak
 			  	</ul>
                 @endif
 			  	<a href ="/settingpajak/{{$pajak->id}}/tambahpengelola"><button class="btn btn-default btn-crud">Tambah Pengelola</button></a>
-				<a href ="/tutuppajak"><button class="btn btn-default btn-crud">Tutup Pajak</button></a>
+				<a href ="/settingpajak/{{$pajak->id}}/tutup"><button class="btn btn-default btn-crud">Tutup Pajak</button></a>
 			</div>
 		</div>
 	</div>
