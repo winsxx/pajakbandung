@@ -25,6 +25,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript" src="/js/bootstrap.js"></script>
     <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/form.js"></script>
 </head>
 <body>
 <div class="header_bg"><!-- start header -->

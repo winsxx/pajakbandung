@@ -7,7 +7,6 @@
 <li class="active"> Tambah Pajak </li>
 @endsection
 @section('content')
-
     @if (count($errors) > 0)
         <div class="alert alert-danger">
             <strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -18,6 +17,26 @@
             </ul>
         </div>
     @endif
+    <script type="text/javascript">
+
+    function showHotel(){   
+        var hotelForm = document.getElementById('hotel-form');
+        var restoranForm = document.getElementById('restoran-form');
+
+        hotelForm.style.display = 'block';
+        restoranForm.style.display = 'none';
+    }
+
+    function showRestoran(){
+        var hotelForm = document.getElementById('hotel-form');
+        var restoranForm = document.getElementById('restoran-form');
+
+        hotelForm.style.display = 'none';
+        restoranForm.style.display = 'block';
+    }
+
+    </script>
+
     <div class="company_ad">
         <h2> Tambah Pajak </h2>
     </div>
@@ -27,10 +46,10 @@
             <label class="col-md-4 control-label">Bidang Usaha</label>
             <div class="col-md-6 label-dok">
                 <label class="radio-inline">
-                  <input type="radio" name="bidang-usaha" id="radio-hotel" value="hotel"> Hotel
+                  <input type="radio" name="bidang-usaha" id="radio-hotel" value="hotel" onclick="javascript:showHotel()"> Hotel
                 </label>
                 <label class="radio-inline">
-                  <input type="radio" name="bidang-usaha" id="radio-restoran" value="restoran"> Restoran
+                  <input type="radio" name="bidang-usaha" id="radio-restoran" value="restoran" onclick="javascript:showRestoran()"> Restoran
                 </label>
             </div>            
         </div>
@@ -257,6 +276,7 @@
             </div>
         </div>
 
+
         <div class="form-group" style="margin-top:10%;">
             <div class="col-md-6 col-md-offset-8">
                 <button type="submit" class="btn btn-primary">
@@ -265,25 +285,4 @@
             </div>
         </div>
     </form>
-
-<script>
-var radios =  document.getElementByName('bidang-usaha');
-var hotel-form = document.getElementById('hotel-form');
-var restoran-form = document.getElementById('restoran-form');
-
-for(var i = 0; i < radios.length; i++) {
-   radios[i].onclick = function() {
-     var val = this.value;
-     if(val == 'hotel'){  
-        hotel-form.style.display = 'block';
-        restoran-form.style.display = 'none';
-     }
-     else if(val == 'restoran'){
-        hotel-form.style.display = 'none';
-        restoran-form.style.display = 'block';
-    }    
-
-  }
-}
-</script>
 @endsection
