@@ -34,7 +34,7 @@ class Penduduk extends Model implements AuthenticatableContract, CanResetPasswor
 	protected $hidden = ['password', 'remember_token'];
 
     public function kolaborasiPajak(){
-        return $this->belongsToMany('\App\Pajak','kolaborator','no_ktp','no_ktp_kolab');
+        return $this->belongsToMany('\App\Pajak','kolaborator','no_ktp_kolab','no_pajak');
     }
 
     public function npwpd(){

@@ -15,7 +15,11 @@ class WajibPajak extends Model {
 
     public function izinUsaha()
     {
-        return $this->belongsTo('IzinUsaha','no_izin_usaha');
+        return $this->belongsTo('\App\IzinUsaha','no_izin_usaha');
+    }
+
+    public function pajak(){
+        return $this->hasMany('\App\Pajak','npwpd_pemilik', 'npwpd');
     }
 
 }

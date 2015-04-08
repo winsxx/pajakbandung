@@ -269,7 +269,7 @@ body {
 	width:24%;
 	float:left;
 	background: #354B77;
-	padding:2.5%;
+	padding:3%;
 }
 .images_1_of_1 p{
 	text-align: center;
@@ -307,7 +307,7 @@ body {
 }
 
 .grid_pajak p {
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 1.8em;
 	color: #434C5E;
 }
@@ -343,7 +343,7 @@ body {
 }
 
 .mytable{
-	font-size: 14pt;
+	font-size: 12pt;
 }
 
 .btn-crud{
@@ -370,6 +370,9 @@ body {
 	margin-left: 3%;
 }
 
+.menuperpajak{
+	margin-top:-20%;
+}
 /* start footer */
 .footer_bg{
 	background: #f9f9f9;
@@ -766,6 +769,14 @@ body {
 	border: 1px solid #ECECEC;
 }
 .form-control:focus {
+	box-shadow: none;
+}
+.form-control-kecil{
+	box-shadow: none;
+	border: 1px solid #ECECEC;
+	height: 20px;
+}
+.form-control-kecil:focus {
 	box-shadow: none;
 }
 .contact-form input[type="submit"] {

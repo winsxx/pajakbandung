@@ -10,11 +10,11 @@ class Pajak extends Model {
 
     public function wajibPajak()
     {
-        return $this->belongsTo('WajibPajak', 'npwpd_pemilik');
+        return $this->belongsTo('\App\WajibPajak', 'npwpd_pemilik');
     }
 
-    public function collaborator(){
-        return $this->belongsToMany('Penduduk','kolaborator','id','no_pajak');
+    public function kolaborator(){
+        return $this->belongsToMany('\App\Penduduk','kolaborator','no_pajak','no_ktp_kolab');
     }
 
 }

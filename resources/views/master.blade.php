@@ -9,22 +9,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <head>
     <title>@yield('title')</title>
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
-    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+    <link href="/css/bootstrap.css" rel='stylesheet' type='text/css' />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="/js/html5shiv.js"></script>
+    <script src="/js/respond.min.js"></script>
     <![endif]-->
     <!--  webfonts  -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='/css/webfont.css' rel='stylesheet' type='text/css'>
     <!-- // webfonts  -->
-    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
     <!-- start plugins -->
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
 </head>
 <body>
 <div class="header_bg"><!-- start header -->
@@ -40,7 +40,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="/"><img src="images/logo.png" alt="" class="img-responsive"/> </a>
+                        <a class="navbar-brand" href="/"><img src="/images/logo.png" alt="" class="img-responsive"/> </a>
                     </div>
                     <div class="title"><h2> Dinas Pelayanan Pajak Kota Bandung </h2></div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
