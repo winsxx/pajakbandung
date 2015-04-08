@@ -25,7 +25,7 @@ Kelola SPTPD
         		<tr>
 	                <td>1</td>
 	                <td>{{$sptpd->no_sptpd}}</td>
-	                <td>Pajak Hotel</td>
+	                <td>{{$sptpd->jenis_pajak}}</td>
 	                <td>Hotel lalal</td>
 	                <td>Sudah Dikirim</td>
 	                <td class="vcenter" style="text-align:right;">

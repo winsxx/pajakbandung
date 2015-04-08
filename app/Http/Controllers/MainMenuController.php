@@ -31,7 +31,7 @@ class MainMenuController extends Controller {
     }
 
     public function showListSptpd(){
-        $listSptpd = Sptpd::sptpdLengkap()->all();
+        $listSptpd = Sptpd::pajak()->all();
         return view('sptpd.dinassptpd',compact('listSptpd'));
     }
 }
