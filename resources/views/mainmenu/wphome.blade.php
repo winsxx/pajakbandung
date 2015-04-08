@@ -13,7 +13,7 @@ Beranda
 					<p>H</p>
 				</div>
 				<div class="grid_pajak">
-				  	<h3><a href = "#.php">Pajak Hotel </a></h3>	   
+				  	<h3><a href = "menuperpajak">Pajak Hotel </a></h3>	   
 	 			</div>
 			 	<div class="clearfix"></div>
 			</div>
@@ -22,7 +22,7 @@ Beranda
 					<p>R</p>
 				</div>
 				<div class="grid_pajak">
-				  	<h3><a href = "#.php">Pajak Restoran </a></h3>	   
+				  	<h3><a href = "menuperpajak">Pajak Restoran </a></h3>	   
 	 			</div>
 	 			<div class="clearfix"></div>
 			</div>
@@ -31,7 +31,7 @@ Beranda
 					<p>H</p>
 				</div>
 				<div class="grid_pajak">
-				  	<h3><a href = "#.php">Pajak Hotel </a></h3>	   
+				  	<h3><a href = "menuperpajak">Pajak Hotel </a></h3>	   
 	 			</div>
 			 	<div class="clearfix"></div>
 			</div>
@@ -40,7 +40,7 @@ Beranda
 					<p>R</p>
 				</div>
 				<div class="grid_pajak">
-				  	<h3><a href = "#.php">Pajak Restoran </a></h3>	   
+				  	<h3><a href = "menuperpajak">Pajak Restoran </a></h3>	   
 	 			</div>
 			 	<div class="clearfix"></div>
 			</div>
@@ -50,7 +50,7 @@ Beranda
 			<div class="btn-add-pajak"> 
 				<p>Anda memiliki usaha baru? Daftarkan pajak usaha anda pada link berikut </p>
 			</div>
-			<button class="btn btn-default btn-add-pajak" href="#">Daftar Pajak Baru</button>
+			<a href="addpajak"><button class="btn btn-default btn-add-pajak">Daftar Pajak Baru</button></a>
 		</div>
 	</div>
 @endsection
