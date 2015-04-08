@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use App\Pajak;
 use App\Penduduk;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -77,5 +78,11 @@ class PajakController extends Controller {
         $pajak = Pajak::find($id);
         $izin = $pajak->wajibPajak->izinUsaha;
         return view('pajak.menuperpajak', compact('pajak','izin'));
+    }
+
+    public function getSptpd($id){
+        $year = Carbon::now()->year;
+        $month = Carbon::now()->month;
+        return view('sptpd.sptpdhotel',compact('year','month'));
     }
 }

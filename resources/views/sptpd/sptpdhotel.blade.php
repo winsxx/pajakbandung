@@ -30,7 +30,24 @@
         <div class="form-group">
             <label class="col-md-4 control-label">Bulan</label>
             <div class="col-md-6">
-                <input type="text" class="form-control" name="bulan-sptpd" value="">
+                <select name="year">
+                    @for($i=1; $i<=12; $i++)
+                        @if($month == $i)
+                            <option value="{{$i}}" selected="selected">{{date('F', mktime(0, 0, 0, $i, 10))}}</option>
+                        @else
+                            <option value="{{$i}}">{{date('F', mktime(0, 0, 0, $i, 10))}}</option>
+                        @endif
+                    @endfor
+                </select>
+                <select name="year">
+                    @for($i=2000; $i<2200; $i++)
+                        @if($year == $i)
+                            <option value="{{$i}}" selected="selected">{{$i}}</option>
+                        @else
+                            <option value="{{$i}}">{{$i}}</option>
+                        @endif
+                    @endfor
+                </select>
             </div>
         </div>
 
