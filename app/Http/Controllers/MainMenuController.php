@@ -14,7 +14,10 @@ class MainMenuController extends Controller {
     }
 
     public function getWpHome(){
-        return view('mainmenu.wphome');
+        $daftarPajakKolab = Auth::user()->kolaborasipajak;
+        $daftarPajakSendiri =  Auth::user()->wajibpajak->pajak;
+
+        return view('mainmenu.wphome', compact('daftarPajakKolab','daftarPajakSendiri'));
     }
 
     public function getIndex(){
@@ -22,6 +25,8 @@ class MainMenuController extends Controller {
     }
 
     public function testing(){
+        return Auth::user()->wajibpajak->izinUsaha;
+        return Auth::user()->kolaborasipajak;
         return Auth::user()->wajibpajak()->get()->first()->npwpd;
     }
 

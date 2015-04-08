@@ -70,4 +70,9 @@ class WajibPajakController extends Controller {
         $wp->save();
         return Redirect::to('tutupnpwpd');
     }
+
+    public function getTambahPajak(){
+        return view('wajibpajak.tambahpajak');
+    }
+
 }
