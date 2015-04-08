@@ -40,6 +40,7 @@ Route::post('settingpajak/{id}/tambahpengelola', ['uses' => 'PajakController@pos
 Route::get('settingpajak/{id}/tutup', ['uses' => 'PajakController@getMohonTutup','middleware' => 'wajibpajak']);
 Route::post('settingpajak/{id}/tutup', ['uses' => 'PajakController@postMohonTutup','middleware' => 'wajibpajak']);
 Route::get('pajak/{id}', ['uses' => 'PajakController@getMenuPajak','middleware' => 'auth']);
+Route::get('pajak/{id}/sptpd', ['uses' => 'PajakController@getSptpd','middleware' => 'auth']);
 /*
 Route::get('statuspajak', 'PajakController@showStatus');
 

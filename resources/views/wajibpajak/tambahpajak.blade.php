@@ -2,9 +2,11 @@
 @section('title')
 	Tambah Pajak
 @endsection
-
+@section('breadcrumb')
+<li><a href="/homewp"> Beranda </a></li>
+<li class="active"> Tambah Pajak </li>
+@endsection
 @section('content')
-
 
     @if (count($errors) > 0)
         <div class="alert alert-danger">
@@ -16,7 +18,9 @@
             </ul>
         </div>
     @endif
-
+    <div class="company_ad">
+        <h2> Tambah Pajak </h2>
+    </div>
     <form class="form-horizontal" role="form" method="POST" action="">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="form-group">

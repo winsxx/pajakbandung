@@ -2,7 +2,8 @@
 @section('title')
 	Tambah NPWPD
 @endsection
-
+<li><a href="/homewp"> Beranda </a></li>
+<li class="active"> Tambah NPWPD </li>
 @section('content')
 
 
