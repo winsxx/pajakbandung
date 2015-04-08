@@ -30,4 +30,8 @@ class MainMenuController extends Controller {
         return Auth::user()->wajibpajak()->get()->first()->npwpd;
     }
 
+    public function showListSptpd(){
+        $listSptpd = Sptpd::sptpdLengkap()->all();
+        return view('sptpd.dinassptpd',compact('listSptpd'));
+    }
 }
