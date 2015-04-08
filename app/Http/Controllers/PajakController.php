@@ -7,6 +7,7 @@ use App\Pajak;
 use App\Penduduk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class PajakController extends Controller {
 
@@ -50,12 +51,31 @@ class PajakController extends Controller {
         return redirect('/settingpajak/'.$pajak->id);
     }
 
-    public function getMohonTutup(){
-        return view('pajak.tutuppajak');
+    public function getMohonTutup($id){
+        return view('pajak.tutuppajak')->with('id',$id);
     }
 
-    public function postMohonTutup(){
-        return view('pajak.tutuppajak');
+    public function postMohonTutup(Request $request, $id){
+        $this->validate($request, [
+            'alasan' => 'required|max:200',
+        ]);
+
+        $pajak = Auth::user()->wajibpajak->pajak()->findOrFail($id);
+
+        $pajak->alasan_penutupan = $request->alasan;
+        $pajak->status = "proses_nonaktif";
+
+        $pajak->save();
+        return redirect('/settingpajak/'.$pajak->id);
     }
 
+    public function getMenuPajak($id){
+        $temp = Auth::user()->wajibpajak->pajak()->find($id);
+        $temp2 = Auth::user()->kolaborasipajak->contains($id);
+        if($temp == null && $temp2 == false)
+            return redirect('/home');
+        $pajak = Pajak::find($id);
+        $izin = $pajak->wajibPajak->izinUsaha;
+        return view('pajak.menuperpajak', compact('pajak','izin'));
+    }
 }

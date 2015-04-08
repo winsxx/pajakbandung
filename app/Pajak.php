@@ -10,7 +10,7 @@ class Pajak extends Model {
 
     public function wajibPajak()
     {
-        return $this->belongsTo('WajibPajak', 'npwpd_pemilik');
+        return $this->belongsTo('\App\WajibPajak', 'npwpd_pemilik');
     }
 
     public function kolaborator(){

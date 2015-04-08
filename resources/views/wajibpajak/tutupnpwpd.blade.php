@@ -45,7 +45,6 @@
                                         Untuk menutup NPWPD anda harus mengunggah beberapa dokumen, antara lain : </p>
                                     <ol class="label-dok">
                                         <li> Surat Penutupan Usaha</li>
-                                        <li> Fotocopy KTP</li>
                                     </ol>
                                 </div>
                             </div>

@@ -44,9 +44,6 @@ class Authenticate {
 			}
 		}
 
-        if ($this->auth->user()->hasNpwpd()){
-            return redirect(url('/home'));
-        }
 
 		return $next($request);
 	}
