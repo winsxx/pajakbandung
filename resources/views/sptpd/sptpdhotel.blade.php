@@ -21,16 +21,16 @@
     <div class="company_ad">
         <h2> Pengajuan SPTPD </h2>
     </div>
-    <form class="form-horizontal" role="form" method="POST" action="">
+    <form class="form-horizontal" role="form" method="POST" action="/pajak/{{$pajak->id}}/sptpdHotel">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="form-group">
             <label class="col-md-4 control-label">Pajak yang dilaporkan</label>
         </div>
 
         <div class="form-group">
-            <label class="col-md-4 control-label">Bulan</label>
+            <label class="col-md-4 control-label">Periode</label>
             <div class="col-md-6">
-                <select name="year">
+                <select name="bulan">
                     @for($i=1; $i<=12; $i++)
                         @if($month == $i)
                             <option value="{{$i}}" selected="selected">{{date('F', mktime(0, 0, 0, $i, 10))}}</option>
@@ -39,7 +39,7 @@
                         @endif
                     @endfor
                 </select>
-                <select name="year">
+                <select name="tahun">
                     @for($i=2000; $i<2200; $i++)
                         @if($year == $i)
                             <option value="{{$i}}" selected="selected">{{$i}}</option>
@@ -54,14 +54,14 @@
         <div class="form-group">
             <label class="col-md-4 control-label">Penjualan kamar</label>
             <div class="col-md-6">
-                <input type="text" class="form-control" name="penjualan-kamar" value="">
+                <input type="text" class="form-control" name="penjualan_kamar" value="">
             </div>
         </div>
 
         <div class="form-group">
             <label class="col-md-4 control-label">Penjualan makanan</label>
             <div class="col-md-6">
-                <input type="text" class="form-control" name="penjualan-makanan" value="">
+                <input type="text" class="form-control" name="penjualan_makanan" value="">
             </div>
         </div>
 
@@ -75,7 +75,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label">Sewa Ruangan</label>
             <div class="col-md-6">
-                <input type="text" class="form-control" name="sewa-ruangan" value="">
+                <input type="text" class="form-control" name="sewa_ruangan" value="">
             </div>
         </div>
         
