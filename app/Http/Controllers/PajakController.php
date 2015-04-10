@@ -159,5 +159,5 @@ class PajakController extends Controller {
         return redirect('/pajak/'.$id);
     }
 
-
+    
 }
