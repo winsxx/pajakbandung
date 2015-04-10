@@ -15,7 +15,7 @@
 Route::get('/', ['uses' => 'MainMenuController@getIndex']);
 Route::get('home', ['uses' => 'MainMenuController@getWpHome', 'middleware' => 'wajibpajak']);
 Route::get('admin/home', ['uses' => 'MainMenuController@getDinasHome','middleware' => 'admin']);
-Route::get('admin/kelolasptpd', ['uses' => 'MainMenuController@showListSptpd','middleware' => 'admin'])
+Route::get('admin/kelolasptpd', ['uses' => 'MainMenuController@showListSptpd','middleware' => 'admin']);
 
 /*Auth*/
 Route::get('login', ['uses' => 'Auth\AuthController@getLogin', 'middleware' => 'guest']);
@@ -43,6 +43,7 @@ Route::get('pajak/{id}', ['uses' => 'PajakController@getMenuPajak','middleware' 
 Route::get('pajak/{id}/sptpd', ['uses' => 'PajakController@getSptpd','middleware' => 'auth']);
 Route::post('pajak/{id}/sptpdHotel', ['uses' => 'PajakController@postSptpdHotel','middleware' => 'auth']);
 Route::post('pajak/{id}/sptpdRestoran', ['uses' => 'PajakController@postSptpdRestoran','middleware' => 'auth']);
+
 /*
 Route::get('statuspajak', 'PajakController@showStatus');
 
