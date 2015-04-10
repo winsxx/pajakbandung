@@ -21,7 +21,19 @@ Kelola SPTPD
 	            </tr>
 	        </thead>
 	        <tbody>
-	            <tr>
+	        	@foreach($listSptpd as $sptpd)
+        		<tr>
+	                <td>1</td>
+	                <td>{{$sptpd->no_sptpd}}</td>
+	                <td>{{$sptpd->jenis_pajak}}</td>
+	                <td>Hotel lalal</td>
+	                <td>Sudah Dikirim</td>
+	                <td class="vcenter" style="text-align:right;">
+	                	<a href="#">lihat berkas</a> | <a href="#">kirim SKPD</a> | <a href="#">hapus</a>
+	                </td>
+	            </tr>
+	        	@endforeach
+	            <!-- <tr>
 	                <td>1</td>
 	                <td>12345</td>
 	                <td>Pajak Hotel</td>
@@ -50,7 +62,7 @@ Kelola SPTPD
 	                <td class="vcenter" style="text-align:right;">
 	                	<a href="#">lihat berkas</a> | <a href="#">kirim SKPD</a> | <a href="#">hapus</a>
 	                </td>
-            	</tr>
+            	</tr> -->
 	        </tbody>
 	    </table>
 	</div>

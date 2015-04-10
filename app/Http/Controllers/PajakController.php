@@ -5,6 +5,9 @@ use App\Http\Controllers\Controller;
 
 use App\Pajak;
 use App\Penduduk;
+use App\Sptpd;
+use App\SptpdHotel;
+use App\SptpdRestoran;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -81,8 +84,80 @@ class PajakController extends Controller {
     }
 
     public function getSptpd($id){
+        $temp = Auth::user()->wajibpajak->pajak()->find($id);
+        $temp2 = Auth::user()->kolaborasipajak->contains($id);
+        if($temp == null && $temp2 == false)
+            return redirect('/home');
+
         $year = Carbon::now()->year;
         $month = Carbon::now()->month;
-        return view('sptpd.sptpdhotel',compact('year','month'));
+
+        $pajak = Pajak::find($id);
+        if($pajak->jenis_pajak == 'restoran')
+            return view('sptpd.sptpdrestoran',compact('year','month','pajak'));
+        else
+            return view('sptpd.sptpdhotel',compact('year','month','pajak'));
     }
+
+    public function postSptpdHotel(Request $request, $id){
+        $this->validate($request, [
+            'bulan' => 'required|integer|between:1,12',
+            'tahun' => 'required|integer|between:2000,2200',
+            'penjualan_kamar' => 'required|integer',
+            'penjualan_makanan' => 'required|integer',
+            'laundry' => 'required|integer',
+            'sewa_ruangan' => 'required|integer',
+            'service' => 'required|integer',
+        ]);
+
+        $temp = Auth::user()->wajibpajak->pajak()->find($id);
+        $temp2 = Auth::user()->kolaborasipajak->contains($id);
+        if($temp == null && $temp2 == false)
+            return redirect('/home');
+
+        $sptpd = new Sptpd();
+        $sptpd->no_pajak = $id;
+        $sptpd->save();
+
+        $sptpdHotel = new SptpdHotel();
+        $sptpdHotel->id = $sptpd->no_sptpd;
+        $sptpdHotel->penjualan_kamar = $request->penjualan_kamar;
+        $sptpdHotel->penjualan_konsumsi = $request->penjualan_makanan;
+        $sptpdHotel->penerimaan_laundry = $request->laundry;
+        $sptpdHotel->penerimaan_sewa_ruangan = $request->sewa_ruangan;
+        $sptpdHotel->penerimaan_service = $request->service;
+        $sptpdHotel->tahun = $request->tahun;
+        $sptpdHotel->bulan = $request->bulan;
+        $sptpdHotel->save();
+
+        return redirect('/pajak/'.$id);
+
+    }
+
+    public function postSptpdRestoran(Request $request, $id){
+        $this->validate($request, [
+            'bulan' => 'required|integer|between:1,12',
+            'tahun' => 'required|integer|between:2000,2200',
+            'penjualan_makanan' => 'required|integer',
+        ]);
+
+        $temp = Auth::user()->wajibpajak->pajak()->find($id);
+        $temp2 = Auth::user()->kolaborasipajak->contains($id);
+        if($temp == null && $temp2 == false)
+            return redirect('/home');
+
+        $sptpd = new Sptpd();
+        $sptpd->no_pajak = $id;
+        $sptpd->save();
+
+        $sptpdResto = new SptpdRestoran();
+        $sptpdResto->id = $sptpd->no_sptpd;
+        $sptpdResto->tahun = $request->tahun;
+        $sptpdResto->bulan = $request->bulan;
+        $sptpdResto->penjualan = $request->penjualan_makanan;
+        $sptpdResto->save();
+        return redirect('/pajak/'.$id);
+    }
+
+    
 }
