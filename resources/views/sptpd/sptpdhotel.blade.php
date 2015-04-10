@@ -3,7 +3,7 @@
 	Mengajukan SPTPD Hotel
 @endsection
 @section('breadcrumb')
-<li><a href="/homewp"> Beranda </a></li>
+<li><a href="/home"> Beranda </a></li>
 <li class="active"> SPTPD Hotel </li>
 @endsection
 @section('content')
