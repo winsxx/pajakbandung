@@ -19,7 +19,7 @@ Pajak Hotel
 		<div class="menuperpajak">
 			<div class="col-md-4">
 				<a href="/pajak/{{$pajak->id}}/sptpd"><button class="btn btn-default btn-add-pajak">Ajukan SPTPD</button></a>
-				<a href="formsspd"><button class="btn btn-default btn-add-pajak">Ajukan SSPD</button></a>
+				<a href="/pajak/{{$pajak->id}}/sspd"><button class="btn btn-default btn-add-pajak">Ajukan SSPD</button></a>
 			</div>
 			<div class="col-md-4 col-md-offset-2">
 				<div class="panel panel-default">

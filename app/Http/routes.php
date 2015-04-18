@@ -43,6 +43,8 @@ Route::get('pajak/{id}', ['uses' => 'PajakController@getMenuPajak','middleware' 
 Route::get('pajak/{id}/sptpd', ['uses' => 'PajakController@getSptpd','middleware' => 'auth']);
 Route::post('pajak/{id}/sptpdHotel', ['uses' => 'PajakController@postSptpdHotel','middleware' => 'auth']);
 Route::post('pajak/{id}/sptpdRestoran', ['uses' => 'PajakController@postSptpdRestoran','middleware' => 'auth']);
+Route::get('pajak/{id}/sspd', ['uses' => 'PajakController@getSspd','middleware' => 'auth']);
+Route::post('pajak/{id}/sspd', ['uses' => 'PajakController@postSspd','middleware' => 'auth']);
 
 /*
 Route::get('statuspajak', 'PajakController@showStatus');

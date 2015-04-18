@@ -5,9 +5,7 @@ use App\Http\Controllers\Controller;
 
 use App\Pajak;
 use App\Penduduk;
-use App\Sptpd;
-use App\SptpdHotel;
-use App\SptpdRestoran;
+use App\Sspd;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -156,6 +154,41 @@ class PajakController extends Controller {
         $sptpdResto->bulan = $request->bulan;
         $sptpdResto->penjualan = $request->penjualan_makanan;
         $sptpdResto->save();
+        return redirect('/pajak/'.$id);
+    }
+
+    public function getSspd($id){
+        $temp = Auth::user()->wajibpajak->pajak()->find($id);
+        $temp2 = Auth::user()->kolaborasipajak->contains($id);
+        if($temp == null && $temp2 == false)
+            return redirect('/home');
+
+        $year = Carbon::now()->year;
+        $month = Carbon::now()->month;
+
+        $pajak = Pajak::find($id);
+        return view('sspd.sspd',compact('year','month','pajak'));
+
+    }
+
+    public function postSspd(Request $request, $id){
+        $this->validate($request, [
+            'bulan' => 'required|integer|between:1,12',
+            'tahun' => 'required|integer|between:2000,2200',
+            'besar_setoran' => 'required|integer',
+        ]);
+
+        $temp = Auth::user()->wajibpajak->pajak()->find($id);
+        $temp2 = Auth::user()->kolaborasipajak->contains($id);
+        if($temp == null && $temp2 == false)
+            return redirect('/home');
+
+        $sspd = new Sspd();
+        $sspd->no_pajak = $id;             
+        $sspd->tahun = $request->tahun;
+        $sspd->bulan = $request->bulan;
+        $sspd->besar_setoran = $request->besar_setoran;
+        $sspd->save();
         return redirect('/pajak/'.$id);
     }
 
