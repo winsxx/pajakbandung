@@ -56,10 +56,11 @@ body {
 }
 
 .navbar-nav {
-	margin-top:-4%;
+	margin-top:0%;
 	margin-left: 25%;
 }
 .navbar-brand {
+	margin-top:-10%;
 	line-height: 25px;
 }
 .menu li.active a{
@@ -187,7 +188,8 @@ body {
 
 /* start slider */
 .slider{
-	margin-top: 6%;	
+	margin-top: -3%;	
+	padding-bottom: 10%;
 }
 .slider_text h2{
 	font-size: 4em;

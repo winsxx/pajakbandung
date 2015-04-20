@@ -44,6 +44,18 @@ Route::get('pajak/{id}/sptpd', ['uses' => 'PajakController@getSptpd','middleware
 Route::post('pajak/{id}/sptpdHotel', ['uses' => 'PajakController@postSptpdHotel','middleware' => 'auth']);
 Route::post('pajak/{id}/sptpdRestoran', ['uses' => 'PajakController@postSptpdRestoran','middleware' => 'auth']);
 
+Route::get('npwpd', function(){
+	return view('wajibpajak.dinasnpwpd');
+});
+Route::get('pajakdinas', function(){
+	return view('pajak.dinaspajak');
+});
+Route::get('dinas', function(){
+	return view('mainmenu.dinashome');
+});
+Route::get('sptpddinas', function(){
+	return view('sptpd.dinassptpd');
+});
 /*
 Route::get('statuspajak', 'PajakController@showStatus');
 

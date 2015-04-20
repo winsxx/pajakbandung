@@ -41,9 +41,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="/"><img src="/images/logo.png" alt="" class="img-responsive"/> </a>
+                        <a class="navbar-brand" href="/"><img src="/images/title.png" alt="" class="img-responsive"/> </a>
                     </div>
-                    <div class="title"><h2> Dinas Pelayanan Pajak Kota Bandung </h2></div>
+                    <div class="title"><h2></h2></div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="menu nav navbar-nav navbar-right ">
