@@ -54,5 +54,31 @@ Beranda
 			</div>
 		</div>
 	</div>
+	<div class="row grids_btm top">
+		<div class="col-md-6">
+			<div class="grid_list">
+				<div class="images_1_of_1">
+					<p>5</p>
+				</div>
+				<div class="grid_1_of_1">
+					<h3><a href = "/kelolaskpd">Kelola SKPD </a></h3>
+					<p>Lihat semua SKPD</p>	 			
+				</div>
+			 	<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="grid_list">
+				<div class="images_1_of_1">
+					<p>6</p>
+				</div>
+				<div class="grid_1_of_1">
+					<h3><a href = "/kelolaskpdkb">Kelola SKPDKB </a></h3>
+					<p>Lihat semua SKPDKB</p>	 			
+				</div>
+			 	<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
 </div>
 @endsection

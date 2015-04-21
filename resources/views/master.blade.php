@@ -53,7 +53,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <li><a href="/login">login</a></li>
                             @else
                                 <li><a href="/home">beranda</a></li>
-                                <li><a href="/notfication">notifikasi</a></li>
                                 <li><a href="/setting">pengaturan</a></li>
                                 <li><a href="/logout">logout</a></li>
                             @endif

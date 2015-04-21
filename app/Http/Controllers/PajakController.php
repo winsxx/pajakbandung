@@ -159,5 +159,17 @@ class PajakController extends Controller {
         return redirect('/pajak/'.$id);
     }
 
+    public function getSspd($id){
+        $temp = Auth::user()->wajibpajak->pajak()->find($id);
+        $temp2 = Auth::user()->kolaborasipajak->contains($id);
+        if($temp == null && $temp2 == false)
+            return redirect('/home');
+
+        $year = Carbon::now()->year;
+        $month = Carbon::now()->month;
+
+        $pajak = Pajak::find($id);
+        return view('sspd.sspd',compact('year','month','pajak'));
+     }
     
 }

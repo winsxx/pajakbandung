@@ -3,7 +3,7 @@
 Kelola NPWPD
 @endsection
 @section('breadcrumb')
-<li><a href="/homedinas">Beranda</a></li>
+<li><a href="/admin/home">Beranda</a></li>
 <li class="active">Kelola NPWPD</li>
 @endsection
 @section('content')

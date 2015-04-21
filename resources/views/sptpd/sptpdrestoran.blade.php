@@ -3,7 +3,8 @@
 	Mengajukan SPTPD Restoran
 @endsection
 @section('breadcrumb')
-<li><a href="/homewp"> Beranda </a></li>
+<li><a href="/home"> Beranda </a></li>
+<li ><a href="/pajak/{{$pajak->id}}">Pajak {{$pajak->jenis_pajak}}</a></li>
 <li class="active"> SPTPD Restoran </li>
 @endsection
 @section('content')

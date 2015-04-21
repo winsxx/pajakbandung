@@ -1,11 +1,11 @@
 @extends('master')
 @section('title')
-	Mengajukan SPTPD Hotel
+	Mengajukan SSPD
 @endsection
 @section('breadcrumb')
 <li><a href="/home"> Beranda </a></li>
-<li ><a href="/pajak/{{$pajak->id}}">Pajak {{$pajak->jenis_pajak}} {{$izin->nama_usaha}}</a></li>
-<li class="active"> SPTPD Hotel </li>
+<!-- <li ><a href="/pajak/{{$pajak->id}}">Pajak {{$pajak->jenis_pajak}} {{$izin->nama_usaha}}</a></li> -->
+<li class="active"> SPTPD Restoran </li>
 @endsection
 @section('content')
 
@@ -19,10 +19,11 @@
             </ul>
         </div>
     @endif
+
     <div class="company_ad">
-        <h2> Pengajuan SPTPD </h2>
+        <h2> Pengajuan SSPD </h2>
     </div>
-    <form class="form-horizontal" role="form" method="POST" action="/pajak/{{$pajak->id}}/sptpdHotel">
+    <form class="form-horizontal" role="form" method="POST" action="#">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="form-group">
             <label class="col-md-4 control-label">Pajak yang dilaporkan</label>
@@ -53,37 +54,9 @@
         </div>
 
         <div class="form-group">
-            <label class="col-md-4 control-label">Penjualan kamar</label>
+            <label class="col-md-4 control-label">Jumlah yang dibayar</label>
             <div class="col-md-6">
-                <input type="text" class="form-control" name="penjualan_kamar" value="">
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="col-md-4 control-label">Penjualan makanan</label>
-            <div class="col-md-6">
-                <input type="text" class="form-control" name="penjualan_makanan" value="">
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="col-md-4 control-label">Laundry</label>
-            <div class="col-md-6">
-                <input type="text" class="form-control" name="laundry" value="">
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="col-md-4 control-label">Sewa Ruangan</label>
-            <div class="col-md-6">
-                <input type="text" class="form-control" name="sewa_ruangan" value="">
-            </div>
-        </div>
-        
-        <div class="form-group">
-            <label class="col-md-4 control-label">Service</label>
-            <div class="col-md-6">
-                <input type="text" class="form-control" name="service" value="">
+                <input type="text" class="form-control" name="jumlah-bayar" value="">
             </div>
         </div>
 

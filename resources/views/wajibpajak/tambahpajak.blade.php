@@ -3,7 +3,7 @@
 	Tambah Pajak
 @endsection
 @section('breadcrumb')
-<li><a href="/homewp"> Beranda </a></li>
+<li><a href="/home"> Beranda </a></li>
 <li class="active"> Tambah Pajak </li>
 @endsection
 @section('content')
@@ -22,17 +22,31 @@
     function showHotel(){   
         var hotelForm = document.getElementById('hotel-form');
         var restoranForm = document.getElementById('restoran-form');
+        var pbbForm = document.getElementById('pbb-form');
 
         hotelForm.style.display = 'block';
         restoranForm.style.display = 'none';
+        pbbForm.style.display = 'none';
     }
 
     function showRestoran(){
         var hotelForm = document.getElementById('hotel-form');
         var restoranForm = document.getElementById('restoran-form');
-
+        var pbbForm = document.getElementById('pbb-form');
+        
         hotelForm.style.display = 'none';
         restoranForm.style.display = 'block';
+        pbbForm.style.display = 'none';
+    }
+
+    function showPbb(){
+        var hotelForm = document.getElementById('hotel-form');
+        var restoranForm = document.getElementById('restoran-form');
+        var pbbForm = document.getElementById('pbb-form');
+        
+        hotelForm.style.display = 'none';
+        restoranForm.style.display = 'none';
+        pbbForm.style.display = 'block';
     }
 
     </script>
@@ -50,6 +64,9 @@
                 </label>
                 <label class="radio-inline">
                   <input type="radio" name="bidang-usaha" id="radio-restoran" value="restoran" onclick="javascript:showRestoran()"> Restoran
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="bidang-usaha" id="radio-restoran" value="bumi-bangunan" onclick="javascript:showPbb()"> Bumi Bangunan
                 </label>
             </div>            
         </div>
@@ -276,6 +293,31 @@
             </div>
         </div>
 
+        <div id="pbb-form" style="display:none">
+            <div class="form-group">
+                <label class="col-md-4 control-label">Ukuran tanah (m) </label>
+                <div class="col-md-2">
+                    <label class="col-md-1 control-label"> panjang </label>
+                    <input class="form-control" name="tanah-panjang" value=""> </input>
+                </div>
+                <div class="col-md-2">
+                    <label class="col-md-1 control-label"> lebar </label>
+                    <input class="form-control" name="tanah-lebar" value=""> </input>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">Ukuran bangunan (m) </label>
+                <div class="col-md-2">
+                    <label class="col-md-1 control-label"> panjang </label>
+                    <input class="form-control" name="bangunan-panjang" value=""> </input>
+                </div>
+                <div class="col-md-2">
+                    <label class="col-md-1 control-label"> lebar </label>
+                    <input class="form-control" name="bangunan-lebar" value=""> </input>
+                </div>
+
+            </div>
+        </div>
 
         <div class="form-group" style="margin-top:10%;">
             <div class="col-md-6 col-md-offset-8">
