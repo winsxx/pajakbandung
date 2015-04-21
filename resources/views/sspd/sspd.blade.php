@@ -1,11 +1,11 @@
 @extends('master')
 @section('title')
-	Mengajukan SSPD
+    Mengajukan SSPD
 @endsection
 @section('breadcrumb')
 <li><a href="/home"> Beranda </a></li>
-<!-- <li ><a href="/pajak/{{$pajak->id}}">Pajak {{$pajak->jenis_pajak}} {{$izin->nama_usaha}}</a></li> -->
-<li class="active"> SPTPD Restoran </li>
+<li class="active"> SSPD </li>
+>>>>>>> a1305c9804fbe4f86a1b93875f6b3bc3d0336390
 @endsection
 @section('content')
 
@@ -19,14 +19,12 @@
             </ul>
         </div>
     @endif
-
     <div class="company_ad">
         <h2> Pengajuan SSPD </h2>
     </div>
     <form class="form-horizontal" role="form" method="POST" action="#">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="form-group">
-            <label class="col-md-4 control-label">Pajak yang dilaporkan</label>
         </div>
 
         <div class="form-group">
@@ -54,9 +52,15 @@
         </div>
 
         <div class="form-group">
+<<<<<<< HEAD
             <label class="col-md-4 control-label">Jumlah yang dibayar</label>
             <div class="col-md-6">
                 <input type="text" class="form-control" name="jumlah-bayar" value="">
+=======
+            <label class="col-md-4 control-label">Besar Setoran</label>
+            <div class="col-md-6">
+                <input type="text" class="form-control" name="besar_setoran" value="">
+>>>>>>> a1305c9804fbe4f86a1b93875f6b3bc3d0336390
             </div>
         </div>
 
