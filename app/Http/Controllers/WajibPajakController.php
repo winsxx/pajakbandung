@@ -75,4 +75,8 @@ class WajibPajakController extends Controller {
         return view('wajibpajak.tambahpajak');
     }
 
+    public function getKelolaNpwpd(){
+        return view('wajibpajak.dinasnpwpd');
+    }
+
 }
