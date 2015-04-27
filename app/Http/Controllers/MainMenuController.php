@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Penduduk;
+use App\Sptpd;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -30,8 +31,4 @@ class MainMenuController extends Controller {
         return Auth::user()->wajibpajak()->get()->first()->npwpd;
     }
 
-    public function showListSptpd(){
-        $listSptpd = Sptpd::pajak()->all();
-        return view('sptpd.dinassptpd',compact('listSptpd'));
-    }
 }

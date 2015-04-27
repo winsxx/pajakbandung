@@ -191,7 +191,25 @@ class PajakController extends Controller {
         $sspd->save();
         return redirect('/pajak/'.$id);
     }
-        
 
+    public function getKelolaSkpd(){
+        return view('skpd.dinasskpd');
+    }
+
+    public function getKelolaPajak(){
+        return view('pajak.dinaspajak');
+    }
+
+    public function getKelolaSspd(){
+        return view('sspd.dinassspd');
+    }
+
+    public function getKelolaSkpdkb(){
+        return view('skpd.dinasskpdkb');
+    }
+
+    public function getKelolaSptpd(){
+        return view('sptpd.dinassptpd');
+    }
 
 }
