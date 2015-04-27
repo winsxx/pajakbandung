@@ -168,9 +168,6 @@ class PajakController extends Controller {
 
         $pajak = Pajak::find($id);
         return view('sspd.sspd',compact('year','month','pajak'));
-<<<<<<< HEAD
-     }
-=======
 
     }
 
@@ -194,7 +191,5 @@ class PajakController extends Controller {
         $sspd->save();
         return redirect('/pajak/'.$id);
     }
-
->>>>>>> a1305c9804fbe4f86a1b93875f6b3bc3d0336390
     
 }
