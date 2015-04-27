@@ -3,7 +3,7 @@
 Pengaturan Pajak
 @endsection
 @section('breadcrumb')
-<li><a href="/homewp">Beranda</a></li>
+<li><a href="/home">Beranda</a></li>
 <li><a href="/setting">Pengaturan</a></li>
 <li class="active"> Pajak </a></li>
 @endsection

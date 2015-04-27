@@ -3,7 +3,7 @@
     Menutup NPWPD
 @endsection
 @section('breadcrumb')
-    <li><a href="/homewp">Beranda</a></li>
+    <li><a href="/home">Beranda</a></li>
     <li><a href="/setting">Pengaturan</a></li>
     <li class="active"> NPWPD </a></li>
 @endsection

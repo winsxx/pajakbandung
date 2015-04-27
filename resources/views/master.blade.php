@@ -25,6 +25,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript" src="/js/bootstrap.js"></script>
     <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/form.js"></script>
 </head>
 <body>
 <div class="header_bg"><!-- start header -->
@@ -40,9 +41,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="/"><img src="/images/logo.png" alt="" class="img-responsive"/> </a>
+                        <a class="navbar-brand" href="/"><img src="/images/title.png" alt="" class="img-responsive"/> </a>
                     </div>
-                    <div class="title"><h2> Dinas Pelayanan Pajak Kota Bandung </h2></div>
+                    <div class="title"><h2></h2></div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="menu nav navbar-nav navbar-right ">
@@ -52,7 +53,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <li><a href="/login">login</a></li>
                             @else
                                 <li><a href="/home">beranda</a></li>
-                                <li><a href="/notfication">notifikasi</a></li>
                                 <li><a href="/setting">pengaturan</a></li>
                                 <li><a href="/logout">logout</a></li>
                             @endif

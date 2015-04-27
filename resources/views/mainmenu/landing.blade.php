@@ -4,15 +4,14 @@ Dinas Pelayanan Pajak Kota Bandung
 @endsection
 @section('slider')
 <div class="col-md-8">
-		<div class="col-md-10 slider_text">
-			<h2> Website Resmi Dinas Pelayanan Pajak Kota Bandung</h2>
-			<h3>Ayo Bayar Pajak Tepat Waktu</h3>
-		</div>
+	<div class="col-md-10 slider_text">
+		<h3> Website Dinas Pajak <h3>
+		<h2> Pelayanan Pajak Restoran, Pajak Hotel, dan Pajak Bumi	 Bangunan </h2>
 	</div>
-	<div class="col-md-4">
-		<div class="slider_img">
-			<img src="images/pic1.png" alt="" class="img-responsive"/>
-		</div>
+</div>
+<div class="col-md-4">
+	<div class="slider_img">
+		<img src="images/pic1.png" alt="" class="img-responsive"/>
 	</div>
 </div>
 @endsection
@@ -31,7 +30,7 @@ Dinas Pelayanan Pajak Kota Bandung
 		  <img src="images/akun.png" class="img-responsive"/>
 		  <p>Daftarkan NPWPD untuk usaha anda dengan cepat dan mudah</p>
 	      <div class="rd_more1">
-			<a href="daftar"><button class="btn_style">daftar</button></a>
+			<a href="register"><button class="btn_style">daftar</button></a>
 		</div>
 	</div>
 	    <div class="clearfix"></div>
