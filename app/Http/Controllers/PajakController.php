@@ -10,6 +10,7 @@ use App\Sspd;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class PajakController extends Controller {
@@ -228,6 +229,11 @@ class PajakController extends Controller {
         $sptpdTerkait->terbit_skpd = true;
         $sptpdTerkait->nilai_skpd = $sptpdTerkait->sptpdLengkap()->totalPendapatan() * 0.1;
         $sptpdTerkait->save();
+
+        Mail::send('emails.skpdmail', array('sptpd'=>$sptpdTerkait), function($message) use($sptpdTerkait) {
+            $message->to($sptpdTerkait->pajak->wajibPajak->penduduk->email, $sptpdTerkait->pajak->wajibPajak->penduduk->nama)
+                ->subject('Surat Ketetapan Pajak Daerah');
+        });
 
         return redirect('admin/kelolasptpd');
     }
