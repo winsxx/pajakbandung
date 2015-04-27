@@ -66,7 +66,7 @@
                   <input type="radio" name="bidang_usaha" id="radio-restoran" value="restoran" onclick="javascript:showRestoran()"> Restoran
                 </label>
                 <label class="radio-inline">
-                  <input type="radio" name="bidang_usaha" id="radio-restoran" value="bumi-bangunan" onclick="javascript:showPbb()"> Bumi Bangunan
+                  <input type="radio" name="bidang_usaha" id="radio-restoran" value="bumi_bangunan" onclick="javascript:showPbb()"> Bumi Bangunan
                 </label>
             </div>            
         </div>
@@ -270,22 +270,22 @@
                 <label class="col-md-4 control-label">Ukuran tanah (m) </label>
                 <div class="col-md-2">
                     <label class="col-md-1 control-label"> panjang </label>
-                    <input class="form-control" name="tanah-panjang" value=""> </input>
+                    <input class="form-control" name="tanah_panjang" value=""> </input>
                 </div>
                 <div class="col-md-2">
                     <label class="col-md-1 control-label"> lebar </label>
-                    <input class="form-control" name="tanah-lebar" value=""> </input>
+                    <input class="form-control" name="tanah_lebar" value=""> </input>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">Ukuran bangunan (m) </label>
                 <div class="col-md-2">
                     <label class="col-md-1 control-label"> panjang </label>
-                    <input class="form-control" name="bangunan-panjang" value=""> </input>
+                    <input class="form-control" name="bangunan_panjang" value=""> </input>
                 </div>
                 <div class="col-md-2">
                     <label class="col-md-1 control-label"> lebar </label>
-                    <input class="form-control" name="bangunan-lebar" value=""> </input>
+                    <input class="form-control" name="bangunan_lebar" value=""> </input>
                 </div>
 
             </div>

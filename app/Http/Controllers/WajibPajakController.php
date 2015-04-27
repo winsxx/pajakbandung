@@ -154,11 +154,22 @@ class WajibPajakController extends Controller {
                 $pajak_khusus->id=$pajak->id;
                 $pajak_khusus->save();
            }
-           else if ($request->bidang_usaha=='bumi-bangunan'){
-                $pajak->jenis_pajak='bumi-bangunan';
+           else if ($request->bidang_usaha=='bumi_bangunan'){
+                $pajak->jenis_pajak='bumi_bangunan';
                 $pajak_khusus=new \App\PajakBumiBangunan;
+                $this->validate($request, [
+                    'tanah_panjang' => 'required',
+                    'tanah_lebar' => 'required',
+                    'bangunan_panjang' => 'required',
+                    'bangunan_lebar' => 'required',
+                ]);
+                $pajak_khusus->panjang_tanah=$request->tanah_panjang;                
+                $pajak_khusus->lebar_tanah=$request->tanah_lebar;
+                $pajak_khusus->panjang_bangunan=$request->bangunan_panjang;                
+                $pajak_khusus->lebar_bangunan=$request->bangunan_lebar;
                 $pajak->save();
-                $pajak_khusus->id=$pajak->id;                
+                $pajak_khusus->id=$pajak->id;   
+                $pajak_khusus->save();             
            }           
            return Redirect::to('tambahpajak');
     }

@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class PajakRestoran extends Model {
+class PajakBumiBangunan extends Model {
 
     protected $table = 'pajak_bumi_bangunan';
     protected $primaryKey = 'id';
