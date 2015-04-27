@@ -85,8 +85,18 @@ class WajibPajakController extends Controller {
            if($request->bidang_usaha=='hotel'){
                 $pajak->jenis_pajak='hotel';
                 $pajak_khusus=new \App\PajakHotel;
-                $pajak->save();
-                $pajak_khusus->id=$pajak->id;
+                $this->validate($request, [
+                    'num_kamar_suite' => 'required',
+                    'rate_high_suite' => 'required',
+                    'rate_low_suite' => 'required',
+                    'num_kamar_deluxe' => 'required',
+                    'rate_high_deluxe' => 'required',
+                    'rate_low_deluxe' => 'required',
+                    'num_kamar_standar' => 'required',
+                    'rate_high_standar' => 'required',
+                    'rate_low_standar' => 'required',
+                    'num_karyawan' => 'required',
+                ]);
                 $pajak_khusus->num_kamar_suite=$request->num_kamar_suite;
                 $pajak_khusus->rate_high_suite=$request->rate_high_suite;
                 $pajak_khusus->rate_low_suite=$request->rate_low_suite;                
@@ -111,15 +121,44 @@ class WajibPajakController extends Controller {
                 if ($request->laundry=='1')  $pajak_khusus->fasilitas_laundry=1;
                 if ($request->telpon=='1')  $pajak_khusus->fasilitas_telpon=1;
                 if ($request->parkir=='1')  $pajak_khusus->fasilitas_parkir=1;
+                $pajak->save();
+                $pajak_khusus->id=$pajak->id;
                 $pajak_khusus->save();           
            }
            else if ($request->bidang_usaha=='restoran'){
                 $pajak->jenis_pajak='restoran';
                 $pajak_khusus=new \App\PajakRestoran;
+                $this->validate($request, [
+                    'jam_buka' => 'required',
+                    'jam_tutup' => 'required',
+                    'num_meja' => 'required',
+                    'num_kursi' => 'required',
+                    'makanan_mahal' => 'required',
+                    'makanan_murah' => 'required',
+                    'minuman_mahal' => 'required',
+                    'minuman_murah' => 'required',
+                    'rata_penjualan' => 'required',
+                    'num_karyawan' => 'required',                    
+                ]);
+                $pajak_khusus->jam_buka=$request->jam_buka;
+                $pajak_khusus->jam_tutup=$request->jam_tutup;
+                $pajak_khusus->jumlah_meja=$request->num_meja;
+                $pajak_khusus->jumlah_kursi=$request->num_kursi;
+                $pajak_khusus->harga_makanan_termahal=$request->makanan_mahal;
+                $pajak_khusus->harga_makanan_termurah=$request->makanan_murah;
+                $pajak_khusus->harga_minuman_termahal=$request->minuman_mahal;
+                $pajak_khusus->harga_minuman_termurah=$request->minuman_murah;
+                $pajak_khusus->penjualan_per_hari=$request->rata_penjualan;
+                $pajak_khusus->jumlah_pegawai=$request->num_karyawan;
+                $pajak->save();
+                $pajak_khusus->id=$pajak->id;
+                $pajak_khusus->save();
            }
            else if ($request->bidang_usaha=='bumi-bangunan'){
                 $pajak->jenis_pajak='bumi-bangunan';
                 $pajak_khusus=new \App\PajakBumiBangunan;
+                $pajak->save();
+                $pajak_khusus->id=$pajak->id;                
            }           
            return Redirect::to('tambahpajak');
     }

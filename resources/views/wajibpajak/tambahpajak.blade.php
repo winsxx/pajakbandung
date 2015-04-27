@@ -201,23 +201,23 @@
             <div class="form-group">
                 <label class="col-md-4 control-label">Jam Operasional</label>
                 <div class="col-md-2">
-                    <input class="form-control" name="jam-buka" value=""> </input>
+                    <input class="form-control" type="time" name="jam_buka" value=""> </input>
                 </div>
                 <label class="col-md-1 control-label"> s/d </label>
                 <div class="col-md-2">
-                    <input class="form-control" name="jam-tutup" value=""> </input>
+                    <input class="form-control" type="time" name="jam_tutup" value=""> </input>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">Jumlah Meja</label>
                 <div class="col-md-2">
-                    <input class="form-control" name="jam-buka" value=""> </input>
+                    <input class="form-control" name="num_meja" value=""> </input>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">Jumlah Kursi</label>
                 <div class="col-md-2">
-                    <input class="form-control" name="jam-kursi" value=""> </input>
+                    <input class="form-control" name="num_kursi" value=""> </input>
                 </div>
             </div>
             <div class="form-group">
@@ -226,13 +226,13 @@
             <div class="form-group col-md-offset-4">
                 <label class="col-md-4 control-label">Termahal : Rp</label>
                 <div class="col-md-2">
-                    <input class="form-control" name="makanan-mahal" value=""> </input>
+                    <input class="form-control" name="makanan_mahal" value=""> </input>
                 </div>
             </div>
             <div class="form-group col-md-offset-4">
                 <label class="col-md-4 control-label">Termurah : Rp</label>
                 <div class="col-md-2">
-                    <input class="form-control" name="makanan-murah" value=""> </input>
+                    <input class="form-control" name="makanan_murah" value=""> </input>
                 </div>
             </div>
             <div class="form-group">
@@ -241,25 +241,25 @@
             <div class="form-group col-md-offset-4">
                 <label class="col-md-4 control-label">Termahal : Rp</label>
                 <div class="col-md-2">
-                    <input class="form-control" name="minuman-mahal" value=""> </input>
+                    <input class="form-control" name="minuman_mahal" value=""> </input>
                 </div>
             </div>
             <div class="form-group col-md-offset-4">
                 <label class="col-md-4 control-label">Termurah : Rp</label>
                 <div class="col-md-2">
-                    <input class="form-control" name="minuman-murah" value=""> </input>
+                    <input class="form-control" name="minuman_murah" value=""> </input>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">Rata-rata penjualan per hari : Rp</label>
                 <div class="col-md-2">
-                    <input class="form-control" name="rata-penjualan" value=""> </input>
+                    <input class="form-control" name="rata_penjualan" value=""> </input>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label">Jumlah Karyawan</label>
                 <div class="col-md-2">
-                    <input class="form-control" name="num-karyawan" value="">
+                    <input class="form-control" name="num_karyawan" value="">
                 </div>
                 <label class="control-label">orang</label>
             </div>
