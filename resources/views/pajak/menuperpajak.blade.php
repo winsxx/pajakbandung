@@ -18,7 +18,9 @@ Pajak Hotel
 		</div>
 		<div class="menuperpajak">
 			<div class="col-md-4">
-				<a href="/pajak/{{$pajak->id}}/sptpd"><button class="btn btn-default btn-add-pajak">Ajukan SPTPD</button></a>
+                @if($pajak->jenis_pajak != "pbb")
+				    <a href="/pajak/{{$pajak->id}}/sptpd"><button class="btn btn-default btn-add-pajak">Ajukan SPTPD</button></a>
+                @endif
 				<a href="/pajak/{{$pajak->id}}/sspd"><button class="btn btn-default btn-add-pajak">Ajukan SSPD</button></a>
 			</div>
 			<div class="col-md-4 col-md-offset-2">

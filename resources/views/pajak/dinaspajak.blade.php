@@ -22,17 +22,30 @@ Kelola Pajak
 	            </tr>
 	        </thead>
 	        <tbody>
-	            <tr>
-	                <td>1</td>
-	                <td>12345</td>
-	                <td>Pajak Hotel</td>
-	                <td>Hotel lalal</td>
-	                <td>Sudah</td>
-	                <td> - </td>
-	                <td class="vcenter" style="text-align:right;">
-	                	<a href="#">lihat berkas</a> | <a href="#">tutup</a> | <a href="#">hapus</a>
-	                </td>
-	            </tr>
+                @foreach($daftarpajak as $pajak)
+                    <tr>
+                        <td>{{$pajak->id}}</td>
+                        <td>{{$pajak->npwpd_pemilik}}</td>
+                        <td>Pajak {{$pajak->jenis_pajak}}</td>
+                        <td>{{$pajak->wajibPajak->izinUsaha->nama_usaha}}</td>
+                        <td>Sudah</td>
+                        <td>
+                            @if($pajak->status == "nonaktif")
+                                [Sudah Ditutup]
+                            @elseif($pajak->status == "proses_nonaktif")
+                                [Mengajukan Penutupan]
+                            @endif
+                        </td>
+                        <td class="vcenter" style="text-align:right;">
+                            @if($pajak->status == "nonaktif")
+                                <a href="#">hapus</a>
+                            @else
+                                <a href="#">lihat berkas</a> | <a href="{{url("admin/pajak/".$pajak->id."/tutuppajak")}}">tutup</a> | <a href="#">hapus</a>
+                            @endif
+                        </td>
+                    </tr>
+                @endforeach
+
 	            <tr>
 	                <td>2</td>
 	                <td>12345</td>

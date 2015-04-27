@@ -15,7 +15,6 @@
 Route::get('/', ['uses' => 'MainMenuController@getIndex']);
 Route::get('home', ['uses' => 'MainMenuController@getWpHome', 'middleware' => 'wajibpajak']);
 Route::get('admin/home', ['uses' => 'MainMenuController@getDinasHome','middleware' => 'admin']);
-Route::get('admin/kelolasptpd', ['uses' => 'MainMenuController@showListSptpd','middleware' => 'admin']);
 
 /*Auth*/
 Route::get('login', ['uses' => 'Auth\AuthController@getLogin', 'middleware' => 'guest']);
@@ -32,6 +31,7 @@ Route::get('tutupnpwpd',['uses' => 'WajibPajakController@getTutupNpwpd','middlew
 Route::post('tutupnpwpd',['uses' => 'WajibPajakController@postTutupNpwpd','middleware' => 'wajibpajak']);
 Route::get('tambahpajak',['uses' => 'WajibPajakController@getTambahPajak','middleware' => 'wajibpajak']);
 Route::post('tambahpajak',['uses' => 'WajibPajakController@postTambahPajak','middleware' => 'wajibpajak']);
+Route::get('admin/kelolanpwpd', ['uses' => 'WajibPajakController@getKelolaNpwpd','middleware' => 'admin']);
 
 /*Pajak*/
 Route::get('settingpajak/{id}', ['uses' => 'PajakController@getSettingPajak','middleware' => 'wajibpajak']);
@@ -46,31 +46,19 @@ Route::post('pajak/{id}/sptpdRestoran', ['uses' => 'PajakController@postSptpdRes
 Route::get('pajak/{id}/sspd', ['uses' => 'PajakController@getSspd','middleware' => 'auth']);
 Route::post('pajak/{id}/sspd', ['uses' => 'PajakController@postSspd','middleware' => 'auth']);
 
-// Route::get('npwpd', function(){
-// 	return view('wajibpajak.dinasnpwpd');
-// });
-// Route::get('pajakdinas', function(){
-// 	return view('pajak.dinaspajak');
-// });
-// Route::get('dinas', function(){
-// 	return view('mainmenu.dinashome');
-// });
-// Route::get('sptpddinas', function(){
-// 	return view('sptpd.dinassptpd');
-// });
-// Route::get('sspd', function(){
-// 	return view('sspd.sspd');
-// });
-// Route::get('kelolasspd', function(){
-// 	return view('sspd.dinassspd');
-// });
-// Route::get('kelolaskpd', function(){
-// 	return view('skpd.dinasskpd');
-// });
-// Route::get('kelolaskpdkb', function(){
-// 	return view('skpd.dinasskpdkb');
-// });
+Route::get('admin/kelolaskpd', ['uses' => 'PajakController@getKelolaSkpd','middleware' => 'admin']);
+Route::get('admin/kelolapajak', ['uses' => 'PajakController@getKelolaPajak','middleware' => 'admin']);
+Route::get('admin/kelolasspd', ['uses' => 'PajakController@getKelolaSspd','middleware' => 'admin']);
+Route::get('admin/kelolaskpdkb', ['uses' => 'PajakController@getKelolaSkpdkb','middleware' => 'admin']);
+Route::get('admin/kelolasptpd', ['uses' => 'PajakController@getKelolaSptpd','middleware' => 'admin']);
+Route::get('admin/pajak/{id}/tutuppajak',['uses' => 'PajakController@getTutupPajak','middleware' => 'admin'] );
+Route::get('admin/pajak/{id}/kirimskpd',['uses' => 'PajakController@getKirimSkpd','middleware' => 'admin'] );
 
-Route::post('pajak/{id}/sspd', ['uses' => 'PajakController@postSspd','middleware' => 'auth']);
 
+
+/*Unimportant*/
 Route::get('debug', 'MainMenuController@testing');
+Route::get('listskpd', function(){return view('skpd.listskpd');});
+Route::get('skpd', function(){return view('skpd.skpd');});
+Route::get('skpdkb', function(){return view('skpd.skpdkb');});
+

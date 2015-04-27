@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use App\Pajak;
 use App\Penduduk;
+use App\Sptpd;
 use App\Sspd;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -191,7 +192,45 @@ class PajakController extends Controller {
         $sspd->save();
         return redirect('/pajak/'.$id);
     }
-        
+
+    public function getKelolaSkpd(){
+        return view('skpd.dinasskpd');
+    }
+
+    public function getKelolaPajak(){
+        $daftarpajak = Pajak::all();
+        return view('pajak.dinaspajak', compact('daftarpajak'));
+    }
+
+    public function getKelolaSspd(){
+        return view('sspd.dinassspd');
+    }
+
+    public function getKelolaSkpdkb(){
+        return view('skpd.dinasskpdkb');
+    }
+
+    public function getKelolaSptpd(){
+        $daftarSptpd = Sptpd::all();
+        return view('sptpd.dinassptpd', compact('daftarSptpd'));
+    }
+
+    public function getTutupPajak($id){
+        $pajak_terkait = Pajak::findOrFail($id);
+        $pajak_terkait->status = "nonaktif";
+
+        $pajak_terkait->save();
+        return redirect('kelolapajak');
+    }
+
+    public function  getKirimSkpd($id){
+        $sptpdTerkait = Sptpd::find($id);
+        $sptpdTerkait->terbit_skpd = true;
+        $sptpdTerkait->nilai_skpd = $sptpdTerkait->sptpdLengkap()->totalPendapatan() * 0.1;
+        $sptpdTerkait->save();
+
+        return redirect('admin/kelolasptpd');
+    }
 
 
 }
