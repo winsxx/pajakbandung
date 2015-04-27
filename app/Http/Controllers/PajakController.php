@@ -191,5 +191,7 @@ class PajakController extends Controller {
         $sspd->save();
         return redirect('/pajak/'.$id);
     }
-    
+        
+
+
 }

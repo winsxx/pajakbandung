@@ -24,7 +24,6 @@ Route::get('register', ['uses' => 'Auth\AuthController@getRegister','middleware'
 Route::post('register', ['uses' => 'Auth\AuthController@postRegister','middleware' => 'guest']);
 Route::get('logout', 'Auth\AuthController@getLogout');
 
-
 /*WajibPajak*/
 Route::get('daftar', ['uses' => 'WajibPajakController@getDaftarNpwpd','middleware' => 'auth']);
 Route::post('daftar', ['uses' => 'WajibPajakController@postDaftarNpwpd','middleware' => 'auth']);
@@ -44,7 +43,7 @@ Route::get('pajak/{id}/sptpd', ['uses' => 'PajakController@getSptpd','middleware
 Route::post('pajak/{id}/sptpdHotel', ['uses' => 'PajakController@postSptpdHotel','middleware' => 'auth']);
 Route::post('pajak/{id}/sptpdRestoran', ['uses' => 'PajakController@postSptpdRestoran','middleware' => 'auth']);
 Route::get('pajak/{id}/sspd', ['uses' => 'PajakController@getSspd','middleware' => 'auth']);
-
+Route::post('pajak/{id}/sspd', ['uses' => 'PajakController@postSspd','middleware' => 'auth']);
 
 // Route::get('npwpd', function(){
 // 	return view('wajibpajak.dinasnpwpd');

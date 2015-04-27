@@ -14,4 +14,3 @@ class Sspd extends Model {
     }
 
 }
-

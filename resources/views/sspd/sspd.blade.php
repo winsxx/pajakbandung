@@ -3,9 +3,8 @@
     Mengajukan SSPD
 @endsection
 @section('breadcrumb')
-<li><a href="/home"> Beranda </a></li>
+<li><a href="/homewp"> Beranda </a></li>
 <li class="active"> SSPD </li>
->>>>>>> a1305c9804fbe4f86a1b93875f6b3bc3d0336390
 @endsection
 @section('content')
 
@@ -22,9 +21,10 @@
     <div class="company_ad">
         <h2> Pengajuan SSPD </h2>
     </div>
-    <form class="form-horizontal" role="form" method="POST" action="#">
+    <form class="form-horizontal" role="form" method="POST" action="/pajak/{{$pajak->id}}/sspd">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="form-group">
+            <label class="col-md-4 control-label">Pajak yang disetorkan</label>
         </div>
 
         <div class="form-group">
@@ -52,15 +52,9 @@
         </div>
 
         <div class="form-group">
-<<<<<<< HEAD
-            <label class="col-md-4 control-label">Jumlah yang dibayar</label>
-            <div class="col-md-6">
-                <input type="text" class="form-control" name="jumlah-bayar" value="">
-=======
             <label class="col-md-4 control-label">Besar Setoran</label>
             <div class="col-md-6">
                 <input type="text" class="form-control" name="besar_setoran" value="">
->>>>>>> a1305c9804fbe4f86a1b93875f6b3bc3d0336390
             </div>
         </div>
 
