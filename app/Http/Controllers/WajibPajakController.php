@@ -75,8 +75,55 @@ class WajibPajakController extends Controller {
         return view('wajibpajak.tambahpajak');
     }
 
+    public function postTambahPajak(Request $request){
+           $wp=Auth::user()->wajibpajak;
+
+           $pajak=new \App\Pajak;
+           $pajak->npwpd_pemilik=$wp->npwpd;
+           $pajak->status='aktif';
+
+           if($request->bidang_usaha=='hotel'){
+                $pajak->jenis_pajak='hotel';
+                $pajak_khusus=new \App\PajakHotel;
+                $pajak->save();
+                $pajak_khusus->id=$pajak->id;
+                $pajak_khusus->num_kamar_suite=$request->num_kamar_suite;
+                $pajak_khusus->rate_high_suite=$request->rate_high_suite;
+                $pajak_khusus->rate_low_suite=$request->rate_low_suite;                
+                $pajak_khusus->num_kamar_deluxe=$request->num_kamar_deluxe;
+                $pajak_khusus->rate_high_deluxe=$request->rate_high_deluxe;
+                $pajak_khusus->rate_low_deluxe=$request->rate_low_deluxe;                
+                $pajak_khusus->num_kamar_standar=$request->num_kamar_standar;
+                $pajak_khusus->rate_high_standar=$request->rate_high_standar;
+                $pajak_khusus->rate_low_standar=$request->rate_low_standar;
+                if ($request->alat_bayar=='manual')
+                    $pajak_khusus->alat_pembayaran='manual';
+                else if ($request->alat_bayar=='komputer')
+                    $pajak_khusus->alat_pembayaran='auto';
+                $pajak_khusus->num_karyawan=$request->num_karyawan;
+                $pajak_khusus->fasilitas_restoran=0;
+                $pajak_khusus->fasilitas_hiburan=0;
+                $pajak_khusus->fasilitas_laundry=0;
+                $pajak_khusus->fasilitas_telpon=0;
+                $pajak_khusus->fasilitas_parkir=0;
+                if ($request->restoran=='1')    $pajak_khusus->fasilitas_restoran=1;
+                if ($request->hiburan=='1')  $pajak_khusus->fasilitas_hiburan=1;
+                if ($request->laundry=='1')  $pajak_khusus->fasilitas_laundry=1;
+                if ($request->telpon=='1')  $pajak_khusus->fasilitas_telpon=1;
+                if ($request->parkir=='1')  $pajak_khusus->fasilitas_parkir=1;
+                $pajak_khusus->save();           
+           }
+           else if ($request->bidang_usaha=='restoran'){
+                $pajak->jenis_pajak='restoran';
+                $pajak_khusus=new \App\PajakRestoran;
+           }
+           else if ($request->bidang_usaha=='bumi-bangunan'){
+                $pajak->jenis_pajak='bumi-bangunan';
+                $pajak_khusus=new \App\PajakBumiBangunan;
+           }           
+           return Redirect::to('tambahpajak');
+    }
     public function getKelolaNpwpd(){
         return view('wajibpajak.dinasnpwpd');
     }
-
 }
