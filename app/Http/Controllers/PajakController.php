@@ -197,7 +197,8 @@ class PajakController extends Controller {
     }
 
     public function getKelolaPajak(){
-        return view('pajak.dinaspajak');
+        $daftarpajak = Pajak::all();
+        return view('pajak.dinaspajak', compact('daftarpajak'));
     }
 
     public function getKelolaSspd(){
@@ -212,4 +213,11 @@ class PajakController extends Controller {
         return view('sptpd.dinassptpd');
     }
 
+    public function getTutupPajak($id){
+        $pajak_terkait = Pajak::findOrFail($id);
+        $pajak_terkait->status = "nonaktif";
+
+        $pajak_terkait->save();
+        return redirect('kelolapajak');
+    }
 }
