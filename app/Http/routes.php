@@ -15,7 +15,7 @@
 Route::get('/', ['uses' => 'MainMenuController@getIndex']);
 Route::get('home', ['uses' => 'MainMenuController@getWpHome', 'middleware' => 'wajibpajak']);
 Route::get('admin/home', ['uses' => 'MainMenuController@getDinasHome','middleware' => 'admin']);
-Route::get('admin/kelolasptpd', ['uses' => 'MainMenuController@showListSptpd','middleware' => 'admin'])
+Route::get('admin/kelolasptpd', ['uses' => 'MainMenuController@showListSptpd','middleware' => 'admin']);
 
 /*Auth*/
 Route::get('login', ['uses' => 'Auth\AuthController@getLogin', 'middleware' => 'guest']);
@@ -23,7 +23,6 @@ Route::post('login', ['uses' => 'Auth\AuthController@postLogin','middleware' => 
 Route::get('register', ['uses' => 'Auth\AuthController@getRegister','middleware' => 'guest']);
 Route::post('register', ['uses' => 'Auth\AuthController@postRegister','middleware' => 'guest']);
 Route::get('logout', 'Auth\AuthController@getLogout');
-
 
 /*WajibPajak*/
 Route::get('daftar', ['uses' => 'WajibPajakController@getDaftarNpwpd','middleware' => 'auth']);
