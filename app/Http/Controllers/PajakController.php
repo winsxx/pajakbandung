@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use App\Pajak;
 use App\Penduduk;
+use App\Sptpd;
 use App\Sspd;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -210,7 +211,8 @@ class PajakController extends Controller {
     }
 
     public function getKelolaSptpd(){
-        return view('sptpd.dinassptpd');
+        $daftarSptpd = Sptpd::all();
+        return view('sptpd.dinassptpd', compact('daftarSptpd'));
     }
 
     public function getTutupPajak($id){
