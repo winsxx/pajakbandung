@@ -42,65 +42,7 @@ Route::get('pajak/{id}', ['uses' => 'PajakController@getMenuPajak','middleware' 
 Route::get('pajak/{id}/sptpd', ['uses' => 'PajakController@getSptpd','middleware' => 'auth']);
 Route::post('pajak/{id}/sptpdHotel', ['uses' => 'PajakController@postSptpdHotel','middleware' => 'auth']);
 Route::post('pajak/{id}/sptpdRestoran', ['uses' => 'PajakController@postSptpdRestoran','middleware' => 'auth']);
-/*
-Route::get('statuspajak', 'PajakController@showStatus');
-
-Route::get('tutupnpwpd','WajibPajakController@tutupnpwpd');
-
-Route::get('hapusnpwpd','WajibPajakController@hapusnpwpd');
-
-Route::get('editnpwpd','WajibPajakController@editnpwpd');
-
-Route::get('tambahnpwpd','WajibPajakController@tambahnpwpd');
-
-Route::get('homewp', function(){
-	return view('homeWp');
-});
-
-Route::get('homedinas', function(){
-	return view('DinasHome');
-});
-
-Route::get('kelolapajak', function(){
-	return view('DinasPajak');
-});
-
-Route::get('kelolanpwpd', function(){
-	return view('DinasNpwpd');
-});
-
-Route::get('kelolasptpd', function(){
-	return view('DinasSptpd');
-});
-
-
-Route::get('daftar', function(){
-	return view('wajibpajak.register');
-});
-
-Route::get('setting',function(){
-	//$data = Auth::User()->kolaborasiPajak();
-	//return view('SettingWp')->with('daftarpajak', $data);
-	return view('SettingWp');	
-});
-
-Route::get('settingpajak',function(){
-	return view('SettingPajak');
-});
-
-Route::get('tambahpengelola',function(){
-	return view('tambahpengelola');
-});
-
-Route::get('tutuppajak', function(){
-	return view('tutuppajak');
-});
-
-/*Route::get('tutupnpwpd',function(){
-	return view('tutupnpwpd');
-});*/
 Route::get('pajak/{id}/sspd', ['uses' => 'PajakController@getSspd','middleware' => 'auth']);
-Route::post('pajak/{id}/sspd', ['uses' => 'PajakController@postSspd','middleware' => 'auth']);
 Route::post('pajak/{id}/sspd', ['uses' => 'PajakController@postSspd','middleware' => 'auth']);
 
 /*Admin*/
