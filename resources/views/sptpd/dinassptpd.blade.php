@@ -33,9 +33,9 @@
                             <td>Belum Dikirim</td>
                         @endif
                         <td class="vcenter" style="text-align:right;">
-                            <a href="#">lihat berkas</a> |
+                            <a href="#">lihat berkas</a>
                             @if(! $sptpd->terbit_skpd)
-                                <a href="/admin/pajak/{{$sptpd->no_sptpd}}/kirimskpd">kirim SKPD</a>
+                                | <a href="/admin/pajak/{{$sptpd->no_sptpd}}/kirimskpd">kirim SKPD</a>
                             @endif
                             | <a href="#">hapus</a>
                         </td>

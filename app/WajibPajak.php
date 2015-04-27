@@ -10,7 +10,7 @@ class WajibPajak extends Model {
 
     public function penduduk()
     {
-        return $this->belongsTo('Penduduk', 'no_ktp_pemilik');
+        return $this->belongsTo('\App\Penduduk', 'no_ktp_pemilik');
     }
 
     public function izinUsaha()
