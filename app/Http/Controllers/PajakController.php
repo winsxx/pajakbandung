@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use App\Pajak;
 use App\Penduduk;
+use App\Skpdkb;
 use App\Sptpd;
 use App\Sspd;
 use Carbon\Carbon;
@@ -227,7 +228,7 @@ class PajakController extends Controller {
     public function  getKirimSkpd($id){
         $sptpdTerkait = Sptpd::find($id);
         $sptpdTerkait->terbit_skpd = true;
-        $sptpdTerkait->nilai_skpd = $sptpdTerkait->sptpdLengkap()->totalPendapatan() * 0.1;
+        $sptpdTerkait->nilai_skpd = $sptpdTerkait->sptpdLengkap()->totalPajak();
         $sptpdTerkait->save();
 
         Mail::send('emails.skpdmail', array('sptpd'=>$sptpdTerkait), function($message) use($sptpdTerkait) {
@@ -238,5 +239,15 @@ class PajakController extends Controller {
         return redirect('admin/kelolasptpd');
     }
 
+    public function  getKirimSkpdkb($id){
+        $pajakTerkait = Pajak::find($id);
+
+        $skpdkb = new Skpdkb();
+        $skpdkb->no_pajak = $id;
+        $skpdkb->bulan = Carbon::now()->month;
+        $skpdkb->tahun = Carbon::now()->year;
+        //$skpdkb->hutang = $pajakTerkait->
+        //$skpdkb->save()
+    }
 
 }

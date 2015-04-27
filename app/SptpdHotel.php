@@ -22,4 +22,8 @@ class SptpdHotel extends Model {
         return  $total;
     }
 
+    public function totalPajak(){
+        return $this->totalPendapatan()*0.1;
+    }
+
 }

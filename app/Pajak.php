@@ -1,5 +1,6 @@
 <?php namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Pajak extends Model {
@@ -15,6 +16,17 @@ class Pajak extends Model {
 
     public function kolaborator(){
         return $this->belongsToMany('\App\Penduduk','kolaborator','no_pajak','no_ktp_kolab');
+    }
+
+    public function statusPembayaranSspd(){
+        $last_sspd = Sspd::where('no_pajak','=',$this->id)->orderBy('no_sspd','DESC')->first();
+        $time_now = Carbon::now()->year*12 + Carbon::now()->month;
+        if($last_sspd) {
+            $time_lastpay = $last_sspd->tahun * 12 + $last_sspd->bulan;
+            return $time_lastpay >= $time_now;
+        }else {
+            return false;
+        }
     }
 
 }

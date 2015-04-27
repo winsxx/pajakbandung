@@ -28,7 +28,12 @@ Kelola Pajak
                         <td>{{$pajak->npwpd_pemilik}}</td>
                         <td>Pajak {{$pajak->jenis_pajak}}</td>
                         <td>{{$pajak->wajibPajak->izinUsaha->nama_usaha}}</td>
-                        <td>Sudah</td>
+                        @if($pajak->statusPembayaranSspd())
+                            <td>Sudah</td>
+                        @else
+                            <td>Belum</td>
+                        @endif
+
                         <td>
                             @if($pajak->status == "nonaktif")
                                 [Sudah Ditutup]
@@ -40,7 +45,11 @@ Kelola Pajak
                             @if($pajak->status == "nonaktif")
                                 <a href="#">hapus</a>
                             @else
-                                <a href="#">lihat berkas</a> | <a href="{{url("admin/pajak/".$pajak->id."/tutuppajak")}}">tutup</a> | <a href="#">hapus</a>
+                                <a href="{{url("admin/pajak/".$pajak->id."/tutuppajak")}}">tutup</a>
+                                @if(! $pajak->statusPembayaranSspd())
+                                    |<a href="/admin/pajak/{{$pajak->id}}/kirimskpdkb">kirim skpdkb</a>
+                                @endif
+                                | <a href="#">hapus</a>
                             @endif
                         </td>
                     </tr>

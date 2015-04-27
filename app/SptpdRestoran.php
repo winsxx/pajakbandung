@@ -15,4 +15,9 @@ class SptpdRestoran extends Model {
     public function totalPendapatan(){
         return $this->penjualan;
     }
+
+    public function totalPajak(){
+        return $this->totalPendapatan()*0.1;
+    }
+
 }
