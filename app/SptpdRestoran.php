@@ -12,4 +12,7 @@ class SptpdRestoran extends Model {
         return $this->belongsTo('\App\Sptpd');
     }
 
+    public function totalPendapatan(){
+        return $this->penjualan;
+    }
 }

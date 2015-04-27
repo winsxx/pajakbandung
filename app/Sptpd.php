@@ -13,10 +13,10 @@ class Sptpd extends Model {
     }
 
     public function sptpdLengkap(){
-        if($this->pajak->jenis_pajak == 'hotel')
-            return $this->hasOne('\App\SptpdHotel','id','no_sptpd');
-        if($this->pajak->jenis_pajak == 'restoran')
-            return $this->hasOne('\App\SptpdRestoran','id','no_sptpd');
+        if(SptpdHotel::find($this->no_sptpd))
+            return SptpdHotel::find($this->no_sptpd);
+        if(SptpdRestoran::find($this->no_sptpd))
+            return SptpdRestoran::find($this->no_sptpd);
 
         return null;
     }

@@ -27,9 +27,17 @@
                         <td>{{$sptpd->no_sptpd}}</td>
                         <td>Pajak {{$sptpd->pajak->jenis_pajak}}</td>
                         <td>{{$sptpd->pajak->wajibPajak->izinUsaha->nama_usaha}}</td>
-                        <td>Sudah Dikirim</td>
+                        @if($sptpd->terbit_skpd)
+                            <td>Sudah Dikirim</td>
+                        @else
+                            <td>Belum Dikirim</td>
+                        @endif
                         <td class="vcenter" style="text-align:right;">
-                            <a href="#">lihat berkas</a> | <a href="#">kirim SKPD</a> | <a href="#">hapus</a>
+                            <a href="#">lihat berkas</a> |
+                            @if(! $sptpd->terbit_skpd)
+                                <a href="/admin/pajak/{{$sptpd->no_sptpd}}/kirimskpd">kirim SKPD</a>
+                            @endif
+                            | <a href="#">hapus</a>
                         </td>
                     </tr>
                 @endforeach

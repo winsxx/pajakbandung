@@ -222,4 +222,15 @@ class PajakController extends Controller {
         $pajak_terkait->save();
         return redirect('kelolapajak');
     }
+
+    public function  getKirimSkpd($id){
+        $sptpdTerkait = Sptpd::find($id);
+        $sptpdTerkait->terbit_skpd = true;
+        $sptpdTerkait->nilai_skpd = $sptpdTerkait->sptpdLengkap()->totalPendapatan() * 0.1;
+        $sptpdTerkait->save();
+
+        return redirect('admin/kelolasptpd');
+    }
+
+
 }
