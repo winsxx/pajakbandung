@@ -9,7 +9,7 @@ class SptpdHotel extends Model {
     public $timestamps = false;
 
     public function sptpd(){
-        return $this->belongsTo('\App\Sptpd');
+        return $this->belongsTo('\App\Sptpd','id','no_sptpd');
     }
 
     public function totalPendapatan(){
