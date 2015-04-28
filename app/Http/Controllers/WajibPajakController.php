@@ -147,10 +147,15 @@ class WajibPajakController extends Controller {
            else if ($request->bidang_usaha=='restoran'){
                 $temp=DB::table('pajak')->where('npwpd_pemilik',Auth::user()->wajibpajak->npwpd)->where('jenis_pajak','restoran')->get();
                 if ($temp==null){
+                    $wp=Auth::user()->wajibpajak;           
+
+                    $pajak=new \App\Pajak;
+                    $pajak->npwpd_pemilik=$wp->npwpd;
+                    $pajak->status='aktif';
                     $pajak->jenis_pajak='restoran';
                     $pajak_khusus=new \App\PajakRestoran;
-                    $this->validate($request, [
-                        'jam_buka' => 'required',
+                    $this->validate($request, [                        
+                        'jam_buka' => 'required|time24',
                         'jam_tutup' => 'required',
                         'num_meja' => 'required',
                         'num_kursi' => 'required',
