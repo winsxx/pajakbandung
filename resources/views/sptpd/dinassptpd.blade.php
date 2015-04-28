@@ -33,10 +33,22 @@
                         @else
                             <td>Belum Dikirim</td>
                         @endif
+                        @if($sptpd->statusSspdPerSptpd())
+                            <td>Sudah</td>
+                        @else
+                            <td>Belum</td>
+                        @endif
+
+
+
+
                         <td class="vcenter" style="text-align:right;">
                             <a href="#">lihat berkas</a>
                             @if(! $sptpd->terbit_skpd)
                                 | <a href="/admin/pajak/{{$sptpd->no_sptpd}}/kirimskpd">kirim SKPD</a>
+                            @endif
+                            @if(! $sptpd->statusSspdPerSptpd() && $sptpd->terbit_skpdkb == false)
+                                | <a href="/admin/pajak/{{$sptpd->no_sptpd}}/kirimskpdkb">kirim SKPDKB</a>
                             @endif
                             | <a href="#">hapus</a>
                         </td>

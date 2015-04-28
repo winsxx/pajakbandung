@@ -21,5 +21,18 @@ class Sptpd extends Model {
         return null;
     }
 
+    public function statusSspdPerSptpd(){
+        $pajakTerkait = $this->pajak;
+        $bulan = $this->sptpdLengkap()->bulan;
+        $tahun = $this->sptpdLengkap()->tahun;
+        $sspdTerkait = Sspd::where('no_pajak', '=', $pajakTerkait->id)->where('bulan','=',$bulan)->where('tahun' ,'=',$tahun)->first();
+        return $sspdTerkait;
+        if($sspdTerkait == null){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
 }
 

@@ -240,14 +240,17 @@ class PajakController extends Controller {
     }
 
     public function  getKirimSkpdkb($id){
-        $pajakTerkait = Pajak::find($id);
+        $sptpdTerkait = Sptpd::find($id);
+        if(! $sptpdTerkait->terbit_skpdkb){
+            Mail::send('emails.skpdkbmail', array('sptpd'=>$sptpdTerkait), function($message) use($sptpdTerkait) {
+                $message->to($sptpdTerkait->pajak->wajibPajak->penduduk->email, $sptpdTerkait->pajak->wajibPajak->penduduk->nama)
+                    ->subject('Surat Ketetapan Pajak Daerah Kurang Bayar');
+            });
+            $sptpdTerkait->terbit_skpdkb = true;
+            $sptpdTerkait->save();
+        }
 
-        $skpdkb = new Skpdkb();
-        $skpdkb->no_pajak = $id;
-        $skpdkb->bulan = Carbon::now()->month;
-        $skpdkb->tahun = Carbon::now()->year;
-        //$skpdkb->hutang = $pajakTerkait->
-        //$skpdkb->save()
+        return redirect('admin/kelolasptpd');
     }
 
 }
