@@ -123,6 +123,8 @@ class PajakController extends Controller {
 
         $sptpd = new Sptpd();
         $sptpd->no_pajak = $id;
+        $sptpd->tahun = $request->tahun;
+        $sptpd->bulan = $request->bulan;
         $sptpd->save();
 
         $sptpdHotel = new SptpdHotel();
@@ -154,6 +156,8 @@ class PajakController extends Controller {
 
         $sptpd = new Sptpd();
         $sptpd->no_pajak = $id;
+        $sptpd->tahun = $request->tahun;
+        $sptpd->bulan = $request->bulan;
         $sptpd->save();
 
         $sptpdResto = new SptpdRestoran();
@@ -191,6 +195,15 @@ class PajakController extends Controller {
         if($temp == null && $temp2 == false)
             return redirect('/home');
 
+        $sptpd = Sptpd::where('no_pajak', '=', $id)->where('bulan','=',$request->bulan)->where('tahun','=',$request->tahun)->first();
+        if($sptpd == null) {
+            $error = ['sptpd' => 'Tidak ditemukan SPTPD pada bulan '.$request->bulan.' dan tahun '.$request->tahun];
+            return redirect('/pajak/' . $id . '/sspd')->withErrors($error);
+        }else if ($sptpd->terbit_skpd == false){
+            $error = ['skpd' => 'SKPD pada bulan '.$request->bulan.' dan tahun '.$request->tahun.' belum diterbitkan'];
+            return redirect('/pajak/' . $id . '/sspd')->withErrors($error);
+        }
+
         $sspd = new Sspd();
         $sspd->no_pajak = $id;             
         $sspd->tahun = $request->tahun;
@@ -221,6 +234,12 @@ class PajakController extends Controller {
     public function getKelolaSptpd(){
         $daftarSptpd = Sptpd::all();
         return view('sptpd.dinassptpd', compact('daftarSptpd'));
+    }
+
+    public function getKelolaNpwpd(){
+        //$listNpwpd = Pajak::with('kolaborator.IzinUsaha')->get();
+        $listNpwpd = Pajak::with('kolaborator.wajibpajak.izinUsaha')->get();
+        return view('wajibpajak.dinasnpwpd')->with('listnpwpd',$listNpwpd);
     }
 
     public function getTutupPajak($id){

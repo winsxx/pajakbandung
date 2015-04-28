@@ -215,7 +215,5 @@ class WajibPajakController extends Controller {
            }           
            return Redirect::to('home');
     }
-    public function getKelolaNpwpd(){
-        return view('wajibpajak.dinasnpwpd');
-    }
+    
 }

@@ -27,9 +27,6 @@ Kelola SSPD
 	        	  	$pajak =  $sspd->pajak;
 	        	  		foreach($pajak->kolaborator as $kolab) {
 	        	  			foreach($kolab->IzinUsaha as $izin) {
-		        	  			//echo $sspd->no_sspd;
-		        	  			//echo $pajak->jenis_pajak;
-		        	  			//echo $izin->nama_usaha;
 	        	?>
 	 	        <tr>
 	 	        	<td><?php echo $i ?></td>
