@@ -7,6 +7,7 @@ use App\Pajak;
 use App\Penduduk;
 use App\Skpdkb;
 use App\Sptpd;
+use App\SptpdRestoran;
 use App\Sspd;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
