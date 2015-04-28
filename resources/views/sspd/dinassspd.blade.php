@@ -19,35 +19,34 @@ Kelola SSPD
 	                <th style="width: 30%"></th>
 	            </tr>
 	        </thead>
+
 	        <tbody>
-<!-- 	        	
- -->	            <tr>
-	                <td>1</td>
-	                <td>12345</td>
-	                <td>Pajak Hotel</td>
-	                <td>Hotel lalal</td>
-	                <td class="vcenter" style="text-align:right;">
+	        	<?php 
+	        		$i = 1;
+	        	  	foreach($listsspd as $sspd) {
+	        	  	$pajak =  $sspd->pajak;
+	        	  		foreach($pajak->kolaborator as $kolab) {
+	        	  			foreach($kolab->IzinUsaha as $izin) {
+		        	  			//echo $sspd->no_sspd;
+		        	  			//echo $pajak->jenis_pajak;
+		        	  			//echo $izin->nama_usaha;
+	        	?>
+	 	        <tr>
+	 	        	<td><?php echo $i ?></td>
+	 	        	<td><?php echo $sspd->no_sspd ?></td>
+	 	        	<td><?php echo $pajak->jenis_pajak ?></td>
+	 	        	<td><?php echo $izin->nama_usaha ?></td>
+	 	        	<td class="vcenter" style="text-align:right;">
 	                	<a href="#">lihat berkas</a> | <a href="#">hapus</a>
 	                </td>
-	            </tr>
-	            <tr>
-	                <td>1</td>
-	                <td>12345</td>
-	                <td>Pajak Hotel</td>
-	                <td>Hotel lalal</td>
-	                <td class="vcenter" style="text-align:right;">
-	                	<a href="#">lihat berkas</a> | <a href="#">hapus</a>
-	                </td>
-	            </tr>
-	            <tr>
-	                <td>1</td>
-	                <td>12345</td>
-	                <td>Pajak Hotel</td>
-	                <td>Hotel lalal</td>
-	                <td class="vcenter" style="text-align:right;">
-	                	<a href="#">lihat berkas</a> | <a href="#">hapus</a>
-	                </td>
-            	</tr>
+	 	        </tr>	
+
+            	<?php 
+            				$i++;
+            				}
+	        	  		}
+	        	   	}
+            	 ?>
 	        </tbody>
 	    </table>
 	</div>

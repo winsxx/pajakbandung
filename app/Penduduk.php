@@ -41,6 +41,10 @@ class Penduduk extends Model implements AuthenticatableContract, CanResetPasswor
         return WajibPajak::where('no_ktp_pemilik','=', $this->no_ktp)->get();
     }
 
+    public function IzinUsaha() {
+    	return $this->hasMany('\App\IzinUsaha','no_ktp_pemilik');
+    }
+
     public function hasNpwpd(){
         $temp = $this->npwpd();
         return count($temp)>0;
