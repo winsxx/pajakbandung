@@ -16,7 +16,7 @@ Kelola Pajak
 	                <th style="width: 14%;">NPWPD</th>
 	                <th style="width: 13%">Jenis Pajak</th>
 	                <th style="width: 15%">Nama Usaha</th>
-	                <th style="widht: 15%">Status SSPD</th>
+	                <th style="widht: 15%">Status Pajak</th>
 	                <th style="widht: 15%">Keterangan</th>
 	                <th style="width: 25%"></th>
 	            </tr>
@@ -46,9 +46,6 @@ Kelola Pajak
                                 <a href="#">hapus</a>
                             @else
                                 <a href="{{url("admin/pajak/".$pajak->id."/tutuppajak")}}">tutup</a>
-                                @if(! $pajak->statusPembayaranSspd())
-                                    |<a href="/admin/pajak/{{$pajak->id}}/kirimskpdkb">kirim skpdkb</a>
-                                @endif
                                 | <a href="#">hapus</a>
                             @endif
                         </td>
@@ -63,7 +60,7 @@ Kelola Pajak
 	                <td>Belum</td>
 	                <td> - </td>
 	                <td class="vcenter" style="text-align:right;">
-	                	<a href="#">kirim skpdkb</a> | <a href="#">tutup</a> | <a href="#">hapus</a>
+	                	<a href="#">tutup</a> | <a href="#">hapus</a>
 	                </td>
 	            </tr>
 	            <tr>
@@ -71,10 +68,10 @@ Kelola Pajak
 	                <td>12345</td>
 	                <td>Pajak Hotel</td>
 	                <td>Hotel lalal</td>
-	                <td>Belum</td>
+	                <td>Sudah</td>
 	                <td>Mengajukan Penutupan</td>
 	                <td class="vcenter" style="text-align:right;">
-	                	<a href="#">kirim skpdkb</a> | <a href="#">tutup</a> | <a href="#">hapus</a>
+	                	<a href="#">tutup</a> | <a href="#">hapus</a>
 	                </td>
 	            </tr>
 	            <tr>

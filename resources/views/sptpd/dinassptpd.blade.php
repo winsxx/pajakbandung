@@ -16,7 +16,8 @@
                     <th style="width: 15%">No SPTPD</th>
                     <th style="width: 15%">Jenis Pajak</th>
                     <th style="width: 15%">Nama Usaha</th>
-                    <th style="widht: 20%">Status SKPD</th>
+                    <th style="widht: 10%">Status SKPD</th>
+                    <th style="widht: 10%">Status SSPD</th>
                     <th style="width: 30%"></th>
                 </tr>
                 </thead>
@@ -47,9 +48,10 @@
                     <td>12345</td>
                     <td>Pajak Hotel</td>
                     <td>Hotel lalal</td>
-                    <td>Sudah Dikirim</td>
+                    <td>Sudah</td>
+                    <td>Sudah</td>
                     <td class="vcenter" style="text-align:right;">
-                        <a href="#">lihat berkas</a> | <a href="#">kirim SKPD</a> | <a href="#">hapus</a>
+                        <a href="#">lihat SPTPD</a> | <a href="#">hapus</a>
                     </td>
                 </tr>
                 <tr>
@@ -57,9 +59,21 @@
                     <td>12345</td>
                     <td>Pajak Hotel</td>
                     <td>Hotel lalal</td>
-                    <td>Sudah Dikirim</td>
+                    <td>Sudah</td>
+                    <td>Belum</td>
                     <td class="vcenter" style="text-align:right;">
-                        <a href="#">lihat berkas</a> | <a href="#">kirim SKPD</a> | <a href="#">hapus</a>
+                        <a href="#">lihat SPTPD</a> | <a href="#">kirim SKPDKB</a> | <a href="#">hapus</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>12345</td>
+                    <td>Pajak Hotel</td>
+                    <td>Hotel lalal</td>
+                    <td>Belum</td>
+                    <td>Belum</td>
+                    <td class="vcenter" style="text-align:right;">
+                        <a href="#">lihat SPTPD</a> | <a href="#">kirim SKPD</a> | <a href="#">hapus</a>
                     </td>
                 </tr>
                 </tbody>

@@ -58,7 +58,4 @@ Route::get('admin/pajak/{id}/kirimskpdkb',['uses' => 'PajakController@getKirimSk
 
 /*Unimportant*/
 Route::get('debug', 'MainMenuController@testing');
-Route::get('listskpd', function(){return view('skpd.listskpd');});
-Route::get('skpd', function(){return view('skpd.skpd');});
-Route::get('skpdkb', function(){return view('skpd.skpdkb');});
 
