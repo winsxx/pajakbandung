@@ -11,6 +11,7 @@ class Sspd extends Model {
 
     public function pajak(){
         return $this->belongsTo('\App\Pajak','no_pajak');
+        //return $this->belongsTo('\App\Pajak','id');
     }
 
 }

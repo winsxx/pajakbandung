@@ -11,7 +11,7 @@ Beranda
 				</div>
 				<div class="grid_1_of_1">
 				  	<h3><a href = "/admin/kelolapajak">Kelola Pajak </a></h3>
-					<p>Lihat daftar pajak, tutup pajak, kirim SKPDKB</p>	   
+					<p>Lihat daftar pajak, tutup pajak, hapus pajak</p>	   
 	 			</div>
 			</div>
 		</div>
@@ -36,7 +36,7 @@ Beranda
 				</div>
 				<div class="grid_1_of_1">
 				  	<h3><a href = "/admin/kelolasptpd">Kelola SPTPD </a></h3>
-					<p>Lihat semua SPTPD, kirim SKPD</p>
+					<p>Lihat semua SPTPD, kirim SKPD, kirim SKPDKB</p>
  				</div>
 			 	<div class="clearfix"></div>
 			</div>

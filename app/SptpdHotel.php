@@ -12,4 +12,18 @@ class SptpdHotel extends Model {
         return $this->belongsTo('\App\Sptpd');
     }
 
+    public function totalPendapatan(){
+        $total = 0;
+        $total += $this->penjualan_kamar;
+        $total += $this->penjualan_konsumsi;
+        $total += $this->penerimaan_laundry;
+        $total += $this->penerimaan_sewa_ruangan;
+        $total += $this->penerimaan_service;
+        return  $total;
+    }
+
+    public function totalPajak(){
+        return $this->totalPendapatan()*0.1;
+    }
+
 }

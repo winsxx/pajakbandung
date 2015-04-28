@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use App\Penduduk;
 use App\Sptpd;
+use App\Sspd;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,9 +27,7 @@ class MainMenuController extends Controller {
     }
 
     public function testing(){
-        return Auth::user()->wajibpajak->izinUsaha;
-        return Auth::user()->kolaborasipajak;
-        return Auth::user()->wajibpajak()->get()->first()->npwpd;
+        return Sspd::where('no_pajak','=',1)->orderBy('no_sspd','DESC')->first()->bulan;
     }
 
 }

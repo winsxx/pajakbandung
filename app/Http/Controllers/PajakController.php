@@ -5,10 +5,14 @@ use App\Http\Controllers\Controller;
 
 use App\Pajak;
 use App\Penduduk;
+use App\Skpdkb;
+use App\Sptpd;
+use App\SptpdRestoran;
 use App\Sspd;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class PajakController extends Controller {
@@ -197,12 +201,24 @@ class PajakController extends Controller {
     }
 
     public function getKelolaPajak(){
-        return view('pajak.dinaspajak');
+        $daftarpajak = Pajak::all();
+        return view('pajak.dinaspajak', compact('daftarpajak'));
     }
 
     public function getKelolaSspd(){
-        //$listsspd = Sspd::all();
-        return view('sspd.dinassspd')->with('listsspd',Sspd::all());
+        //$listpajak = Pajak::all();
+        /*foreach ($listpajak as $pajak) {
+            $listsspd = $pajak->listSspd;
+
+        }*/
+
+        /*foreach(Pajak::with('listsspd')->get() as $sspd) {
+            
+        }*/
+        //$listSspd = Pajak::with('sspd')->get();
+        $listSspd = Sspd::with('pajak.kolaborator.IzinUsaha')->get();
+        //return view('sspd.dinassspd')->with('listsspd',Sspd::all());
+        return view('sspd.dinassspd')->with('listsspd',$listSspd);
     }
 
     public function getKelolaSkpdkb(){
@@ -210,7 +226,44 @@ class PajakController extends Controller {
     }
 
     public function getKelolaSptpd(){
-        return view('sptpd.dinassptpd');
+        $daftarSptpd = Sptpd::all();
+        return view('sptpd.dinassptpd', compact('daftarSptpd'));
+    }
+
+    public function getTutupPajak($id){
+        $pajak_terkait = Pajak::findOrFail($id);
+        $pajak_terkait->status = "nonaktif";
+
+        $pajak_terkait->save();
+        return redirect('kelolapajak');
+    }
+
+    public function  getKirimSkpd($id){
+        $sptpdTerkait = Sptpd::find($id);
+        $sptpdTerkait->terbit_skpd = true;
+        $sptpdTerkait->nilai_skpd = $sptpdTerkait->sptpdLengkap()->totalPajak();
+        $sptpdTerkait->save();
+
+        Mail::send('emails.skpdmail', array('sptpd'=>$sptpdTerkait), function($message) use($sptpdTerkait) {
+            $message->to($sptpdTerkait->pajak->wajibPajak->penduduk->email, $sptpdTerkait->pajak->wajibPajak->penduduk->nama)
+                ->subject('Surat Ketetapan Pajak Daerah');
+        });
+
+        return redirect('admin/kelolasptpd');
+    }
+
+    public function  getKirimSkpdkb($id){
+        $sptpdTerkait = Sptpd::find($id);
+        if(! $sptpdTerkait->terbit_skpdkb){
+            Mail::send('emails.skpdkbmail', array('sptpd'=>$sptpdTerkait), function($message) use($sptpdTerkait) {
+                $message->to($sptpdTerkait->pajak->wajibPajak->penduduk->email, $sptpdTerkait->pajak->wajibPajak->penduduk->nama)
+                    ->subject('Surat Ketetapan Pajak Daerah Kurang Bayar');
+            });
+            $sptpdTerkait->terbit_skpdkb = true;
+            $sptpdTerkait->save();
+        }
+
+        return redirect('admin/kelolasptpd');
     }
 
 }
