@@ -17,4 +17,7 @@ class Pajak extends Model {
         return $this->belongsToMany('\App\Penduduk','kolaborator','no_pajak','no_ktp_kolab');
     }
 
+    public function listSspd() {
+        return Sspd::where('no_pajak',$this->id);
+    }
 }

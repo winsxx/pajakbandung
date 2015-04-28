@@ -19,6 +19,10 @@ Kelola SSPD
 	                <th style="width: 30%"></th>
 	            </tr>
 	        </thead>
+
+	        <?php //var_dump($listsspd); 
+	        	  echo count($listsspd);
+	        ?>
 	        <tbody>
 <!-- 	        	
  -->	            <tr>

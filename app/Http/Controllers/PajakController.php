@@ -201,7 +201,8 @@ class PajakController extends Controller {
     }
 
     public function getKelolaSspd(){
-        return view('sspd.dinassspd');
+        //$listsspd = Sspd::all();
+        return view('sspd.dinassspd')->with('listsspd',Sspd::all());
     }
 
     public function getKelolaSkpdkb(){
