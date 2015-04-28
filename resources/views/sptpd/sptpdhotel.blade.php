@@ -4,7 +4,7 @@
 @endsection
 @section('breadcrumb')
 <li><a href="/home"> Beranda </a></li>
-<li ><a href="/pajak/{{$pajak->id}}">Pajak {{$pajak->jenis_pajak}} {{$izin->nama_usaha}}</a></li>
+<li ><a href="/pajak/{{$pajak->id}}">Pajak {{$pajak->jenis_pajak}}</a></li>
 <li class="active"> SPTPD Hotel </li>
 @endsection
 @section('content')

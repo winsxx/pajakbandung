@@ -10,6 +10,7 @@ use App\Skpdkb;
 use App\SkpdkbPbb;
 use App\SkpdPbb;
 use App\Sptpd;
+use App\SptpdHotel;
 use App\SptpdRestoran;
 use App\Sspd;
 use Carbon\Carbon;
@@ -257,7 +258,7 @@ class PajakController extends Controller {
 
     public function  getKirimSkpdkb($id){
         $sptpdTerkait = Sptpd::find($id);
-        if(! $sptpdTerkait->terbit_skpdkb){
+        if((! $sptpdTerkait->terbit_skpdkb) && $sptpdTerkait->terbit_skpd){
             Mail::send('emails.skpdkbmail', array('sptpd'=>$sptpdTerkait), function($message) use($sptpdTerkait) {
                 $message->to($sptpdTerkait->pajak->wajibPajak->penduduk->email, $sptpdTerkait->pajak->wajibPajak->penduduk->nama)
                     ->subject('Surat Ketetapan Pajak Daerah Kurang Bayar');
