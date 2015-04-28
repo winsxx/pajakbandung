@@ -8,6 +8,8 @@ Kelola NPWPD
 @endsection
 @section('content')
 <div class="row details"><!-- start details -->
+    <h4> Daftar NPWPD yang terdaftar </h4>
+    <br>
 	<div class="col-md-12">
 		<table class="table table-hover table-condensed mytable">
 	        <thead>

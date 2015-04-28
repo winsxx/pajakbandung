@@ -8,6 +8,8 @@ Kelola Pajak
 @endsection
 @section('content')
 <div class="row details"><!-- start details -->
+    <h4> Daftar Pajak yang terdaftar </h4>
+    <br>
 	<div class="col-md-12">
 		<table class="table table-hover table-condensed mytable">
 	        <thead>
@@ -27,7 +29,7 @@ Kelola Pajak
                         <td>{{$pajak->id}}</td>
                         <td>{{$pajak->npwpd_pemilik}}</td>
                         <td>Pajak {{$pajak->jenis_pajak}}</td>
-                        <td>{{$pajak->wajibPajak->izinUsaha->nama_usaha}}</td>
+                        <td>kasjhdka</td>
                         @if($pajak->statusPembayaranSspd())
                             <td>Sudah bayar</td>
                         @else

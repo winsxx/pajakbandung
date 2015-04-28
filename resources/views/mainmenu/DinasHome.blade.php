@@ -34,9 +34,9 @@ Beranda
 				<div class="images_1_of_1">
 					<p>3</p>
 				</div>
-				<div class="grid_1_of_1">
-				  	<h3><a href = "/admin/kelolasptpd">Kelola Pembayaran Pajak</a></h3>
-					<p>Lihat semua SPTPD, kirim SKPD dan SKPDKB Hotel dan Restoran</p>
+				<div class="grid_1_of_1" style="padding:1.5%;">
+				  	<h3><a href = "/admin/kelolasptpd">Kelola Pembayaran Pajak Hotel dan Restoran</a></h3>
+					<p>Lihat semua SPTPD, kirim SKPD dan SKPDKB</p>
  				</div>
 			 	<div class="clearfix"></div>
 			</div>
@@ -46,9 +46,9 @@ Beranda
 				<div class="images_1_of_1">
 					<p>4</p>
 				</div>
-				<div class="grid_1_of_1">
-					<h3><a href = "/admin/kelolasspd">Kelola SSPD</a></h3>
-					<p>Lihat semua SSPD</p>	 			
+				<div class="grid_1_of_1" style="padding:1.5%%;">
+					<h3><a href = "/admin/kelolapbb">Kelola Pembayaran Pajak Bumi dan Bangunan</a></h3>
+					<p>Menerbitkan SKPD, menerbitkan SKPDKB</p>	 			
 				</div>
 			 	<div class="clearfix"></div>
 			</div>
@@ -61,24 +61,13 @@ Beranda
 					<p>5</p>
 				</div>
 				<div class="grid_1_of_1">
-					<h3><a href = "#">Terbitkan SKPD PBB </a></h3>
-					<p>Mengirimkan SKPD kepada semua wajib pajak yang terdaftar di PBB</p>	 			
+					<h3><a href = "/admin/kelolasspd">Lihat Daftar SSPD</a></h3>
+					<p>Melihat semua SSPD yang dikirim</p>	 			
 				</div>
 			 	<div class="clearfix"></div>
 			</div>
 		</div>
-		<div class="col-md-6">
-			<div class="grid_list">
-				<div class="images_1_of_1">
-					<p>6</p>
-				</div>
-				<div class="grid_1_of_1">
-					<h3><a href = "#">Terbitkan SKPDKB PBB</a></h3>
-					<p>Mengirimkan SKPDKB kepada semua wajib pajak PBB yang belum bayar pajak</p>	 			
-				</div>
-			 	<div class="clearfix"></div>
-			</div>
-		</div>
+		
 	</div>
 </div>
 @endsection
