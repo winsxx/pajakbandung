@@ -37,7 +37,7 @@ Kelola SSPD
 	 	        	<td><?php echo $pajak->jenis_pajak ?></td>
 	 	        	<td><?php echo $izin->nama_usaha ?></td>
 	 	        	<td class="vcenter" style="text-align:right;">
-	                	<a href="#">lihat berkas</a> | <a href="#">hapus</a>
+	                	<a href="#">lihat berkas</a> | <a href="pajak/<?php echo $sspd->no_sspd ?>/hapussspd">hapus</a>
 	                </td>
 	 	        </tr>	
 
