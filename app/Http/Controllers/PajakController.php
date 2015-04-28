@@ -222,6 +222,12 @@ class PajakController extends Controller {
         return view('sptpd.dinassptpd', compact('daftarSptpd'));
     }
 
+    public function getKelolaNpwpd(){
+        //$listNpwpd = Pajak::with('kolaborator.IzinUsaha')->get();
+        $listNpwpd = Pajak::with('kolaborator.wajibpajak.izinUsaha')->get();
+        return view('wajibpajak.dinasnpwpd')->with('listnpwpd',$listNpwpd);
+    }
+
     public function getTutupPajak($id){
         $pajak_terkait = Pajak::findOrFail($id);
         $pajak_terkait->status = "nonaktif";

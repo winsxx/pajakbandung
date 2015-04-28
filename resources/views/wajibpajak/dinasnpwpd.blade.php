@@ -20,37 +20,36 @@ Kelola NPWPD
 	                <th style="width: 30%"></th>
 	            </tr>
 	        </thead>
+	        
 	        <tbody>
-	            <tr>
-	                <td>1</td>
-	                <td>12345</td>
-	                <td>Pajak Hotel</td>
-	                <td>Hotel lalal</td>
+	        	<?php 
+		        	$i = 1;
+		        	foreach($listnpwpd as $npwpd) {
+		        		//echo $npwpd;
+		        		foreach($npwpd->kolaborator as $kolab) {
+		        			$wp = $kolab->wajibpajak;
+		        			foreach($wp->izinUsaha as $izin) {
+
+		        ?>
+
+		        <tr>
+	                <td><?php echo $i ?></td>
+	                <td><?php echo $npwpd->npwpd_pemilik ?></td>
+	                <td><?php echo $npwpd->jenis_pajak ?></td>
+	                <td><?php echo $izin->nama_usaha ?></td>
 	                <td>Aktif</td>
 	                <td class="vcenter" style="text-align:right;">
 	                	<a href="#">lihat berkas</a> | <a href="#">tutup</a> | <a href="#">hapus</a>
 	                </td>
 	            </tr>
-	            <tr>
-	                <td>2</td>
-	                <td>12345</td>
-	                <td>Pajak Restoran</td>
-	                <td>Hotel lalal</td>
-	                <td>Mengajukan penutupan</td>
-	                <td class="vcenter" style="text-align:right;">
-	                	<a href="#">lihat berkas</a> | <a href="#">tutup</a> | <a href="#">hapus</a>
-	                </td>
-	            </tr>
-	            <tr>
-	                <td>3</td>
-	                <td>12345</td>
-	                <td>Pajak Hotel</td>
-	                <td>Hotel lalal</td>
-	                <td>Ditutup</td>
-	                <td class="vcenter" style="text-align:right;">
-	                	<a href="#">lihat berkas</a> | <a href="#">tutup</a> | <a href="#">hapus</a>
-	                </td>
-	            </tr>
+
+		        <?php
+		        			$i++;
+		        			}
+		        		}
+		        	}
+
+	        	?>
 	        </tbody>
 	    </table>
 	</div>
