@@ -55,39 +55,6 @@
                     </tr>
                 @endforeach
 
-                <tr>
-                    <td>1</td>
-                    <td>12345</td>
-                    <td>Pajak Hotel</td>
-                    <td>Hotel lalal</td>
-                    <td>Sudah</td>
-                    <td>Sudah</td>
-                    <td class="vcenter" style="text-align:right;">
-                        <a href="#">lihat SPTPD</a> | <a href="#">hapus</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>12345</td>
-                    <td>Pajak Hotel</td>
-                    <td>Hotel lalal</td>
-                    <td>Sudah</td>
-                    <td>Belum</td>
-                    <td class="vcenter" style="text-align:right;">
-                        <a href="#">lihat SPTPD</a> | <a href="#">kirim SKPDKB</a> | <a href="#">hapus</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>12345</td>
-                    <td>Pajak Hotel</td>
-                    <td>Hotel lalal</td>
-                    <td>Belum</td>
-                    <td>Belum</td>
-                    <td class="vcenter" style="text-align:right;">
-                        <a href="#">lihat SPTPD</a> | <a href="#">kirim SKPD</a> | <a href="#">hapus</a>
-                    </td>
-                </tr>
                 </tbody>
             </table>
         </div>
