@@ -30,7 +30,7 @@ Dinas Pelayanan Pajak Kota Bandung
 		  <img src="images/akun.png" class="img-responsive"/>
 		  <p>Daftarkan NPWPD untuk usaha anda dengan cepat dan mudah</p>
 	      <div class="rd_more1">
-			<a href="daftar"><button class="btn_style">daftar</button></a>
+			<a href="register"><button class="btn_style">daftar</button></a>
 		</div>
 	</div>
 	    <div class="clearfix"></div>

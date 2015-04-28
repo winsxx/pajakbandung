@@ -4,8 +4,11 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Pajak;
+use App\PajakBumiBangunan;
 use App\Penduduk;
 use App\Skpdkb;
+use App\SkpdkbPbb;
+use App\SkpdPbb;
 use App\Sptpd;
 use App\SptpdRestoran;
 use App\Sspd;
@@ -264,6 +267,56 @@ class PajakController extends Controller {
         }
 
         return redirect('admin/kelolasptpd');
+    }
+
+    public function genereteAllPbbSkpd(){
+        $hargaTanahSatuan = 5000000.0;
+        $hargaBangunanSatuan = 5000000.0;
+        $biayaPbbMinimal = 12000000.0;
+        $daftarPbb = PajakBumiBangunan::all();
+        foreach($daftarPbb as $pbb){
+            $hargaTanah = ($pbb->panjang_tanah * $pbb->lebar_tanah)*$hargaTanahSatuan;
+            $hargaBangunan = ($pbb->panjang_bangunan * $pbb->lebar_bangunan)* $hargaBangunanSatuan;
+            $pajak = $hargaTanah + $hargaBangunan - $biayaPbbMinimal;
+            if($pajak <0) $pajak = 0;
+            $pajak = 0.2 * $pajak;
+            $pajak = 0.005 * $pajak;
+
+            $skpdPbb = new SkpdPbb();
+            $skpdPbb->no_pajak_pbb = $pbb->id;
+            $skpdPbb->tahun = Carbon::now()->year;
+            $skpdPbb->biaya = $pajak;
+            $skpdPbb->save();
+
+            Mail::send('emails.skpdpbbmail', array('skpd'=>$skpdPbb), function($message) use($skpdPbb) {
+                $message->to($skpdPbb->pajakPbb->pajak->wajibPajak->penduduk->email, $skpdPbb->pajakPbb->pajak->wajibPajak->penduduk->nama)
+                    ->subject('Surat Ketetapan Pajak Daerah');
+            });
+
+        }
+    }
+
+    public function genereteAllPbbSkpdkb($year){
+
+        $daftarSkpdPbb = SkpdPbb::where('tahun','=',$year)->get();
+        foreach($daftarSkpdPbb as $skpd){
+
+            $sspd = Sspd::where('no_pajak','=',$skpd->no_pajak_pbb)->where('tahun','=',$skpd->tahun)->first();
+
+            if($sspd == null){
+                $skpdkbPbb = new SkpdkbPbb();
+                $skpdkbPbb->no_pajak_pbb = $skpd->no_pajak_pbb;
+                $skpdkbPbb->tahun = $skpd->tahun;
+                $skpdkbPbb->hutang = $skpd->biaya;
+                $skpdkbPbb->save();
+
+                Mail::send('emails.skpdkbpbbmail', array('skpdkb'=>$skpdkbPbb), function($message) use($skpdkbPbb) {
+                    $message->to($skpdkbPbb->pajakPbb->pajak->wajibPajak->penduduk->email, $skpdkbPbb->pajakPbb->pajak->wajibPajak->penduduk->nama)
+                        ->subject('Surat Ketetapan Pajak Daerah Kurang Bayar');
+                });
+            }
+
+        }
     }
 
 }

@@ -180,7 +180,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label">Jumlah Karyawan</label>
                 <div class="col-md-2">
-                    <input class="form-control" name="num_karyawan" value="">
+                    <input class="form-control" name="jmlh_karyawan" value="">
                 </div>
                 <label class="control-label">orang</label>
             </div>

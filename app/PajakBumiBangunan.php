@@ -10,7 +10,7 @@ class PajakBumiBangunan extends Model {
 
     public function pajak()
     {
-        return $this->belongsTo('Pajak', 'id');
+        return $this->belongsTo('\App\Pajak', 'id');
     }
 
 }
