@@ -95,7 +95,7 @@ class WajibPajakController extends Controller {
                     'num_kamar_standar' => 'required',
                     'rate_high_standar' => 'required',
                     'rate_low_standar' => 'required',
-                    'num_karyawan' => 'required',
+                    'jmlh_karyawan' => 'required',
                 ]);
                 $pajak_khusus->num_kamar_suite=$request->num_kamar_suite;
                 $pajak_khusus->rate_high_suite=$request->rate_high_suite;
@@ -105,22 +105,34 @@ class WajibPajakController extends Controller {
                 $pajak_khusus->rate_low_deluxe=$request->rate_low_deluxe;                
                 $pajak_khusus->num_kamar_standar=$request->num_kamar_standar;
                 $pajak_khusus->rate_high_standar=$request->rate_high_standar;
-                $pajak_khusus->rate_low_standar=$request->rate_low_standar;
-                if ($request->alat_bayar=='manual')
+                $pajak_khusus->rate_low_standar=$request->rate_low_standar;                
+                if ($request->alat_bayar=='manual'){
                     $pajak_khusus->alat_pembayaran='manual';
-                else if ($request->alat_bayar=='komputer')
-                    $pajak_khusus->alat_pembayaran='auto';
-                $pajak_khusus->num_karyawan=$request->num_karyawan;
+                }                    
+                else if ($request->alat_bayar=='komputer'){
+                    $pajak_khusus->alat_pembayaran='auto';                
+                }                    
                 $pajak_khusus->fasilitas_restoran=0;
                 $pajak_khusus->fasilitas_hiburan=0;
                 $pajak_khusus->fasilitas_laundry=0;
                 $pajak_khusus->fasilitas_telpon=0;
                 $pajak_khusus->fasilitas_parkir=0;
-                if ($request->restoran=='1')    $pajak_khusus->fasilitas_restoran=1;
-                if ($request->hiburan=='1')  $pajak_khusus->fasilitas_hiburan=1;
-                if ($request->laundry=='1')  $pajak_khusus->fasilitas_laundry=1;
-                if ($request->telpon=='1')  $pajak_khusus->fasilitas_telpon=1;
-                if ($request->parkir=='1')  $pajak_khusus->fasilitas_parkir=1;
+                if ($request->restoran=='1') {
+                   $pajak_khusus->fasilitas_restoran=1; 
+               }                   
+                if ($request->hiburan=='1'){
+                   $pajak_khusus->fasilitas_hiburan=1; 
+                }  
+                if ($request->laundry=='1'){
+                   $pajak_khusus->fasilitas_laundry=1; 
+                }  
+                if ($request->telpon=='1'){
+                   $pajak_khusus->fasilitas_telpon=1; 
+                }  
+                if ($request->parkir=='1') {
+                  $pajak_khusus->fasilitas_parkir=1;  
+                } 
+                $pajak_khusus->num_karyawan=$request->jmlh_karyawan;
                 $pajak->save();
                 $pajak_khusus->id=$pajak->id;
                 $pajak_khusus->save();           
@@ -155,7 +167,7 @@ class WajibPajakController extends Controller {
                 $pajak_khusus->save();
            }
            else if ($request->bidang_usaha=='bumi_bangunan'){
-                $pajak->jenis_pajak='bumi_bangunan';
+                $pajak->jenis_pajak='pbb';
                 $pajak_khusus=new \App\PajakBumiBangunan;
                 $this->validate($request, [
                     'tanah_panjang' => 'required',
