@@ -29,9 +29,9 @@ Kelola Pajak
                         <td>Pajak {{$pajak->jenis_pajak}}</td>
                         <td>{{$pajak->wajibPajak->izinUsaha->nama_usaha}}</td>
                         @if($pajak->statusPembayaranSspd())
-                            <td>Sudah</td>
+                            <td>Sudah bayar</td>
                         @else
-                            <td>Belum</td>
+                            <td>Belum bayar</td>
                         @endif
 
                         <td>

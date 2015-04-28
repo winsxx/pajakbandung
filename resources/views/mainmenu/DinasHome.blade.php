@@ -3,7 +3,7 @@
 Beranda
 @endsection
 @section('content')
-<div class="row grids_btm top">
+	<div class="row grids_btm top">
 		<div class="col-md-6">
 			<div class="grid_list">
 				<div class="images_1_of_1">
@@ -35,8 +35,8 @@ Beranda
 					<p>3</p>
 				</div>
 				<div class="grid_1_of_1">
-				  	<h3><a href = "/admin/kelolasptpd">Kelola SPTPD </a></h3>
-					<p>Lihat semua SPTPD, kirim SKPD, kirim SKPDKB</p>
+				  	<h3><a href = "/admin/kelolasptpd">Kelola Pembayaran Pajak</a></h3>
+					<p>Lihat semua SPTPD, kirim SKPD dan SKPDKB Hotel dan Restoran</p>
  				</div>
 			 	<div class="clearfix"></div>
 			</div>
@@ -47,7 +47,7 @@ Beranda
 					<p>4</p>
 				</div>
 				<div class="grid_1_of_1">
-					<h3><a href = "/admin/kelolasspd">Kelola SSPD </a></h3>
+					<h3><a href = "/admin/kelolasspd">Kelola SSPD</a></h3>
 					<p>Lihat semua SSPD</p>	 			
 				</div>
 			 	<div class="clearfix"></div>
@@ -61,8 +61,8 @@ Beranda
 					<p>5</p>
 				</div>
 				<div class="grid_1_of_1">
-					<h3><a href = "/admin/kelolaskpd">Kelola SKPD </a></h3>
-					<p>Lihat semua SKPD</p>	 			
+					<h3><a href = "#">Terbitkan SKPD PBB </a></h3>
+					<p>Mengirimkan SKPD kepada semua wajib pajak yang terdaftar di PBB</p>	 			
 				</div>
 			 	<div class="clearfix"></div>
 			</div>
@@ -73,8 +73,8 @@ Beranda
 					<p>6</p>
 				</div>
 				<div class="grid_1_of_1">
-					<h3><a href = "/admin/kelolaskpdkb">Kelola SKPDKB </a></h3>
-					<p>Lihat semua SKPDKB</p>	 			
+					<h3><a href = "#">Terbitkan SKPDKB PBB</a></h3>
+					<p>Mengirimkan SKPDKB kepada semua wajib pajak PBB yang belum bayar pajak</p>	 			
 				</div>
 			 	<div class="clearfix"></div>
 			</div>
