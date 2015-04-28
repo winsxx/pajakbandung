@@ -2,14 +2,13 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class SkpdkbPbb extends Model {
+class SkpdPbb extends Model {
 
-    protected $table = 'skpdkb_pbb';
+    protected $table = 'skpd_pbb';
     protected $primaryKey = 'id';
     public $timestamps = false;
 
     public function pajakPbb(){
         return $this->belongsTo('\App\PajakBumiBangunan','no_pajak_pbb');
     }
-
 }
