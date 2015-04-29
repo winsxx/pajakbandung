@@ -15,7 +15,7 @@ class CreatePenduduk extends Migration {
 		Schema::create('ppl_pajak_penduduk', function(Blueprint $table)
 		{
             $table->string('no_ktp', 16);
-            $table->primary('id');
+            $table->primary('no_ktp');
             $table->string('nama, 50');
             $table->string('alamat', 100)->nullable();
             $table->string('no_tlp', 18)->nullable();
