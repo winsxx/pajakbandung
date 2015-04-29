@@ -16,6 +16,9 @@ class CreateWajibPajak extends Migration {
 		{
             $table->integer('id');
             $table->primary('id');
+            $table->foreign('id')
+                ->references('id')->on('ppl_pajak_pajak')
+                ->onDelete('cascade')->onUpdate('cascade');
             $table->integer('num_kamar_suite');
             $table->integer('rate_high_suite');
             $table->integer('rate_low_suite');

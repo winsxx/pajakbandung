@@ -16,6 +16,9 @@ class CreateWajibPajak extends Migration {
 		{
             $table->integer('id');
             $table->primary('id');
+            $table->foreign('id')
+                ->references('no_sptpd')->on('ppl_pajak_sptpd')
+                ->onDelete('cascade')->onUpdate('cascade');
             $table->integer('penjualan');
             $table->integer('bulan');
             $table->integer('tahun');

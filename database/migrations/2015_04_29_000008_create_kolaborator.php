@@ -17,6 +17,12 @@ class CreateKolaborator extends Migration {
             $table->integer('no_pajak');
             $table->string('no_ktp_kolab',16);
             $table->primary(['no_pajak','no_ktp_kolab']);
+            $table->foreign('no_pajak')
+                ->references('id')->on('ppl_pajak_pajak')
+                ->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('no_ktp_kolab')
+                ->references('nik')->on('ppl_dukcapil_ktp')
+                ->onDelete('cascade')->onUpdate('cascade');
 		});
 	}
 

@@ -16,7 +16,13 @@ class CreateWajibPajak extends Migration {
 		{
 			$table->increments('npwpd');
             $table->string('no_ktp_pemilik',16);
+            $table->foreign('no_ktp_pemilik')
+                ->references('nik')->on('ppl_dukcapil_ktp')
+                ->onDelete('cascade')->onUpdate('cascade');
             $table->string('no_izin_usaha',30);
+            $table->foreign('no_izin_usaha')
+                ->references('no_izin')->on('ppl_pajak_izin_usaha')
+                ->onDelete('cascade')->onUpdate('cascade');
             $table->enum('status',['aktif','proses_nonaktif','nonaktif']);
             $table->string('lokasi_file',100)->nullable();
 		});
