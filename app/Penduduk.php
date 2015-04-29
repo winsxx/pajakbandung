@@ -17,7 +17,7 @@ class Penduduk extends Model implements AuthenticatableContract, CanResetPasswor
 	 *
 	 * @var string
 	 */
-	protected $table = 'penduduk';
+	protected $table = 'ppl_pajak_penduduk';
 
 	/**
 	 * The attributes that are mass assignable.
@@ -34,7 +34,7 @@ class Penduduk extends Model implements AuthenticatableContract, CanResetPasswor
 	protected $hidden = ['password', 'remember_token'];
 
     public function kolaborasiPajak(){
-        return $this->belongsToMany('\App\Pajak','kolaborator','no_ktp_kolab','no_pajak');
+        return $this->belongsToMany('\App\Pajak','ppl_pajak_kolaborator','no_ktp_kolab','no_pajak');
     }
 
     public function npwpd(){

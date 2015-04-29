@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class SkpdkbPbb extends Model {
 
-    protected $table = 'skpdkb_pbb';
+    protected $table = 'ppl_pajak_skpdkb_pbb';
     protected $primaryKey = 'id';
     public $timestamps = false;
 

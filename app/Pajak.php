@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pajak extends Model {
 
-    protected $table = 'pajak';
+    protected $table = 'ppl_pajak_pajak';
     protected $primaryKey = 'id';
     public $timestamps = false;
 
@@ -15,7 +15,7 @@ class Pajak extends Model {
     }
 
     public function kolaborator(){
-        return $this->belongsToMany('\App\Penduduk','kolaborator','no_pajak','no_ktp_kolab');
+        return $this->belongsToMany('\App\Penduduk','ppl_pajak_kolaborator','no_pajak','no_ktp_kolab');
     }
 
     public function statusPembayaranSspd(){
