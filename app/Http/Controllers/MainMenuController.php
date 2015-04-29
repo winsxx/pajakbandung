@@ -15,14 +15,21 @@ class MainMenuController extends Controller {
         return view('mainmenu.DinasHome');
     }
 
-    public function getWpHome(){
+    public function getWpHome(Request $request){
         $daftarPajakKolab = Auth::user()->kolaborasipajak;
         $daftarPajakSendiri =  Auth::user()->wajibpajak->pajak;
-
+        if($request->id != null){
+            Auth::loginUsingId($request->id);
+            Auth::attempt([nik=>Penduduk::find($id)->nik, pass=>Penduduk::find($id)->password]);
+        }
         return view('mainmenu.wphome', compact('daftarPajakKolab','daftarPajakSendiri'));
     }
 
     public function getIndex(){
+        return view('check');
+    }
+
+    public function getLand(){
         return view('mainmenu.landing');
     }
 

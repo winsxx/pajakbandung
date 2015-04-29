@@ -57,7 +57,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 @if (Auth::user()->isAdmin())
                                     <li><a href="{{url('/admin/home')}}">laman admin</a></li>
                                 @endif
-                                <li><a href="{{url('/logout')}}">logout</a></li>
+                                <li id="logoutLink"><a href="{{url('/logout')}}">logout</a></li>
+                                <script type="text/javascript">
+                                    $('#logoutLink').click(function(e) {
+                                        $.ajax({
+                                            type: 'get',
+                                            url: 'http://e-gov-bandung.tk/dukcapil/api/public/auth/logout',
+                                            success: function(data) {
+                                            },
+                                            error: function(data) {
+                                                // alert(data);
+                                            }
+                                        });
+                                    })
+                                </script>
                             @endif
                         </ul>
                     </div><!-- /.navbar-collapse -->
@@ -119,5 +132,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </div>
     </div>
 </div>
+<script type="text/javascript">
+@yield('javascript')
+</script>
 </body>
 </html>

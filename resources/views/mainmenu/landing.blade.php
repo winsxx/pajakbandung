@@ -6,7 +6,7 @@ Dinas Pelayanan Pajak Kota Bandung
 <div class="col-md-8">
 	<div class="col-md-10 slider_text">
 		<h3> Website Dinas Pajak </h3>
-		<h2> Pelayanan Pajak Restoran, Pajak Hotel, dan Pajak Bumi	 Bangunan </h2>
+		<h2> Pelayanan Pajak Restoran, Pajak Hotel, dan Pajak Bumi Bangunan </h2>
 	</div>
 </div>
 <div class="col-md-4">
