@@ -15,7 +15,10 @@ class CreateWajibPajak extends Migration {
 		Schema::create('ppl_pajak_skpd_pbb', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->timestamps();
+			//$table->timestamps();
+            $table->integer('no_pajak_pbb');
+            $table->integer('tahun');
+            $table->float('biaya');
 		});
 	}
 

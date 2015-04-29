@@ -16,6 +16,10 @@ class CreateWajibPajak extends Migration {
 		{
 			$table->increments('id');
 			$table->timestamps();
+            $table->integer('no_pajak');
+            $table->integer('besar_setoran');
+            $table->integer('bulan');
+            $table->integer('tahun');
 		});
 	}
 
