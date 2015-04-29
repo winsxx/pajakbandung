@@ -42,7 +42,7 @@
                         @else
                             <td>Belum</td>
                         @endif
-                        <td>{{$sptpd->created_at}}</td>
+                        <td>{{$sptpd->bulan}} - {{$sptpd->tahun}}</td>
 
                         <td class="vcenter" style="text-align:right;">
                             <a href="#">lihat berkas</a>
