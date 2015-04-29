@@ -1,6 +1,6 @@
 @extends('master')
 @section('title')
-Pajak
+Pajak {{$pajak->jenis_pajak}}
 @endsection
 @section('breadcrumb')
 <li><a href="/home">Beranda</a></li>
@@ -33,10 +33,10 @@ Pajak
 								<div class="panel-body" style="font-size:14px;">
 									<ol>
 										@if ($skpd != null)
-											<li><a href="viewskpd">SKPD- {{ $skpd->id }}</a></li>
+											<li><a href="/pajak/{{$pajak->id}}/skpd/{{$skpd->id}}">SKPD- {{ $skpd->id }}</a></li>
 										@endif
 										@if ($skpdkb != null)							
-											<li><a href="viewskpd">SKPDKB- {{ $skpdkb->id }}</a></li>
+											<li><a href="/pajak/{{$pajak->id}}/skpdkb/{{$skpdkb->id}}">SKPDKB- {{ $skpdkb->id }}</a></li>
 										@endif
 									</ol>
 									@if ($skpd != null || $skpdkb != null)
@@ -49,10 +49,10 @@ Pajak
 							<div class="panel-body" style="font-size:14px;">
 								<ol>
 									@if ($skpd != null)
-										<li><a href="viewskpd">SKPD- {{$skpd->no_sptpd}}</a></li>		
+										<li><a href="/pajak/{{$pajak->id}}/skpd/{{$skpd->no_sptpd}}">SKPD- {{$skpd->no_sptpd}}</a></li>		
 									@endif					
 									@if ($skpdkb != null)	
-										<li><a href="viewskpd">SKPDKB- {{$skpdkb->no_sptpd}}</a></li>
+										<li><a href="/pajak/{{$pajak->id}}/skpdkb/{{$skpdkb->no_sptpd}}">SKPDKB- {{$skpdkb->no_sptpd}}</a></li>
 									@endif
 								</ol>
 								@if ($skpd != null || $skpdkb != null)
