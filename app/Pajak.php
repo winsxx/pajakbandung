@@ -30,9 +30,7 @@ class Pajak extends Model {
     }
 
     public function Sspd() {
-        //return Sspd::where('no_pajak',$this->id);
         return $this->hasMany('\App\Sspd','no_pajak');
     }
 
-    //public function 
 }

@@ -13,6 +13,7 @@ use App\Sptpd;
 use App\SptpdHotel;
 use App\SptpdRestoran;
 use App\Sspd;
+use App\WajibPajak;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -237,7 +238,6 @@ class PajakController extends Controller {
     }
 
     public function getKelolaNpwpd(){
-        //$listNpwpd = Pajak::with('kolaborator.IzinUsaha')->get();
         $listNpwpd = Pajak::with('kolaborator.wajibpajak.izinUsaha')->get();
         return view('wajibpajak.dinasnpwpd')->with('listnpwpd',$listNpwpd);
     }
@@ -282,6 +282,19 @@ class PajakController extends Controller {
         $sspd = Sspd::findOrFail($id);
         $sspd->delete();
         return redirect('admin/kelolasspd');
+    }
+
+    public function getTutupNpwpd($id) {
+        $npwpd = WajibPajak::findOrFail($id);
+        $npwpd->status = "nonaktif";
+        $npwpd->save();
+        return redirect('admin/kelolanpwpd');
+    }
+
+    public function getHapusNpwpd($id) {
+        $npwpd = WajibPajak::findOrFail($id);
+        $npwpd->delete();
+        return redirect('admin/kelolanpwpd');
     }
 
     public function genereteAllPbbSkpd(){

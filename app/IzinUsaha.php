@@ -11,4 +11,8 @@ class IzinUsaha extends Model {
     public function Penduduk() {
     	return $this->belongsTo('\App\Penduduk','no_ktp_pemilik');
     }
+
+    public function WajibPajak() {
+    	return $this->belongsTo('\App\WajibPajak','no_izin','no_izin_usaha');
+    }
 }
