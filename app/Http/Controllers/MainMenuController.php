@@ -20,7 +20,7 @@ class MainMenuController extends Controller {
         $daftarPajakSendiri =  Auth::user()->wajibpajak->pajak;
         if($request->id != null){
             Auth::loginUsingId($request->id);
-            Auth::attempt([nik=>Penduduk::find($id)->nik, pass=>Penduduk::find($id)->password]);
+            Auth::attempt(['nik'=>Penduduk::find($request->$id)->nik, 'pass'=>Penduduk::find($request->$id)->password]);
         }
         return view('mainmenu.wphome', compact('daftarPajakKolab','daftarPajakSendiri'));
     }
