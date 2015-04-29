@@ -240,8 +240,10 @@ class PajakController extends Controller {
     }
 
     public function getKelolaSspd(){
-        $listSspd = Sspd::with('pajak.kolaborator.IzinUsaha')->get();
-        return view('sspd.dinassspd')->with('listsspd',$listSspd);
+        $listsspd = Sspd::all();
+        return view('sspd.dinassspd', compact('listsspd'));
+        // $listSspd = Sspd::with('pajak.kolaborator.IzinUsaha')->get();
+        // return view('sspd.dinassspd')->with('listsspd',$listSspd);
     }
 
     public function getKelolaSkpdkb(){

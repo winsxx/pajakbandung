@@ -26,7 +26,7 @@
                         <th style="width: 5%;">No</th>
                         <th style="width: 15%">Nama Usaha</th>
                         <th style="width: 15">Status SSPD</th>
-                        <th style="width: 15">Tanggal SSPD terakhir</th>
+                        <th style="width: 15">Tahun  SSPD terakhir</th>
                         <th style="width: 50%"></th>
                     </tr>
                     </thead>

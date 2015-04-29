@@ -22,30 +22,20 @@ Kelola SSPD
 	        </thead>
 
 	        <tbody>
-	        	<?php 
-	        		$i = 1;
-	        	  	foreach($listsspd as $sspd) {
-	        	  	$pajak =  $sspd->pajak;
-	        	  		foreach($pajak->kolaborator as $kolab) {
-	        	  			foreach($kolab->IzinUsaha as $izin) {
-	        	?>
-	 	        <tr>
+	        <?php $i = 1;?>
+	        @foreach($listsspd as $sspd)
+	        	<tr>
 	 	        	<td><?php echo $i ?></td>
-	 	        	<td><?php echo $sspd->no_sspd ?></td>
-	 	        	<td><?php echo $pajak->jenis_pajak ?></td>
-	 	        	<td><?php echo $izin->nama_usaha ?></td>
-	 	        	<td><?php echo $sspd->created_at ?></td>
+	 	        	<td>{{$sspd->no_sspd}}</td>
+	 	        	<td>{{$sspd->pajak->jenis_pajak}}</td>
+	 	        	<td>{{$sspd->pajak->wajibPajak->izinUsaha->nama_usaha}}</td>
+	 	        	<td>{{$sspd->created_at}}</td>
 	 	        	<td class="vcenter" style="text-align:right;">
 	                	<a href="#">lihat berkas</a> | <a href="pajak/<?php echo $sspd->no_sspd ?>/hapussspd">hapus</a>
 	                </td>
-	 	        </tr>	
-
-            	<?php 
-            				$i++;
-            				}
-	        	  		}
-	        	   	}
-            	 ?>
+	 	        </tr>
+	 	        <?php $i++;?>	
+	 	    @endforeach
 	        </tbody>
 	    </table>
 	</div>
