@@ -18,7 +18,7 @@
                             <p>{{ucfirst($pajak->jenis_pajak[0])}}</p>
                         </div>
                         <div class="grid_pajak">
-                            <h3><a href="/pajak/{{$pajak->id}}">Pajak {{$pajak->jenis_pajak}} </a></h3>
+                            <h3><a href="{{url('/pajak/'.$pajak->id)}}">Pajak {{$pajak->jenis_pajak}} </a></h3>
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -36,7 +36,7 @@
                             <p>{{ucfirst($pajak->jenis_pajak[0])}}</p>
                         </div>
                         <div class="grid_pajak">
-                            <h3><a href="/pajak/{{$pajak->id}}">Pajak {{$pajak->jenis_pajak}} </a></h3>
+                            <h3><a href="{{url('/pajak/'.$pajak->id)}}">Pajak {{$pajak->jenis_pajak}} </a></h3>
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -48,7 +48,7 @@
             <div class="btn-add-pajak">
                 <p>Anda memiliki usaha baru? Daftarkan pajak usaha anda pada link berikut </p>
             </div>
-            <a href="/tambahpajak">
+            <a href="{{url('/tambahpajak')}}">
                 <button class="btn btn-default btn-add-pajak">Daftar Pajak Baru</button>
             </a>
         </div>

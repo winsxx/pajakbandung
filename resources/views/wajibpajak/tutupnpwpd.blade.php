@@ -3,8 +3,8 @@
     Menutup NPWPD
 @endsection
 @section('breadcrumb')
-    <li><a href="/home">Beranda</a></li>
-    <li><a href="/setting">Pengaturan</a></li>
+    <li><a href="{{url('/home')}}">Beranda</a></li>
+    <li><a href="{{url('/setting')}}">Pengaturan</a></li>
     <li class="active"> NPWPD </a></li>
 @endsection
 @section('content')
@@ -16,8 +16,8 @@
     </div>
     <div class="row details setting">
         <ul class="col-md-4 nav nav-pills nav-stacked">
-            <li role="presentation"><a href="setting"><h4>Pajak</h4></a></li>
-            <li role="presentation" class="active"><a href="tutupnpwpd"><h4>NPWPD</h4></a></li>
+            <li role="presentation"><a href="{{url('/setting')}}"><h4>Pajak</h4></a></li>
+            <li role="presentation" class="active"><a href="{{url('/tutupnpwpd')}}"><h4>NPWPD</h4></a></li>
         </ul>
         <div class="col-md-8">
             <div class="panel panel-default panel-setting">

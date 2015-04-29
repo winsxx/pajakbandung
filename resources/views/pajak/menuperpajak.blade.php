@@ -3,7 +3,7 @@
 Pajak {{$pajak->jenis_pajak}}
 @endsection
 @section('breadcrumb')
-<li><a href="/home">Beranda</a></li>
+<li><a href="{{url('/home')}}">Beranda</a></li>
 <li class="active">Pajak {{$pajak->jenis_pajak}}</li>
 @endsection
 @section('content')
@@ -19,9 +19,9 @@ Pajak {{$pajak->jenis_pajak}}
 		<div class="menuperpajak">
 			<div class="col-md-4">
                 @if($pajak->jenis_pajak != "pbb")
-				    <a href="/pajak/{{$pajak->id}}/sptpd"><button class="btn btn-default btn-add-pajak">Ajukan SPTPD</button></a>
+				    <a href="{{url('/pajak/'.$pajak->id.'/sptpd')}}"><button class="btn btn-default btn-add-pajak">Ajukan SPTPD</button></a>
                 @endif
-				<a href="/pajak/{{$pajak->id}}/sspd"><button class="btn btn-default btn-add-pajak">Ajukan SSPD</button></a>
+				<a href="{{url('/pajak/'.$pajak->id.'/sspd')}}/sspd"><button class="btn btn-default btn-add-pajak">Ajukan SSPD</button></a>
 			</div>
 			<div class="col-md-4 col-md-offset-2">
 				<div class="panel panel-default">
@@ -33,15 +33,15 @@ Pajak {{$pajak->jenis_pajak}}
 								<div class="panel-body" style="font-size:14px;">
 									<ol>
 										@if ($skpd != null)
-											<li><a href="/pajak/{{$pajak->id}}/skpd/{{$skpd->id}}">SKPD- {{ $skpd->id }}</a></li>
+											<li><a href="{{url('/pajak/'.$pajak->id.'/skpd/'.$skpd->id)}}">SKPD- {{ $skpd->id }}</a></li>
 										@endif
 										@if ($skpdkb != null)							
-											<li><a href="/pajak/{{$pajak->id}}/skpdkb/{{$skpdkb->id}}">SKPDKB- {{ $skpdkb->id }}</a></li>
+											<li><a href="{{url('/pajak/'.$pajak->id.'/skpdkb/'.$skpdkb-id)}}">SKPDKB- {{ $skpdkb->id }}</a></li>
 										@endif
 									</ol>
 									@if ($skpd != null || $skpdkb != null)
 										<div class="col-md-offset-8">
-											<a href="/pajak/{{$pajak->id}}/skpdall">lainnya...</a>
+											<a href="{{url('/pajak/'.$pajak->id.'/skpdall')}}">lainnya...</a>
 										</div>
 									@endif
 								</div>							
@@ -49,15 +49,15 @@ Pajak {{$pajak->jenis_pajak}}
 							<div class="panel-body" style="font-size:14px;">
 								<ol>
 									@if ($skpd != null)
-										<li><a href="/pajak/{{$pajak->id}}/skpd/{{$skpd->no_sptpd}}">SKPD- {{$skpd->no_sptpd}}</a></li>		
+										<li><a href="{{url('/pajak/'.$pajak->id.'/skpd/'.$skpd->no_sptpd)}}">SKPD- {{$skpd->no_sptpd}}</a></li>
 									@endif					
 									@if ($skpdkb != null)	
-										<li><a href="/pajak/{{$pajak->id}}/skpdkb/{{$skpdkb->no_sptpd}}">SKPDKB- {{$skpdkb->no_sptpd}}</a></li>
+										<li><a href="{{url('/pajak/'.$pajak->id.'/skpdkb/'.$skpdkb->no_sptpd)}}">SKPDKB- {{$skpdkb->no_sptpd}}</a></li>
 									@endif
 								</ol>
 								@if ($skpd != null || $skpdkb != null)
 									<div class="col-md-offset-8">
-										<a href="/pajak/{{$pajak->id}}/skpdall">lainnya...</a>
+										<a href="{{url('/pajak/'.$pajak->id.'/skpdall')}}">lainnya...</a>
 									</div>
 								@endif
 							</div>

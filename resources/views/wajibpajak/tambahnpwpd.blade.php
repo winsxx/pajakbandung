@@ -2,7 +2,7 @@
 @section('title')
 	Tambah NPWPD
 @endsection
-<li><a href="/home"> Beranda </a></li>
+<li><a href="{{url('/home')}}"> Beranda </a></li>
 <li class="active"> Tambah NPWPD </li>
 @section('content')
 

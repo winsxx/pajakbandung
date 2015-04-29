@@ -3,7 +3,7 @@
 Kelola Pajak
 @endsection
 @section('breadcrumb')
-<li><a href="/admin/home">Beranda</a></li>
+<li><a href="{{url('/admin/home')}}">Beranda</a></li>
 <li class="active">Kelola Pajak</li>
 @endsection
 @section('content')

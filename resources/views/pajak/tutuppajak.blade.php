@@ -3,9 +3,9 @@
     Menutup Pajak
 @endsection
 @section('breadcrumb')
-    <li><a href="/home">Beranda</a></li>
-    <li><a href="/setting">Pengaturan</a></li>
-    <li><a href="/settingpajak"> Pajak </a></li>
+    <li><a href="{{url('/home')}}">Beranda</a></li>
+    <li><a href="{{url('/setting')}}">Pengaturan</a></li>
+    <li><a href="{{url('/settingpajak')}}"> Pajak </a></li>
     <li class="active"> Tutup Pajak</li>
 @endsection
 @section('content')
@@ -14,15 +14,15 @@
     </div>
     <div class="row details setting">
         <ul class="col-md-4 nav nav-pills nav-stacked">
-            <li role="presentation" class="active"><a href="/setting"><h4>Pajak</h4></a></li>
-            <li role="presentation"><a href="/tutupnpwpd"><h4>NPWPD</h4></a></li>
+            <li role="presentation" class="active"><a href="{{url('/setting')}}"><h4>Pajak</h4></a></li>
+            <li role="presentation"><a href="{{url('/tutupnpwpd')}}"><h4>NPWPD</h4></a></li>
         </ul>
         <div class="col-md-8">
             <div class="panel panel-default panel-setting">
                 <div class="panel-heading">
                     <h2>Menutup Pajak </h2>
                 </div>
-                <form role="form" method="POST" action="/settingpajak/{{$id}}/tutup">
+                <form role="form" method="POST" action="{{url('/settingpajak/'.$id.'/tutup')}}">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                     <div class="panel-body">

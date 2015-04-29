@@ -9,23 +9,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <head>
     <title>@yield('title')</title>
     <!-- Bootstrap -->
-    <link href="/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
-    <link href="/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="{{url('/css/bootstrap.min.css')}}" rel='stylesheet' type='text/css' />
+    <link href="{{url('/css/bootstrap.css')}}" rel='stylesheet' type='text/css' />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!--[if lt IE 9]>
-    <script src="/js/html5shiv.js"></script>
-    <script src="/js/respond.min.js"></script>
+    <script src="{{url('/js/html5shiv.js')}}"></script>
+    <script src="{{url('/js/respond.min.js')}}"></script>
     <![endif]-->
     <!--  webfonts  -->
-    <link href='/css/webfont.css' rel='stylesheet' type='text/css'>
+    <link href='{{url('/css/webfont.css')}}' rel='stylesheet' type='text/css'>
     <!-- // webfonts  -->
-    <link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{url('/css/style.css')}}" rel="stylesheet" type="text/css" media="all" />
     <!-- start plugins -->
-    <script type="text/javascript" src="/js/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/bootstrap.js"></script>
-    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/js/form.js"></script>
+    <script type="text/javascript" src="{{url('/js/jquery.min.js')}}"></script>
+    <script type="text/javascript" src="{{url('/js/bootstrap.js')}}"></script>
+    <script type="text/javascript" src="{{url('/js/bootstrap.min.js')}}"></script>
+    <script type="text/javascript" src="{{url('/js/form.js')}}"></script>
 </head>
 <body>
 <div class="header_bg"><!-- start header -->
@@ -41,23 +41,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="/"><img src="/images/title.png" alt="" class="img-responsive"/> </a>
+                        <a class="navbar-brand" href="{{url('/')}}"><img src="{{url('/images/title.png')}}" alt="" class="img-responsive"/> </a>
                     </div>
                     <div class="title"><h2></h2></div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="menu nav navbar-nav navbar-right ">
                             @if (Auth::Check() == false)
-                                <li><a href="/">beranda</a></li>
-                                <li><a href="/about">tentang kami</a></li>
-                                <li><a href="/login">login</a></li>
+                                <li><a href="{{url('/')}}">beranda</a></li>
+                                <li><a href="{{url('/about')}}">tentang kami</a></li>
+                                <li><a href="{{url('/login')}}">login</a></li>
                             @else
-                                <li><a href="/home">beranda</a></li>
-                                <li><a href="/setting">pengaturan</a></li>
+                                <li><a href="{{url('/home')}}">beranda</a></li>
+                                <li><a href="{{url('/setting')}}">pengaturan</a></li>
                                 @if (Auth::user()->isAdmin())
-                                    <li><a href="/admin/home">laman admin</a></li>
+                                    <li><a href="{{url('/admin/home')}}">laman admin</a></li>
                                 @endif
-                                <li><a href="/logout">logout</a></li>
+                                <li><a href="{{url('/logout')}}">logout</a></li>
                             @endif
                         </ul>
                     </div><!-- /.navbar-collapse -->

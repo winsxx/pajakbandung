@@ -3,7 +3,7 @@
 SKPD
 @endsection
 @section('breadcrumb')
-<li><a href="/home">Beranda</a></li>
+<li><a href="{{url('/home')}}">Beranda</a></li>
 <li>Pajak Hotel</li>
 <li class ="active"> Daftar SKPD</li>
 @endsection
@@ -20,17 +20,17 @@ SKPD
                 <ol>
                 @if ($pajak->jenis_pajak=='pbb')
                     @foreach ($daftarskpd as $skpd)
-                        <li><h4><a href="/pajak/{{$pajak->id}}/skpd/{{$skpd->id}}"> SKPD- {{$skpd->id}} </a></h4> </li>
+                        <li><h4><a href="{{url('/pajak/'.$pajak->id.'/skpd/'.$skpd->id)}}"> SKPD- {{$skpd->id}} </a></h4> </li>
                     @endforeach
                     @foreach ($daftarskpdkb as $skpdkb)
-                        <li><h4><a href="/pajak/{{$pajak->id}}/skpdkb/{{$skpdkb->id}}"> SKPDKB- {{$skpdkb->id}} </a></h4> </li> 
+                        <li><h4><a href="{{url('/pajak/'.$pajak->id.'/skpdkb/'.$skpdkb-id)}}"> SKPDKB- {{$skpdkb->id}} </a></h4> </li>
                     @endforeach                 
                 @elseif ($pajak->jenis_pajak!='pbb') 
                     @foreach ($daftarskpd as $skpd)
-                        <li><h4><a href="/pajak/{{$pajak->id}}/skpd/{{$skpd->no_sptpd}}"> SKPD- {{$skpd->no_sptpd}} </a></h4> </li>
+                        <li><h4><a href="{{url('/pajak/'.$pajak->id.'/skpd/'.$skpd->no_sptpd)}}"> SKPD- {{$skpd->no_sptpd}} </a></h4> </li>
                     @endforeach
                     @foreach ($daftarskpdkb as $skpdkb)
-                        <li><h4><a href="/pajak/{{$pajak->id}}/skpdkb/{{$skpdkb->no_sptpd}}"> SKPDKB- {{$skpdkb->no_sptpd}} </a></h4> </li> 
+                        <li><h4><a href="{{url('/pajak/'.$pajak->id.'/skpdkb/'.$skpdkb->no_sptpd)}}"> SKPDKB- {{$skpdkb->no_sptpd}} </a></h4> </li>
                     @endforeach  
                 @endif
                 </ol>

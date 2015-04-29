@@ -3,7 +3,7 @@
 Pengaturan Akun
 @endsection
 @section('breadcrumb')
-<li><a href="/home">Beranda</a></li>
+<li><a href="{{url('/home')}}">Beranda</a></li>
 <li class="active">Pengaturan</li>
 @endsection
 @section('content')
@@ -13,8 +13,8 @@ Pengaturan Akun
 </div>
 <div class="row details setting">
 	<ul class="col-md-4 nav nav-pills nav-stacked">
-	  <li role="presentation" class="active"><a href="setting"><h4>Pajak</h4></a></li>
-	  <li role="presentation"><a href="tutupnpwpd"><h4>NPWPD</h4></a></li>
+	  <li role="presentation" class="active"><a href="{{url('/setting')}}"><h4>Pajak</h4></a></li>
+	  <li role="presentation"><a href="{{url('/tutupnpwpd')}}"><h4>NPWPD</h4></a></li>
 	</ul>
 	<div class="col-md-8">
 		<div class="panel panel-default panel-setting">
@@ -28,7 +28,7 @@ Pengaturan Akun
                 <ol>
                     @foreach($daftarPajak as $pajak)
                         @if($pajak->status!= 'nonaktif')
-                        <h3><a href = "settingpajak/{{$pajak->id}}" > <li>Pajak {{$pajak->jenis_pajak}} </a></h3>
+                        <h3><a href = "{{url('/settingpajak/'.$pajak->id)}}" > <li>Pajak {{$pajak->jenis_pajak}} </a></h3>
                         @endif
                     @endforeach
                 </ol>

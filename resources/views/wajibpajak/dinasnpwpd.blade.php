@@ -3,7 +3,7 @@
     Kelola NPWPD
 @endsection
 @section('breadcrumb')
-    <li><a href="/admin/home">Beranda</a></li>
+    <li><a href="{{url('/admin/home')}}">Beranda</a></li>
     <li class="active">Kelola NPWPD</li>
 @endsection
 @section('content')
@@ -29,8 +29,8 @@
                         <td>{{$wajibpajak->izinUsaha->nama_usaha}}</td>
                         <td>{{$wajibpajak->status}} </td>
                         <td class="vcenter" style="text-align:right;">
-                            <a href="#">lihat berkas</a> | <a href="pajak/{{$wajibpajak->npwpd}}/tutupnpwpd">tutup</a> |
-                            <a href="pajak/{{$wajibpajak->npwpd}}/hapusnpwpd">hapus</a>
+                            <a href="#">lihat berkas</a> | <a href="{{url('/pajak/'.$wajibpajak->npwpd.'/tutupnpwpd')}}">tutup</a> |
+                            <a href="{{url('/pajak/'.$wajibpajak->npwpd.'/hapusnpwpd')}}">hapus</a>
                         </td>
                     </tr>
                 @endforeach

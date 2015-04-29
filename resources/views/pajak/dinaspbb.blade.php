@@ -3,7 +3,7 @@
     Kelola Pembayaran PBB
 @endsection
 @section('breadcrumb')
-    <li><a href="/admin/home">Beranda</a></li>
+    <li><a href="{{url('/admin/home')}}">Beranda</a></li>
     <li class="active">Kelola Pembayaran PBB</li>
 @endsection
 @section('content')
@@ -47,7 +47,7 @@
                                 </td>
                                 <td class="vcenter" style="text-align:right;">
                                     @if(!$pajak->statusPembayaranSspd())
-                                        <a href="admin/pajak/{{$pajak->id}}/kirimskpdkbpbb">Kirim SKPDKB</a>
+                                        <a href="{{url('/admin/pajak/'.$pajak->id.'kirimskpdkbpbb')}}">Kirim SKPDKB</a>
                                     @endif
                                 </td>
                             </tr>

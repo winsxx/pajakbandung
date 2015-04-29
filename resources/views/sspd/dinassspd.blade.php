@@ -3,7 +3,7 @@
 Kelola SSPD
 @endsection
 @section('breadcrumb')
-<li><a href="/admin/home">Beranda</a></li>
+<li><a href="{{url('/admin/home')}}">Beranda</a></li>
 <li class="active">Kelola SSPD</li>
 @endsection
 @section('content')
@@ -31,7 +31,7 @@ Kelola SSPD
 	 	        	<td>{{$sspd->pajak->wajibPajak->izinUsaha->nama_usaha}}</td>
 	 	        	<td>{{$sspd->created_at}}</td>
 	 	        	<td class="vcenter" style="text-align:right;">
-	                	<a href="#">lihat berkas</a> | <a href="pajak/<?php echo $sspd->no_sspd ?>/hapussspd">hapus</a>
+	                	<a href="#">lihat berkas</a> | <a href="{{url('/pajak/'.$sspd->no_sspd.'hapussspd')}}">hapus</a>
 	                </td>
 	 	        </tr>
 	 	        <?php $i++;?>	

@@ -3,8 +3,8 @@
 SKPDKB
 @endsection
 @section('breadcrumb')
-<li><a href="/home">Beranda</a></li>
-<li><a href="/pajak/id">Pajak {{$pajak->jenis_pajak}}</a></li>
+<li><a href="{{url('/home')}}">Beranda</a></li>
+<li><a href="{{url('/pajak/id')}}">Pajak {{$pajak->jenis_pajak}}</a></li>
 @if ($pajak->jenis_pajak == 'pbb')
     <li class ="active"> SKPDKB- {{$skpdkb->id}} </li> 
 @elseif ($pajak->jenis_pajak != 'pbb')

@@ -3,7 +3,7 @@
     Kelola Pembayaran Pajak Hotel dan Restoran
 @endsection
 @section('breadcrumb')
-    <li><a href="/admin/home">Beranda</a></li>
+    <li><a href="{{url('/admin/home')}}">Beranda</a></li>
     <li class="active">Kelola Pembayaran Pajak Hotel dan Restoran</li>
 @endsection
 @section('content')
@@ -47,10 +47,10 @@
                         <td class="vcenter" style="text-align:right;">
                             <a href="#">lihat berkas</a>
                             @if(! $sptpd->terbit_skpd)
-                                | <a href="/admin/pajak/{{$sptpd->no_sptpd}}/kirimskpd">kirim SKPD</a>
+                                | <a href="{{url('/admin/pajak/'.$sptpd->no_sptpd.'/kirimskpd')}}">kirim SKPD</a>
                             @endif
                             @if(! $sptpd->statusSspdPerSptpd() && $sptpd->terbit_skpdkb == false)
-                                | <a href="/admin/pajak/{{$sptpd->no_sptpd}}/kirimskpdkb">kirim SKPDKB</a>
+                                | <a href="{{url('/admin/pajak/'.$sptpd->no_sptpd.'kirimskpdkb')}}">kirim SKPDKB</a>
                             @endif
                             | <a href="{{url("admin/pajak/".$sptpd->no_sptpd."/hapusptpd")}}">hapus</a>
                         </td>

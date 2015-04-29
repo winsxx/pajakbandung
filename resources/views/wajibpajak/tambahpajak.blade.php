@@ -3,7 +3,7 @@
 	Tambah Pajak
 @endsection
 @section('breadcrumb')
-<li><a href="/home"> Beranda </a></li>
+<li><a href="{{url('/home')}}"> Beranda </a></li>
 <li class="active"> Tambah Pajak </li>
 @endsection
 @section('content')
@@ -54,7 +54,7 @@
     <div class="company_ad">
         <h2> Tambah Pajak </h2>
     </div>
-    <form class="form-horizontal" role="form" method="POST" action="tambahpajak">
+    <form class="form-horizontal" role="form" method="POST" action="{{url('/tambahpajak')}}">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="form-group">
             <label class="col-md-4 control-label">Bidang Usaha</label>

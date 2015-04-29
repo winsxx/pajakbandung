@@ -3,7 +3,7 @@
     Mengajukan SSPD
 @endsection
 @section('breadcrumb')
-<li><a href="/home"> Beranda </a></li>
+<li><a href="{{url('/home')}}"> Beranda </a></li>
 <li class="active"> SSPD </li>
 @endsection
 @section('content')
@@ -21,7 +21,7 @@
     <div class="company_ad">
         <h2> Pengajuan SSPD </h2>
     </div>
-    <form class="form-horizontal" role="form" method="POST" action="/pajak/{{$pajak->id}}/sspd">
+    <form class="form-horizontal" role="form" method="POST" action="{{url('/pajak/'.$pajak->id.'/sspd')}}">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="form-group">
             <label class="col-md-4 control-label">Pajak yang disetorkan</label>
