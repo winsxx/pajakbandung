@@ -19,7 +19,7 @@ Dinas Pelayanan Pajak Kota Bandung
 <div class="row grids_of_3">
 	<div class="col-md-6 grid1_of_3">
 		  <h2>Tentang Pajak Bandung</h2>
-		  <img src="/images/info.png" class="img-responsive"/>
+		  <img src="{{url('/images/info.png')}}" class="img-responsive"/>
 		  <p>Informasi lebih lanjut mengenai perpajakan di kota Bandung.</p>
 	     <div class="rd_more1">
 			<a href="/about"><button class="btn_style">Baca</button></a>
