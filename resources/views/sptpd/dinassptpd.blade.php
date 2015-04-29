@@ -42,9 +42,6 @@
                             <td>Belum</td>
                         @endif
 
-
-
-
                         <td class="vcenter" style="text-align:right;">
                             <a href="#">lihat berkas</a>
                             @if(! $sptpd->terbit_skpd)
@@ -53,7 +50,7 @@
                             @if(! $sptpd->statusSspdPerSptpd() && $sptpd->terbit_skpdkb == false)
                                 | <a href="/admin/pajak/{{$sptpd->no_sptpd}}/kirimskpdkb">kirim SKPDKB</a>
                             @endif
-                            | <a href="#">hapus</a>
+                            | <a href="{{url("admin/pajak/".$sptpd->no_sptpd."/hapusptpd")}}">hapus</a>
                         </td>
                     </tr>
                     <?php $i++;?>

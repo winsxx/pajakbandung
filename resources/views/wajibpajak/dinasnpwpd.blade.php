@@ -35,8 +35,8 @@ Kelola NPWPD
 
 		        	<tr>
 						<td><?php echo $i ?></td>
-						<td><?php echo $wp->npwpd ?></td>
-						<td><?php echo $pajak->jenis_pajak ?></td>
+						<td><?php echo $wp->npwpd ?></td>						
+						<td>{{$pajak->jenis_pajak}}</td>						
 						<td><?php echo $izin->nama_usaha ?></td>
 						<td><?php echo $wp->status ?></td>
 						<td class="vcenter" style="text-align:right;">

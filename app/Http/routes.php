@@ -53,6 +53,7 @@ Route::get('admin/kelolapajak', ['uses' => 'PajakController@getKelolaPajak','mid
 Route::get('admin/kelolasspd', ['uses' => 'PajakController@getKelolaSspd','middleware' => 'admin']);
 Route::get('admin/kelolaskpdkb', ['uses' => 'PajakController@getKelolaSkpdkb','middleware' => 'admin']);
 Route::get('admin/kelolasptpd', ['uses' => 'PajakController@getKelolaSptpd','middleware' => 'admin']);
+Route::get('admin/pajak/{id}/hapusptpd', ['uses' => 'PajakController@hapusSptpd','middleware' => 'admin']);
 Route::get('admin/kelolanpwpd', ['uses' => 'PajakController@getKelolaNpwpd','middleware' => 'admin']);
 Route::get('admin/kelolapbb',['uses' => 'PajakController@getKelolaPbb','middleware' => 'admin']);
 Route::get('admin/pajak/{id}/tutuppajak',['uses' => 'PajakController@getTutupPajak','middleware' => 'admin'] );

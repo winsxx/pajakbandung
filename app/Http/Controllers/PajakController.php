@@ -253,6 +253,11 @@ class PajakController extends Controller {
         return view('sptpd.dinassptpd', compact('daftarSptpd'));
     }
 
+    public function hapusSptpd($id){
+        Sptpd::destroy($id);
+        return redirect('admin/kelolasptpd');
+    }
+
     public function getKelolaNpwpd(){
         $listNpwpd = Pajak::with('kolaborator.wajibpajak.izinUsaha')->get();
         return view('wajibpajak.dinasnpwpd')->with('listnpwpd',$listNpwpd);
