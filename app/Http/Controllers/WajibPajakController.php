@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use DB;
+use App\Pajak;
 
 class WajibPajakController extends Controller {
 
@@ -80,7 +81,7 @@ class WajibPajakController extends Controller {
 
     public function postTambahPajak(Request $request){
            if($request->bidang_usaha=='hotel'){                
-                $temp=DB::table('ppl_pajak_pajak')->where('npwpd_pemilik',Auth::user()->wajibpajak->npwpd)->where('jenis_pajak','hotel')->get();
+                $temp=Pajak::where('npwpd_pemilik',Auth::user()->wajibpajak->npwpd)->where('jenis_pajak','hotel')->first();
                 if ($temp==null){
                     $wp=Auth::user()->wajibpajak;           
 
@@ -147,7 +148,7 @@ class WajibPajakController extends Controller {
                 }           
            }
            else if ($request->bidang_usaha=='restoran'){
-                $temp=DB::table('ppl_pajak_pajak')->where('npwpd_pemilik',Auth::user()->wajibpajak->npwpd)->where('jenis_pajak','restoran')->get();
+                $temp=Pajak::where('npwpd_pemilik',Auth::user()->wajibpajak->npwpd)->where('jenis_pajak','restoran')->first();
                 if ($temp==null){
                     $wp=Auth::user()->wajibpajak;           
 
@@ -186,8 +187,8 @@ class WajibPajakController extends Controller {
                     return Redirect::to('tambahpajak');
                 }
            }
-           else if ($request->bidang_usaha=='bumi_bangunan'){
-                $temp=DB::table('ppl_pajak_pajak')->where('npwpd_pemilik',Auth::user()->wajibpajak->npwpd)->where('jenis_pajak','pbb')->get();
+           else if ($request->bidang_usaha=='bumi_bangunan'){                
+                $temp=Pajak::where('npwpd_pemilik','=', Auth::user()->wajibpajak->npwpd)->where('jenis_pajak','=','pbb')->first();
                 if ($temp == null){
                     $wp=Auth::user()->wajibpajak;           
 

@@ -21,6 +21,7 @@ class CreateKtpTable extends Migration {
             $table->string('jenis_kelamin');
             $table->string('gol_darah');
             $table->string('alamat');
+            $table->string('email');
             $table->integer('rt')->unsigned();
             $table->integer('rw')->unsigned();
             $table->string('kel_desa');

@@ -19,6 +19,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
+use DB;
 
 class PajakController extends Controller {
 
@@ -87,7 +88,15 @@ class PajakController extends Controller {
             return redirect('/home');
         $pajak = Pajak::find($id);
         $izin = $pajak->wajibPajak->izinUsaha;
-        return view('pajak.menuperpajak', compact('pajak','izin'));
+        if ($pajak->jenis_pajak=='pbb'){
+            $skpd=$pajak->getlatestSkpdPbb();
+            $skpdkb=$pajak->getlatestSkpdkbPbb();
+        }
+        else{
+            $skpd=$pajak->getlatestSkpd();
+            $skpdkb=$pajak->getlatestSkpdkb();
+        }
+        return view('pajak.menuperpajak', compact('pajak','izin','skpd','skpdkb'));
     }
 
     public function getSptpd($id){
@@ -359,6 +368,49 @@ class PajakController extends Controller {
     public function getKelolaPbb(){
         $daftarpbb = Pajak::all();
         return view('pajak.dinaspbb', compact('daftarpbb'));
+    }
+
+    public function showSkpd($id,$skpd_id){         
+        $pajak=Pajak::findOrFail($id);
+        if ($pajak != null){
+            if ( $pajak->jenis_pajak == 'pbb'){
+                $skpd=SkpdPbb::findOrFail($skpd_id);
+            }
+            else if ( $pajak->jenis_pajak != 'pbb'){
+                $skpd=Sptpd::findOrFail($skpd_id);
+            }
+            return view('skpd.skpd',compact('pajak','skpd'));
+        }
+        return Redirect('home');        
+    }
+
+    public function showSkpdkb($id,$skpdkb_id){
+        $pajak=Pajak::findOrFail($id);
+        if ($pajak != null){
+            if ( $pajak->jenis_pajak == 'pbb'){
+                $skpdkb=SkpdkbPbb::findOrFail($skpdkb_id);
+            }
+            else if ( $pajak->jenis_pajak != 'pbb'){
+                $skpdkb=Sptpd::findOrFail($skpdkb_id);
+            }
+            return view('skpd.skpdkb',compact('pajak','skpdkb'));
+        }
+        return Redirect('home');        
+    }
+
+    public function showSkpdAll($id){
+        $pajak=Pajak::findOrFail($id);
+        if ($pajak != null){
+            if ($pajak->jenis_pajak=='pbb'){
+                $daftarskpd=SkpdPbb::where('no_pajak_pbb','=',$id)->orderBy('id','DESC')->get();
+                $daftarskpdkb=SkpdkbPbb::where('no_pajak_pbb','=',$id)->orderBy('id','DESC')->get();
+            }
+            else{
+                $daftarskpd=Sptpd::where('no_pajak',$id)->where('terbit_skpd','=',1)->orderBy('no_sptpd','DESC')->get();
+                $daftarskpdkb=Sptpd::where('no_pajak',$id)->where('terbit_skpdkb','=',1)->orderBy('no_sptpd','DESC')->get();
+            }
+        }
+        return view('skpd.listskpd',compact('pajak','daftarskpd','daftarskpdkb'));
     }
 
 }
