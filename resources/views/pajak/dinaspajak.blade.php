@@ -45,10 +45,10 @@ Kelola Pajak
                         </td>
                         <td class="vcenter" style="text-align:right;">
                             @if($pajak->status == "nonaktif")
-                                <a href="#">hapus</a>
+                                <a href="{{url("admin/pajak/".$pajak->id."/hapuspajak")}}">hapus</a>
                             @else
                                 <a href="{{url("admin/pajak/".$pajak->id."/tutuppajak")}}">tutup</a>
-                                | <a href="#">hapus</a>
+                                | <a href="{{url("admin/pajak/".$pajak->id."/hapuspajak")}}">hapus</a>
                             @endif
                         </td>
                     </tr>

@@ -265,7 +265,12 @@ class PajakController extends Controller {
         $pajak_terkait->status = "nonaktif";
 
         $pajak_terkait->save();
-        return redirect('kelolapajak');
+        return redirect('admin/kelolapajak');
+    }
+
+    public function getHapusPajak($id){
+        Pajak::destroy($id);
+        return redirect('admin/kelolapajak');
     }
 
     public function  getKirimSkpd($id){
