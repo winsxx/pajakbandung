@@ -14,10 +14,9 @@ class CreateKolaborator extends Migration {
 	{
 		Schema::create('ppl_pajak_kolaborator', function(Blueprint $table)
 		{
-			//$table->increments('id');
-			//$table->timestamps();
             $table->integer('no_pajak');
             $table->string('no_ktp_kolab',16);
+            $table->primary(['no_pajak','no_ktp_kolab']);
 		});
 	}
 

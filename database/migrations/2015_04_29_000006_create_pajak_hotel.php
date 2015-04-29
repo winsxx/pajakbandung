@@ -14,9 +14,8 @@ class CreateWajibPajak extends Migration {
 	{
 		Schema::create('ppl_pajak_pajak_hotel', function(Blueprint $table)
 		{
-			//$table->increments('id');
-			//$table->timestamps();
             $table->integer('id');
+            $table->primary('id');
             $table->integer('num_kamar_suite');
             $table->integer('rate_high_suite');
             $table->integer('rate_low_suite');

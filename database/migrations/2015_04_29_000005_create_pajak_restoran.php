@@ -14,9 +14,8 @@ class CreateWajibPajak extends Migration {
 	{
 		Schema::create('ppl_pajak_pajak_restoran', function(Blueprint $table)
 		{
-			//$table->increments('id');
-			//$table->timestamps();
-            $table->integer(id);
+            $table->integer('id');
+            $table->primary('id');
             $table->time('jam_buka');
             $table->time('jam_tutup');
             $table->integer('jumlah_meja');

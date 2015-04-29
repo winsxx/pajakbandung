@@ -12,13 +12,13 @@ class CreateWajibPajak extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('ppl_pajak_skpdkb_pbb', function(Blueprint $table)
+		Schema::create('ppl_pajak_skpd_pbb', function(Blueprint $table)
 		{
 			$table->increments('id');
-			//$table->timestamps();
             $table->integer('no_pajak_pbb');
+            $table->index('no_pajak_pbb');
             $table->integer('tahun');
-            $table->integer('hutang');
+            $table->float('biaya');
 		});
 	}
 
@@ -29,7 +29,7 @@ class CreateWajibPajak extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('ppl_pajak_skpdkb_pbb');
+		Schema::drop('ppl_pajak_skpd_pbb');
 	}
 
 }
