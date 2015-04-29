@@ -347,4 +347,9 @@ class PajakController extends Controller {
         }
     }
 
+    public function getKelolaPbb(){
+        $daftarpbb = Pajak::all();
+        return view('pajak.dinaspbb', compact('daftarpbb'));
+    }
+
 }

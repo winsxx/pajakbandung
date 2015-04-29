@@ -54,6 +54,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             @else
                                 <li><a href="/home">beranda</a></li>
                                 <li><a href="/setting">pengaturan</a></li>
+                                @if (Auth::user()->isAdmin())
+                                    <li><a href="/admin/home">laman admin</a></li>
+                                @endif
                                 <li><a href="/logout">logout</a></li>
                             @endif
                         </ul>

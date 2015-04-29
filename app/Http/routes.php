@@ -51,6 +51,7 @@ Route::get('admin/kelolasspd', ['uses' => 'PajakController@getKelolaSspd','middl
 Route::get('admin/kelolaskpdkb', ['uses' => 'PajakController@getKelolaSkpdkb','middleware' => 'admin']);
 Route::get('admin/kelolasptpd', ['uses' => 'PajakController@getKelolaSptpd','middleware' => 'admin']);
 Route::get('admin/kelolanpwpd', ['uses' => 'PajakController@getKelolaNpwpd','middleware' => 'admin']);
+Route::get('admin/kelolapbb',['uses' => 'PajakController@getKelolaPbb','middleware' => 'admin']);
 Route::get('admin/pajak/{id}/tutuppajak',['uses' => 'PajakController@getTutupPajak','middleware' => 'admin'] );
 Route::get('admin/pajak/{id}/kirimskpd',['uses' => 'PajakController@getKirimSkpd','middleware' => 'admin'] );
 Route::get('admin/pajak/{id}/kirimskpdkb',['uses' => 'PajakController@getKirimSkpdkb','middleware' => 'admin']);
@@ -58,6 +59,7 @@ Route::get('admin/pajak/{id}/hapussspd/', ['uses' => 'PajakController@getHapusSs
 Route::get('admin/pajak/{id}/tutupnpwpd', ['uses' => 'PajakController@getTutupNpwpd','middleware' => 'admin']);
 Route::get('admin/pajak/{id}/hapusnpwpd', ['uses' => 'PajakController@getHapusNpwpd','middleware' => 'admin']);
 
+Route::get('admin/skpd/pbb', ['uses' => 'PajakController@genereteAllPbbSkpd', 'middleware' => 'admin']);
 /*Unimportant*/
 Route::get('debug', 'MainMenuController@testing');
 
