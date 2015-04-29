@@ -86,7 +86,15 @@ class PajakController extends Controller {
             return redirect('/home');
         $pajak = Pajak::find($id);
         $izin = $pajak->wajibPajak->izinUsaha;
-        return view('pajak.menuperpajak', compact('pajak','izin'));
+        if ($pajak->jenis_pajak=='pbb'){
+            $skpd=$pajak->getlatestSkpdPbb();
+            $skpdkb=$pajak->getlatestSkpdkbPbb();
+        }
+        else{
+            $skpd=$pajak->getlatestSkpd();
+            $skpdkb=$pajak->getlatestSkpdkb();
+        }
+        return view('pajak.menuperpajak', compact('pajak','izin','skpd','skpdkb'));
     }
 
     public function getSptpd($id){
