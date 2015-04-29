@@ -197,7 +197,14 @@ class PajakController extends Controller {
             return redirect('/home');
 
         $sptpd = Sptpd::where('no_pajak', '=', $id)->where('bulan','=',$request->bulan)->where('tahun','=',$request->tahun)->first();
-        if($sptpd == null) {
+        $jenis_pajak = Pajak::find($id)->jenis_pajak;
+        if($jenis_pajak == "pbb"){
+            $skpd = SkpdPbb::where('no_pajak_pbb','=',$id)->where('tahun','=',$request->tahun)->first();
+            if($skpd == null){
+                $error = ['skpd' => 'SKPD pada tahun '.$request->tahun.' belum diterbitkan'];
+                return redirect('/pajak/' . $id . '/sspd')->withErrors($error);
+            }
+        }else if($sptpd == null) {
             $error = ['sptpd' => 'Tidak ditemukan SPTPD pada bulan '.$request->bulan.' dan tahun '.$request->tahun];
             return redirect('/pajak/' . $id . '/sspd')->withErrors($error);
         }else if ($sptpd->terbit_skpd == false){
