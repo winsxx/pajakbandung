@@ -50,9 +50,9 @@
                                 | <a href="{{url('/admin/pajak/'.$sptpd->no_sptpd.'/kirimskpd')}}">kirim SKPD</a>
                             @endif
                             @if(! $sptpd->statusSspdPerSptpd() && $sptpd->terbit_skpdkb == false)
-                                | <a href="{{url('/admin/pajak/'.$sptpd->no_sptpd.'kirimskpdkb')}}">kirim SKPDKB</a>
+                                | <a href="{{url('/admin/pajak/'.$sptpd->no_sptpd.'/kirimskpdkb')}}">kirim SKPDKB</a>
                             @endif
-                            | <a href="{{url("admin/pajak/".$sptpd->no_sptpd."/hapusptpd")}}">hapus</a>
+                            | <a href="{{url("/admin/pajak/".$sptpd->no_sptpd."/hapusptpd")}}">hapus</a>
                         </td>
                     </tr>
                     <?php $i++;?>

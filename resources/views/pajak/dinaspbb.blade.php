@@ -47,7 +47,7 @@
                                 </td>
                                 <td class="vcenter" style="text-align:right;">
                                     @if(!$pajak->statusPembayaranSspd())
-                                        <a href="{{url('/admin/pajak/'.$pajak->id.'kirimskpdkbpbb')}}">Kirim SKPDKB</a>
+                                        <a href="{{url('/admin/pajak/'.$pajak->id.'/kirimskpdkbpbb')}}">Kirim SKPDKB</a>
                                     @endif
                                 </td>
                             </tr>

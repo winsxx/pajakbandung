@@ -31,7 +31,7 @@ Kelola SSPD
 	 	        	<td>{{$sspd->pajak->wajibPajak->izinUsaha->nama_usaha}}</td>
 	 	        	<td>{{$sspd->created_at}}</td>
 	 	        	<td class="vcenter" style="text-align:right;">
-	                	<a href="#">lihat berkas</a> | <a href="{{url('/pajak/'.$sspd->no_sspd.'hapussspd')}}">hapus</a>
+	                	<a href="#">lihat berkas</a> | <a href="{{url('/pajak/'.$sspd->no_sspd.'/hapussspd')}}">hapus</a>
 	                </td>
 	 	        </tr>
 	 	        <?php $i++;?>	
