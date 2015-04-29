@@ -6,7 +6,7 @@ Dinas Pelayanan Pajak Kota Bandung
 <div class="col-md-8">
 	<div class="col-md-10 slider_text">
 		<h3> Website Dinas Pajak </h3>
-		<h2> Pelayanan Pajak Restoran, Pajak Hotel, dan Pajak Bumi	 Bangunan </h2>
+		<h2> Pelayanan Pajak Restoran, Pajak Hotel, dan Pajak Bumi Bangunan </h2>
 	</div>
 </div>
 <div class="col-md-4">
@@ -16,6 +16,25 @@ Dinas Pelayanan Pajak Kota Bandung
 </div>
 @endsection
 @section('content')
+<script type="text/javascript">
+    $.ajax({
+        type: 'get',
+        url: 'http://e-gov-bandung.tk/dukcapil/api/public/check/authenticated',
+        success: function(data) {
+            console.log(data)
+            if (data != 'false') { //redirect ke alamat login kalian
+                var url = "{{url()}}/home?id="+data;
+                window.location.href = url;
+            } else {
+                var url = "{{url()}}/login" //redirect ke home page kalian, tp kalian juga harus login sendiri juga
+                window.location.href = url
+            }
+        },
+        error: function(data) {
+            alert(data);
+        }
+    });
+</script>
 <div class="row grids_of_3">
 	<div class="col-md-6 grid1_of_3">
 		  <h2>Tentang Pajak Bandung</h2>
