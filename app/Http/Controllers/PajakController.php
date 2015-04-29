@@ -13,6 +13,7 @@ use App\Sptpd;
 use App\SptpdHotel;
 use App\SptpdRestoran;
 use App\Sspd;
+use App\WajibPajak;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -131,6 +132,8 @@ class PajakController extends Controller {
 
         $sptpd = new Sptpd();
         $sptpd->no_pajak = $id;
+        $sptpd->tahun = $request->tahun;
+        $sptpd->bulan = $request->bulan;
         $sptpd->save();
 
         $sptpdHotel = new SptpdHotel();
@@ -162,6 +165,8 @@ class PajakController extends Controller {
 
         $sptpd = new Sptpd();
         $sptpd->no_pajak = $id;
+        $sptpd->tahun = $request->tahun;
+        $sptpd->bulan = $request->bulan;
         $sptpd->save();
 
         $sptpdResto = new SptpdRestoran();
@@ -199,6 +204,15 @@ class PajakController extends Controller {
         if($temp == null && $temp2 == false)
             return redirect('/home');
 
+        $sptpd = Sptpd::where('no_pajak', '=', $id)->where('bulan','=',$request->bulan)->where('tahun','=',$request->tahun)->first();
+        if($sptpd == null) {
+            $error = ['sptpd' => 'Tidak ditemukan SPTPD pada bulan '.$request->bulan.' dan tahun '.$request->tahun];
+            return redirect('/pajak/' . $id . '/sspd')->withErrors($error);
+        }else if ($sptpd->terbit_skpd == false){
+            $error = ['skpd' => 'SKPD pada bulan '.$request->bulan.' dan tahun '.$request->tahun.' belum diterbitkan'];
+            return redirect('/pajak/' . $id . '/sspd')->withErrors($error);
+        }
+
         $sspd = new Sspd();
         $sspd->no_pajak = $id;             
         $sspd->tahun = $request->tahun;
@@ -229,6 +243,11 @@ class PajakController extends Controller {
     public function getKelolaSptpd(){
         $daftarSptpd = Sptpd::all();
         return view('sptpd.dinassptpd', compact('daftarSptpd'));
+    }
+
+    public function getKelolaNpwpd(){
+        $listNpwpd = Pajak::with('kolaborator.wajibpajak.izinUsaha')->get();
+        return view('wajibpajak.dinasnpwpd')->with('listnpwpd',$listNpwpd);
     }
 
     public function getTutupPajak($id){
@@ -273,6 +292,19 @@ class PajakController extends Controller {
         return redirect('admin/kelolasspd');
     }
 
+    public function getTutupNpwpd($id) {
+        $npwpd = WajibPajak::findOrFail($id);
+        $npwpd->status = "nonaktif";
+        $npwpd->save();
+        return redirect('admin/kelolanpwpd');
+    }
+
+    public function getHapusNpwpd($id) {
+        $npwpd = WajibPajak::findOrFail($id);
+        $npwpd->delete();
+        return redirect('admin/kelolanpwpd');
+    }
+
     public function genereteAllPbbSkpd(){
         $hargaTanahSatuan = 5000000.0;
         $hargaBangunanSatuan = 5000000.0;
@@ -296,11 +328,12 @@ class PajakController extends Controller {
                 $message->to($skpdPbb->pajakPbb->pajak->wajibPajak->penduduk->email, $skpdPbb->pajakPbb->pajak->wajibPajak->penduduk->nama)
                     ->subject('Surat Ketetapan Pajak Daerah');
             });
-
         }
+        return redirect('admin/kelolapbb');
     }
 
-    public function genereteAllPbbSkpdkb($year){
+    public function genereteAllPbbSkpdkb(){
+        $year = Carbon::now()->year;
 
         $daftarSkpdPbb = SkpdPbb::where('tahun','=',$year)->get();
         foreach($daftarSkpdPbb as $skpd){
@@ -319,8 +352,14 @@ class PajakController extends Controller {
                         ->subject('Surat Ketetapan Pajak Daerah Kurang Bayar');
                 });
             }
-
         }
+
+        return redirect('admin/kelolapbb');
+    }
+
+    public function getKelolaPbb(){
+        $daftarpbb = Pajak::all();
+        return view('pajak.dinaspbb', compact('daftarpbb'));
     }
 
 }

@@ -51,9 +51,18 @@ class Pajak extends Model {
     }
 
     public function Sspd() {
-        //return Sspd::where('no_pajak',$this->id);
         return $this->hasMany('\App\Sspd','no_pajak');
     }
 
-    //public function 
+    public function sspdTerakhir(){
+        $last_sspd = Sspd::where('no_pajak','=',$this->id)->orderBy('no_sspd','DESC')->first();
+        if($last_sspd) {
+            return $last_sspd->tahun;
+        }
+        else {
+            return "0000";
+        }
+        
+    }
+
 }

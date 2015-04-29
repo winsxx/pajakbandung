@@ -16,6 +16,7 @@ Kelola SSPD
 	                <th style="width: 15%">No SSPD</th>
 	                <th style="width: 15%">Jenis Pajak</th>
 	                <th style="width: 15%">Nama Usaha</th>
+	                <th style="width: 15%">Tanggal</th
 	                <th style="width: 30%"></th>
 	            </tr>
 	        </thead>
@@ -27,15 +28,13 @@ Kelola SSPD
 	        	  	$pajak =  $sspd->pajak;
 	        	  		foreach($pajak->kolaborator as $kolab) {
 	        	  			foreach($kolab->IzinUsaha as $izin) {
-		        	  			//echo $sspd->no_sspd;
-		        	  			//echo $pajak->jenis_pajak;
-		        	  			//echo $izin->nama_usaha;
 	        	?>
 	 	        <tr>
 	 	        	<td><?php echo $i ?></td>
 	 	        	<td><?php echo $sspd->no_sspd ?></td>
 	 	        	<td><?php echo $pajak->jenis_pajak ?></td>
 	 	        	<td><?php echo $izin->nama_usaha ?></td>
+	 	        	<td><?php echo $sspd->created_at ?></td>
 	 	        	<td class="vcenter" style="text-align:right;">
 	                	<a href="#">lihat berkas</a> | <a href="pajak/<?php echo $sspd->no_sspd ?>/hapussspd">hapus</a>
 	                </td>
