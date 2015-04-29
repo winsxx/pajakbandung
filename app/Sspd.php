@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 class Sspd extends Model {
 
 	//
-    protected $table = 'sspd';
+    protected $table = 'ppl_pajak_sspd';
     protected $primaryKey = 'no_sspd';
     public $timestamps = false;
 

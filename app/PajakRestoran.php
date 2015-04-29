@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PajakRestoran extends Model {
 
-    protected $table = 'pajak_restoran';
+    protected $table = 'ppl_pajak_pajak_restoran';
     protected $primaryKey = 'id';
     public $timestamps = false;
 
