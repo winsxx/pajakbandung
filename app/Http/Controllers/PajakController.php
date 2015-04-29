@@ -141,7 +141,7 @@ class PajakController extends Controller {
         $sptpdHotel->id = $sptpd->no_sptpd;
         $sptpdHotel->penjualan_kamar = $request->penjualan_kamar;
         $sptpdHotel->penjualan_konsumsi = $request->penjualan_makanan;
-        $sptpdHotel->penerimaan_laundry = $request->laundry;
+        $sptpdHotel->penjualan_laundry = $request->laundry;
         $sptpdHotel->penerimaan_sewa_ruangan = $request->sewa_ruangan;
         $sptpdHotel->penerimaan_service = $request->service;
         $sptpdHotel->tahun = $request->tahun;

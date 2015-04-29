@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 class MainMenuController extends Controller {
 
     public function getDinasHome(){
-        return view('mainmenu.dinashome');
+        return view('mainmenu.DinasHome');
     }
 
     public function getWpHome(){
