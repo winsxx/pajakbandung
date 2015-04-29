@@ -12,6 +12,9 @@
         <a href="{{url("admin/skpd/pbb")}}">
             <button class="btn btn-default">Terbitkan SKPD baru</button>
         </a>
+        <a href="{{url("admin/skpdkb/pbb")}}">
+            <button class="btn btn-default">Terbitkan SKPDKB baru</button>
+        </a>
         </div>
         <div class="row grids_btm top">
             <h4> Daftar PBB yang terdaftar </h4>

@@ -307,11 +307,12 @@ class PajakController extends Controller {
                 $message->to($skpdPbb->pajakPbb->pajak->wajibPajak->penduduk->email, $skpdPbb->pajakPbb->pajak->wajibPajak->penduduk->nama)
                     ->subject('Surat Ketetapan Pajak Daerah');
             });
-
         }
+        return redirect('admin/kelolapbb');
     }
 
-    public function genereteAllPbbSkpdkb($year){
+    public function genereteAllPbbSkpdkb(){
+        $year = Carbon::now()->year;
 
         $daftarSkpdPbb = SkpdPbb::where('tahun','=',$year)->get();
         foreach($daftarSkpdPbb as $skpd){
@@ -330,8 +331,9 @@ class PajakController extends Controller {
                         ->subject('Surat Ketetapan Pajak Daerah Kurang Bayar');
                 });
             }
-
         }
+
+        return redirect('admin/kelolapbb');
     }
 
     public function getKelolaPbb(){
