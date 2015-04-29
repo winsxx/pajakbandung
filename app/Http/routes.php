@@ -46,6 +46,7 @@ Route::get('pajak/{id}/sspd', ['uses' => 'PajakController@getSspd','middleware' 
 Route::post('pajak/{id}/sspd', ['uses' => 'PajakController@postSspd','middleware' => 'auth']);
 Route::get('pajak/{id}/skpd/{skpd_id}', ['uses' => 'PajakController@showSkpd','middleware' => 'auth']);
 Route::get('pajak/{id}/skpdkb/{skpdkb_id}', ['uses' => 'PajakController@showSkpdkb','middleware' => 'auth']);
+Route::get('pajak/{id}/skpdall', ['uses' => 'PajakController@showSkpdAll','middleware' => 'auth']);
 
 Route::get('admin/kelolaskpd', ['uses' => 'PajakController@getKelolaSkpd','middleware' => 'admin']);
 Route::get('admin/kelolapajak', ['uses' => 'PajakController@getKelolaPajak','middleware' => 'admin']);

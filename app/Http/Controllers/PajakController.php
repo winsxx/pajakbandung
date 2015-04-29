@@ -391,4 +391,12 @@ class PajakController extends Controller {
         return Redirect('home');        
     }
 
+    public function showSkpdAll($id){
+        $daftarskpd=SkpdPbb::where('no_pajak_pbb','=',$id)->orderBy('id','DESC')->get();
+        $daftarskpdkb=SkpdkbPbb::where('no_pajak_pbb','=',$id)->orderBy('id','DESC')->get();
+        $daftarskpd=Sptpd::where('no_pajak',$id)->where('terbit_skpd','=',1)->orderBy('no_sptpd','DESC')->get();
+        $daftarskpdkb=Sptpd::where('no_pajak',$id)->where('terbit_skpdkb','=',1)->orderBy('no_sptpd','DESC')->get();
+        return view();
+    }
+
 }
