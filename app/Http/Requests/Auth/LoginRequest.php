@@ -12,7 +12,7 @@ class LoginRequest extends FormRequest {
     public function rules()
     {
         return [
-            'no_ktp' => 'required', 'password' => 'required',
+            'nik' => 'required', 'password' => 'required',
         ];
     }
 

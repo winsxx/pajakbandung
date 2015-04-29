@@ -3,7 +3,7 @@
     Mengajukan SSPD
 @endsection
 @section('breadcrumb')
-<li><a href="/homewp"> Beranda </a></li>
+<li><a href="/home"> Beranda </a></li>
 <li class="active"> SSPD </li>
 @endsection
 @section('content')

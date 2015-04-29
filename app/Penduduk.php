@@ -10,21 +10,21 @@ class Penduduk extends Model implements AuthenticatableContract, CanResetPasswor
 
 	use Authenticatable, CanResetPassword;
 
-    protected $primaryKey = 'no_ktp';
+    protected $primaryKey = 'nik';
 
 	/**
 	 * The database table used by the model.
 	 *
 	 * @var string
 	 */
-	protected $table = 'ppl_pajak_penduduk';
+	protected $table = 'ppl_dukcapil_ktp';
 
 	/**
 	 * The attributes that are mass assignable.
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['no_ktp', 'nama', 'password'];
+	protected $fillable = ['nik', 'nama', 'password'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -38,7 +38,7 @@ class Penduduk extends Model implements AuthenticatableContract, CanResetPasswor
     }
 
     public function npwpd(){
-        return WajibPajak::where('no_ktp_pemilik','=', $this->no_ktp)->get();
+        return WajibPajak::where('no_ktp_pemilik','=', $this->nik)->get();
     }
 
     public function IzinUsaha() {
@@ -51,10 +51,14 @@ class Penduduk extends Model implements AuthenticatableContract, CanResetPasswor
     }
 
     public function wajibpajak(){
-        return $this->hasOne('\App\WajibPajak','no_ktp_pemilik','no_ktp');
+        return $this->hasOne('\App\WajibPajak','no_ktp_pemilik','nik');
     }
 
     public function isAdmin(){
-        return $this->admin;
+        return ($this->role == 'dinaspajak');
+    }
+
+    public function getNoKtpAttribute(){
+        return $this->nik;
     }
 }

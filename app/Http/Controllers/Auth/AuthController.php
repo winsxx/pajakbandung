@@ -53,7 +53,7 @@ class AuthController extends Controller {
      */
     public function postRegister(RegisterRequest $request)
     {
-        $this->user->no_ktp = $request->no_ktp;
+        $this->user->nik = $request->nik;
         $this->user->nama = $request->nama;
         $this->user->password = bcrypt($request->password);
         $this->user->save();
@@ -80,13 +80,13 @@ class AuthController extends Controller {
      */
     public function postLogin(LoginRequest $request)
     {
-        if ($this->auth->attempt($request->only('no_ktp', 'password')))
+        if ($this->auth->attempt($request->only('nik', 'password')))
         {
             return redirect('/home');
         }
 
         return redirect('/login')->withErrors([
-            'no_ktp' => 'The credentials you entered did not match our records. Try again?',
+            'nik' => 'The credentials you entered did not match our records. Try again?',
         ]);
     }
 

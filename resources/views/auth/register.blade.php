@@ -28,7 +28,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label">Nomor KTP</label>
             <div class="col-md-6">
-                <input class="form-control" name="no_ktp" value="{{ old('no_ktp') }}">
+                <input class="form-control" name="nik" value="{{ old('nik') }}">
             </div>
         </div>
 

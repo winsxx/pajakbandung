@@ -261,7 +261,7 @@ class PajakController extends Controller {
     }
 
     public function getKelolaNpwpd(){
-        $listNpwpd = Pajak::with('kolaborator.wajibpajak.izinUsaha')->get();
+        $listNpwpd = WajibPajak::all();
         return view('wajibpajak.dinasnpwpd')->with('listnpwpd',$listNpwpd);
     }
 
