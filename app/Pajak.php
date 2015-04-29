@@ -31,22 +31,22 @@ class Pajak extends Model {
     }
 
     public function getlatestSkpdPbb(){
-        $last_skpd=DB::table('skpd_pbb')->where('no_pajak_pbb','=',$this->id)->orderBy('id','DESC')->first();
+        $last_skpd=SkpdPbb::where('no_pajak_pbb','=',$this->id)->orderBy('id','DESC')->first();
         return $last_skpd;
     }
 
     public function getlatestSkpdkbPbb(){
-        $last_skpdkb=DB::table('skpdkb_pbb')->where('no_pajak_pbb','=',$this->id)->orderBy('id','DESC')->first();
+        $last_skpdkb=SkpdkbPbb::where('no_pajak_pbb','=',$this->id)->orderBy('id','DESC')->first();
         return $last_skpdkb;
     }
 
     public function getlatestSkpd(){
-        $last_skpd=DB::table('sptpd')->where('no_pajak',$this->id)->where('terbit_skpd','=',1)->orderBy('no_sptpd','DESC')->first();
+        $last_skpd=Sptpd::where('no_pajak',$this->id)->where('terbit_skpd','=',1)->orderBy('no_sptpd','DESC')->first();
         return $last_skpd;
     }
 
     public function getlatestSkpdkb(){
-        $last_skpdkb=DB::table('sptpd')->where('no_pajak',$this->id)->where('terbit_skpdkb','=',1)->orderBy('no_sptpd','DESC')->first();
+        $last_skpdkb=Sptpd::where('no_pajak',$this->id)->where('terbit_skpdkb','=',1)->orderBy('no_sptpd','DESC')->first();
         return $last_skpdkb;
     }
 

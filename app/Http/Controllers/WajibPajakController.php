@@ -78,7 +78,7 @@ class WajibPajakController extends Controller {
 
     public function postTambahPajak(Request $request){
            if($request->bidang_usaha=='hotel'){                
-                $temp=DB::table('pajak')->where('npwpd_pemilik',Auth::user()->wajibpajak->npwpd)->where('jenis_pajak','hotel')->get();
+                $temp=Pajak::where('npwpd_pemilik',Auth::user()->wajibpajak->npwpd)->where('jenis_pajak','hotel')->get();
                 if ($temp==null){
                     $wp=Auth::user()->wajibpajak;           
 
@@ -145,7 +145,7 @@ class WajibPajakController extends Controller {
                 }           
            }
            else if ($request->bidang_usaha=='restoran'){
-                $temp=DB::table('pajak')->where('npwpd_pemilik',Auth::user()->wajibpajak->npwpd)->where('jenis_pajak','restoran')->get();
+                $temp=Pajak::where('npwpd_pemilik',Auth::user()->wajibpajak->npwpd)->where('jenis_pajak','restoran')->get();
                 if ($temp==null){
                     $wp=Auth::user()->wajibpajak;           
 
@@ -185,7 +185,7 @@ class WajibPajakController extends Controller {
                 }
            }
            else if ($request->bidang_usaha=='bumi_bangunan'){
-                $temp=DB::table('pajak')->where('npwpd_pemilik',Auth::user()->wajibpajak->npwpd)->where('jenis_pajak','pbb')->get();
+                $temp=Pajak::where('npwpd_pemilik',Auth::user()->wajibpajak->npwpd)->where('jenis_pajak','pbb')->get();
                 if ($temp == null){
                     $wp=Auth::user()->wajibpajak;           
 
