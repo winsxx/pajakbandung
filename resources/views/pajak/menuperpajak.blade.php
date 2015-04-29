@@ -13,7 +13,7 @@ Pajak {{$pajak->jenis_pajak}}
 	<div class="row">
 		<div class="panel panel-default col-md-6 col-md-offset-3">
 			<div class="panel-body" style="text-align:center;">
-				<h3>Status pajak anda saat ini: {{$pajak->status}}.<br> Anda telah mengajukan SPTPD.</h3>
+				<h3>Status pajak anda saat ini: {{$pajak->status}}.</h3>
 			</div>
 		</div>
 		<div class="menuperpajak">
