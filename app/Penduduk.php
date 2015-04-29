@@ -58,6 +58,10 @@ class Penduduk extends Model implements AuthenticatableContract, CanResetPasswor
         return ($this->role == 'dinaspajak');
     }
 
+    public function getAdminAttribute(){
+        return ($this->role == 'dinaspajak');
+    }
+
     public function getNoKtpAttribute(){
         return $this->nik;
     }
