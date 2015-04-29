@@ -15,7 +15,7 @@ class CreatePajak extends Migration {
 		Schema::create('ppl_pajak_pajak', function(Blueprint $table)
 		{
 			$table->increments('id');
-            $table->string('npwpd_pemilik',30);
+            $table->integer('npwpd_pemilik')->unsigned();
             $table->index('npwpd_pemilik');
             $table->foreign('npwpd_pemilik')
                 ->references('npwpd')->on('ppl_pajak_wajib_pajak')

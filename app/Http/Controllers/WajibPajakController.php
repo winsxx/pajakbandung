@@ -9,6 +9,8 @@ use DB;
 class WajibPajakController extends Controller {
 
     public function getDaftarNpwpd(){
+        if(Auth::user()->wajibpajak)
+            return redirect('home');
         return view('wajibpajak.registernpwpd');
     }
 

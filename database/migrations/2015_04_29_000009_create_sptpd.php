@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateWajibPajak extends Migration {
+class CreateSptpd extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -15,7 +15,7 @@ class CreateWajibPajak extends Migration {
 		Schema::create('ppl_pajak_sptpd', function(Blueprint $table)
 		{
 			$table->increments('no_sptpd');
-            $table->integer('no_pajak');
+            $table->integer('no_pajak')->unsigned();
             $table->index('no_pajak');
             $table->foreign('no_pajak')
                 ->references('id')->on('ppl_pajak_pajak')

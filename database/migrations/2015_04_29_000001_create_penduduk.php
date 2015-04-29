@@ -16,7 +16,7 @@ class CreatePenduduk extends Migration {
 		{
             $table->string('no_ktp', 16);
             $table->primary('no_ktp');
-            $table->string('nama, 50');
+            $table->string('nama', 50);
             $table->string('alamat', 100)->nullable();
             $table->string('no_tlp', 18)->nullable();
             $table->string('password',60);

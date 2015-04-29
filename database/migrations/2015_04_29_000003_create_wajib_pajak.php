@@ -17,7 +17,7 @@ class CreateWajibPajak extends Migration {
 			$table->increments('npwpd');
             $table->string('no_ktp_pemilik',16);
             $table->foreign('no_ktp_pemilik')
-                ->references('nik')->on('ppl_dukcapil_ktp')
+                ->references('no_ktp')->on('ppl_pajak_penduduk')
                 ->onDelete('cascade')->onUpdate('cascade');
             $table->string('no_izin_usaha',30);
             $table->foreign('no_izin_usaha')
