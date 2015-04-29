@@ -19,7 +19,7 @@ class CreateIzinUsaha extends Migration {
             $table->string('nama_usaha', 50);
             $table->string('no_ktp_pemilik', 16);
             $table->foreign('no_ktp_pemilik')
-                ->references('no_ktp')->on('ppl_pajak_penduduk')
+                ->references('nik')->on('ppl_dukcapil_ktp')
                 ->onDelete('cascade')->onUpdate('cascade');
             $table->string('bidang_usaha', 20);
             $table->enum('status',['aktif','kadarluasa']);

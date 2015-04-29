@@ -21,7 +21,7 @@ class CreateKolaborator extends Migration {
                 ->references('id')->on('ppl_pajak_pajak')
                 ->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('no_ktp_kolab')
-                ->references('no_ktp')->on('ppl_pajak_penduduk')
+                ->references('nik')->on('ppl_dukcapil_ktp')
                 ->onDelete('cascade')->onUpdate('cascade');
 		});
 	}
