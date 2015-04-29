@@ -35,7 +35,7 @@
                         @foreach($daftarpbb as $pajak)
                             <tr>
                                 <td><?php echo $i?></td>
-                                <td>PT alalal</td>
+                                <td>{{$pajak->wajibPajak->izinUsaha->nama_usaha}}</td>
                                 @if($pajak->statusPembayaranSspd())
                                     <td>Sudah bayar</td>
                                 @else
