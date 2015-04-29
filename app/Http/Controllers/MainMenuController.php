@@ -26,6 +26,10 @@ class MainMenuController extends Controller {
     }
 
     public function getIndex(){
+        return view('check');
+    }
+
+    public function getLand(){
         return view('mainmenu.landing');
     }
 
