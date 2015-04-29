@@ -26,31 +26,30 @@ Kelola NPWPD
 	        <tbody>
 	        	<?php 
 		        	$i = 1;
-		        	foreach($listnpwpd as $npwpd) {
-		        		//echo $npwpd;
-		        		foreach($npwpd->kolaborator as $kolab) {
-		        			$wp = $kolab->wajibpajak;
-		        			foreach($wp->izinUsaha as $izin) {
-
+		        	foreach($listnpwpd as $pajak) {
+		        		foreach($pajak->kolaborator as $kolab) {
+		        			if(!is_null($kolab->wajibpajak)) {
+		        				$wp = $kolab->wajibpajak;
+		        				foreach($wp->izinUsaha as $izin) {
 		        ?>
 
-		        <tr>
-	                <td><?php echo $i ?></td>
-	                <td><?php echo $npwpd->npwpd_pemilik ?></td>
-	                <td><?php echo $npwpd->jenis_pajak ?></td>
-	                <td><?php echo $izin->nama_usaha ?></td>
-	                <td>Aktif</td>
-	                <td class="vcenter" style="text-align:right;">
-	                	<a href="#">lihat berkas</a> | <a href="#">tutup</a> | <a href="#">hapus</a>
-	                </td>
-	            </tr>
+		        	<tr>
+						<td><?php echo $i ?></td>
+						<td><?php echo $wp->npwpd ?></td>
+						<td><?php echo $pajak->jenis_pajak ?></td>
+						<td><?php echo $izin->nama_usaha ?></td>
+						<td><?php echo $wp->status ?></td>
+						<td class="vcenter" style="text-align:right;">
+							<a href="#">lihat berkas</a> | <a href="pajak/<?php echo $wp->npwpd ?>/tutupnpwpd">tutup</a> | <a href="pajak/<?php echo $wp->npwpd ?>/hapusnpwpd">hapus</a>
+						</td>
+					</tr> 		        
 
 		        <?php
-		        			$i++;
+		        				$i++;
+		        				}
 		        			}
 		        		}
 		        	}
-
 	        	?>
 	        </tbody>
 	    </table>
