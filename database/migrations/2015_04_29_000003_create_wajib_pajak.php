@@ -15,11 +15,16 @@ class CreateWajibPajak extends Migration {
 		Schema::create('ppl_pajak_wajib_pajak', function(Blueprint $table)
 		{
 			$table->increments('npwpd');
-			//$table->timestamps();
             $table->string('no_ktp_pemilik',16);
+            $table->foreign('no_ktp_pemilik')
+                ->references('no_ktp')->on('ppl_pajak_penduduk')
+                ->onDelete('cascade')->onUpdate('cascade');
             $table->string('no_izin_usaha',30);
+            $table->foreign('no_izin_usaha')
+                ->references('no_izin')->on('ppl_pajak_izin_usaha')
+                ->onDelete('cascade')->onUpdate('cascade');
             $table->enum('status',['aktif','proses_nonaktif','nonaktif']);
-            $table->string('lokasi_file',100);
+            $table->string('lokasi_file',100)->nullable();
 		});
 	}
 

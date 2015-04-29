@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateWajibPajak extends Migration {
+class CreatePajakRestoran extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -14,9 +14,11 @@ class CreateWajibPajak extends Migration {
 	{
 		Schema::create('ppl_pajak_pajak_restoran', function(Blueprint $table)
 		{
-			//$table->increments('id');
-			//$table->timestamps();
-            $table->integer(id);
+            $table->integer('id')->unsigned();
+            $table->primary('id');
+            $table->foreign('id')
+                ->references('id')->on('ppl_pajak_pajak')
+                ->onDelete('cascade')->onUpdate('cascade');
             $table->time('jam_buka');
             $table->time('jam_tutup');
             $table->integer('jumlah_meja');

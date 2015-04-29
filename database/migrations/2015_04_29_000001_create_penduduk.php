@@ -14,14 +14,14 @@ class CreatePenduduk extends Migration {
 	{
 		Schema::create('ppl_pajak_penduduk', function(Blueprint $table)
 		{
-			//$table->increments('id');
             $table->string('no_ktp', 16);
-            $table->string('nama, 50');
-            $table->string('alamat', 100);
-            $table->string('no_tlp', 18);
+            $table->primary('no_ktp');
+            $table->string('nama', 50);
+            $table->string('alamat', 100)->nullable();
+            $table->string('no_tlp', 18)->nullable();
             $table->string('password',60);
-            $table->boolean('admin');
-            $table->string('email', 40);
+            $table->boolean('admin')->default(false);
+            $table->string('email', 40)->nullable();
             $table->timestamps();
             $table->rememberToken();
 		});
