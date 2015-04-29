@@ -41,7 +41,7 @@ Pajak {{$pajak->jenis_pajak}}
 									</ol>
 									@if ($skpd != null || $skpdkb != null)
 										<div class="col-md-offset-8">
-											<a href="seeallskpd">lainnya...</a>
+											<a href="/pajak/{{$pajak->id}}/skpdall">lainnya...</a>
 										</div>
 									@endif
 								</div>							
@@ -57,7 +57,7 @@ Pajak {{$pajak->jenis_pajak}}
 								</ol>
 								@if ($skpd != null || $skpdkb != null)
 									<div class="col-md-offset-8">
-										<a href="/pajak/{{$pajak->id}}/skpdall}}">lainnya...</a>
+										<a href="/pajak/{{$pajak->id}}/skpdall">lainnya...</a>
 									</div>
 								@endif
 							</div>

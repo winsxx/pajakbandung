@@ -399,11 +399,18 @@ class PajakController extends Controller {
     }
 
     public function showSkpdAll($id){
-        $daftarskpd=SkpdPbb::where('no_pajak_pbb','=',$id)->orderBy('id','DESC')->get();
-        $daftarskpdkb=SkpdkbPbb::where('no_pajak_pbb','=',$id)->orderBy('id','DESC')->get();
-        $daftarskpd=Sptpd::where('no_pajak',$id)->where('terbit_skpd','=',1)->orderBy('no_sptpd','DESC')->get();
-        $daftarskpdkb=Sptpd::where('no_pajak',$id)->where('terbit_skpdkb','=',1)->orderBy('no_sptpd','DESC')->get();
-        return view();
+        $pajak=Pajak::findOrFail($id);
+        if ($pajak != null){
+            if ($pajak->jenis_pajak=='pbb'){
+                $daftarskpd=SkpdPbb::where('no_pajak_pbb','=',$id)->orderBy('id','DESC')->get();
+                $daftarskpdkb=SkpdkbPbb::where('no_pajak_pbb','=',$id)->orderBy('id','DESC')->get();
+            }
+            else{
+                $daftarskpd=Sptpd::where('no_pajak',$id)->where('terbit_skpd','=',1)->orderBy('no_sptpd','DESC')->get();
+                $daftarskpdkb=Sptpd::where('no_pajak',$id)->where('terbit_skpdkb','=',1)->orderBy('no_sptpd','DESC')->get();
+            }
+        }
+        return view('skpd.listskpd',compact('pajak','daftarskpd','daftarskpdkb'));
     }
 
 }
