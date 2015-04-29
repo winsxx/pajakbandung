@@ -60,6 +60,7 @@ Route::get('admin/pajak/{id}/tutuppajak',['uses' => 'PajakController@getTutupPaj
 Route::get('admin/pajak/{id}/hapuspajak',['uses' => 'PajakController@getHapusPajak','middleware' => 'admin'] );
 Route::get('admin/pajak/{id}/kirimskpd',['uses' => 'PajakController@getKirimSkpd','middleware' => 'admin'] );
 Route::get('admin/pajak/{id}/kirimskpdkb',['uses' => 'PajakController@getKirimSkpdkb','middleware' => 'admin']);
+Route::get('admin/pajak/{id}/kirimskpdkbpbb',['uses' => 'PajakController@getKirimSkpdkbPbb','middleware' => 'admin']);
 Route::get('admin/pajak/{id}/hapussspd/', ['uses' => 'PajakController@getHapusSspd','middleware' => 'admin']);
 Route::get('admin/pajak/{id}/tutupnpwpd', ['uses' => 'PajakController@getTutupNpwpd','middleware' => 'admin']);
 Route::get('admin/pajak/{id}/hapusnpwpd', ['uses' => 'PajakController@getHapusNpwpd','middleware' => 'admin']);

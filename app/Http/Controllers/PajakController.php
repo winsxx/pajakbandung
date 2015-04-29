@@ -240,8 +240,10 @@ class PajakController extends Controller {
     }
 
     public function getKelolaSspd(){
-        $listSspd = Sspd::with('pajak.kolaborator.IzinUsaha')->get();
-        return view('sspd.dinassspd')->with('listsspd',$listSspd);
+        $listsspd = Sspd::all();
+        return view('sspd.dinassspd', compact('listsspd'));
+        // $listSspd = Sspd::with('pajak.kolaborator.IzinUsaha')->get();
+        // return view('sspd.dinassspd')->with('listsspd',$listSspd);
     }
 
     public function getKelolaSkpdkb(){
@@ -302,6 +304,10 @@ class PajakController extends Controller {
         }
 
         return redirect('admin/kelolasptpd');
+    }
+
+    public function getKirimSkpdkbPbb($id){
+        // Bagian ngoding sini
     }
 
     public function getHapusSspd($id) {
@@ -376,7 +382,7 @@ class PajakController extends Controller {
     }
 
     public function getKelolaPbb(){
-        $daftarpbb = Pajak::all();
+        $daftarpbb = Pajak::where('jenis_pajak','=','pbb')->get();
         return view('pajak.dinaspbb', compact('daftarpbb'));
     }
 

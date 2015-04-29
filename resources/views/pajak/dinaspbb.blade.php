@@ -26,7 +26,7 @@
                         <th style="width: 5%;">No</th>
                         <th style="width: 15%">Nama Usaha</th>
                         <th style="width: 15">Status SSPD</th>
-                        <th style="width: 15">Tanggal SSPD terakhir</th>
+                        <th style="width: 15">Tahun  SSPD terakhir</th>
                         <th style="width: 50%"></th>
                     </tr>
                     </thead>
@@ -35,7 +35,7 @@
                         @foreach($daftarpbb as $pajak)
                             <tr>
                                 <td><?php echo $i?></td>
-                                <td>PT alalal</td>
+                                <td>{{$pajak->wajibPajak->izinUsaha->nama_usaha}}</td>
                                 @if($pajak->statusPembayaranSspd())
                                     <td>Sudah bayar</td>
                                 @else
@@ -47,13 +47,12 @@
                                 </td>
                                 <td class="vcenter" style="text-align:right;">
                                     @if(!$pajak->statusPembayaranSspd())
-                                        <a href="#">Kirim SKPDKB</a>
+                                        <a href="admin/pajak/{{$pajak->id}}/kirimskpdkbpbb">Kirim SKPDKB</a>
                                     @endif
                                 </td>
                             </tr>
                             <?php $i++;?>
                         @endforeach
-
                     
                     </tbody>
                 </table>

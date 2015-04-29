@@ -16,11 +16,12 @@
                 <tr>
                     <th style="width: 5%;">No</th>
                     <th style="width: 10%">No SPTPD</th>
-                    <th style="width: 12%">Jenis Pajak</th>
-                    <th style="width: 13%">Nama Usaha</th>
-                    <th style="widht: 12%">Status SKPD</th>
-                    <th style="widht: 10%">Status SSPD</th>
-                    <th style="width: 40%"></th>
+                    <th style="width: 10%">Jenis Pajak</th>
+                    <th style="width: 10%">Nama Usaha</th>
+                    <th style="widht: 15%">Status SKPD</th>
+                    <th style="widht: 15%">Status SSPD</th>
+                    <th style="widht: 20%">Masa Pajak</th>
+                    <th style="width: 30%"></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -30,7 +31,7 @@
                         <td><?php echo $i?></td>
                         <td>{{$sptpd->no_sptpd}}</td>
                         <td>Pajak {{$sptpd->pajak->jenis_pajak}}</td>
-                        <td>alalslals</td>
+                        <td>{{$sptpd->pajak->wajibPajak->izinUsaha->nama_usaha}}</td>
                         @if($sptpd->terbit_skpd)
                             <td>Sudah Dikirim</td>
                         @else
@@ -41,6 +42,7 @@
                         @else
                             <td>Belum</td>
                         @endif
+                        <td>{{$sptpd->created_at}}</td>
 
                         <td class="vcenter" style="text-align:right;">
                             <a href="#">lihat berkas</a>
