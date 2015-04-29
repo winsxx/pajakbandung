@@ -16,7 +16,7 @@ Kelola SSPD
 	                <th style="width: 15%">No SSPD</th>
 	                <th style="width: 15%">Jenis Pajak</th>
 	                <th style="width: 15%">Nama Usaha</th>
-	                <th style="width: 15%">Tanggal</th
+	                <th style="width: 15%">Masa Pajak</th
 	                <th style="width: 30%"></th>
 	            </tr>
 	        </thead>
@@ -29,7 +29,7 @@ Kelola SSPD
 	 	        	<td>{{$sspd->no_sspd}}</td>
 	 	        	<td>{{$sspd->pajak->jenis_pajak}}</td>
 	 	        	<td>{{$sspd->pajak->wajibPajak->izinUsaha->nama_usaha}}</td>
-	 	        	<td>{{$sspd->created_at}}</td>
+	 	        	<td>{{$sspd->bulan}} - {{$sspd->tahun}}</td>
 	 	        	<td class="vcenter" style="text-align:right;">
 	                	<a href="#">lihat berkas</a> | <a href="{{url('/pajak/'.$sspd->no_sspd.'/hapussspd')}}">hapus</a>
 	                </td>
