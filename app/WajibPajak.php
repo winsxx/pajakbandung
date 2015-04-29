@@ -13,15 +13,9 @@ class WajibPajak extends Model {
         return $this->belongsTo('\App\Penduduk', 'no_ktp_pemilik');
     }
 
-    /*public function izinUsaha()
-    {
-        return $this->belongsTo('\App\IzinUsaha','no_izin_usaha');
-    }*/
-
     public function izinUsaha()
     {
-        return $this->hasMany('\App\IzinUsaha','no_izin','no_izin_usaha');
-        //return $this->belongsTo('\App\IzinUsaha','no_izin_usaha','no_izin');
+        return $this->belongsTo('\App\IzinUsaha','no_izin_usaha');
     }
 
     public function pajak(){

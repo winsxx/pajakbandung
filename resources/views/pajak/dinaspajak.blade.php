@@ -29,7 +29,7 @@ Kelola Pajak
                         <td>{{$pajak->id}}</td>
                         <td>{{$pajak->npwpd_pemilik}}</td>
                         <td>Pajak {{$pajak->jenis_pajak}}</td>
-                        <td>kasjhdka</td>
+                        <td>{{$pajak->wajibPajak->izinUsaha->nama_usaha}}</td>
                         @if($pajak->statusPembayaranSspd())
                             <td>Sudah bayar</td>
                         @else
