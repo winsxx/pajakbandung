@@ -23,7 +23,7 @@ SKPD
                         <li><h4><a href="{{url('/pajak/'.$pajak->id.'/skpd/'.$skpd->id)}}"> SKPD- {{$skpd->id}} </a></h4> </li>
                     @endforeach
                     @foreach ($daftarskpdkb as $skpdkb)
-                        <li><h4><a href="{{url('/pajak/'.$pajak->id.'/skpdkb/'.$skpdkb-id)}}"> SKPDKB- {{$skpdkb->id}} </a></h4> </li>
+                        <li><h4><a href="{{url('/pajak/'.$pajak->id.'/skpdkb/'.$skpdkb->id)}}"> SKPDKB- {{$skpdkb->id}} </a></h4> </li>
                     @endforeach                 
                 @elseif ($pajak->jenis_pajak!='pbb') 
                     @foreach ($daftarskpd as $skpd)

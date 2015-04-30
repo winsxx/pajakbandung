@@ -36,7 +36,7 @@ Pajak {{$pajak->jenis_pajak}}
 											<li><a href="{{url('/pajak/'.$pajak->id.'/skpd/'.$skpd->id)}}">SKPD- {{ $skpd->id }}</a></li>
 										@endif
 										@if ($skpdkb != null)							
-											<li><a href="{{url('/pajak/'.$pajak->id.'/skpdkb/'.$skpdkb-id)}}">SKPDKB- {{ $skpdkb->id }}</a></li>
+											<li><a href="{{url('/pajak/'.$pajak->id.'/skpdkb/'.$skpdkb->id)}}">SKPDKB- {{ $skpdkb->id }}</a></li>
 										@endif
 									</ol>
 									@if ($skpd != null || $skpdkb != null)
