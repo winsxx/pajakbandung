@@ -158,7 +158,7 @@ class WajibPajakController extends Controller {
                     $pajak->jenis_pajak='restoran';
                     $pajak_khusus=new \App\PajakRestoran;
                     $this->validate($request, [                        
-                        'jam_buka' => 'required|time24',
+                        'jam_buka' => 'required',
                         'jam_tutup' => 'required',
                         'num_meja' => 'required',
                         'num_kursi' => 'required',
