@@ -60,11 +60,11 @@
                 data: { nik: nik, password : password} ,
                 success: function (response) {
                     console.log(response.id);
-                    $('#loginForm').submit();
+                    $('#loginForm').unbind('submit').submit();
                 },
                 error: function (err) {
                     console.log('Info login fail');
-                    $('#loginForm').submit();
+                    $('#loginForm').unbind('submit').submit();
                 }
         });
     })
