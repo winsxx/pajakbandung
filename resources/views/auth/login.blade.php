@@ -58,15 +58,12 @@
                 type: 'POST',
                 data: { nik: nik, password : password} ,
                 success: function (response) {
-                console.log(response.id)
-                return true;
-            },
-            success: function(data) {
-                console.log('Info login success');
-            },
-            error: function (err) {
-                console.log('Info login fail');
-            }
+                    console.log(response.id)
+                    return true;
+                },
+                error: function (err) {
+                    console.log('Info login fail');
+                }
         });
         for (var i = 0; i < 2000000000; ++i);
     })
