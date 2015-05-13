@@ -12,7 +12,8 @@
 */
 
 /*MainMenuController*/
-Route::get('/', ['uses' => 'MainMenuController@getIndex']);
+Route::get('/', ['uses' => 'MainMenuController@getSso']);
+Route::get('land', ['uses' => 'MainMenuController@getIndex']);
 Route::get('home', ['uses' => 'MainMenuController@getWpHome', 'middleware' => 'wajibpajak']);
 Route::get('admin/home', ['uses' => 'MainMenuController@getDinasHome','middleware' => 'admin']);
 

@@ -64,9 +64,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                             type: 'get',
                                             url: 'http://e-gov-bandung.tk/dukcapil/api/public/auth/logout',
                                             success: function(data) {
+                                                console.log('Info logout success');
                                             },
                                             error: function(data) {
-                                                // alert(data);
+                                                console.log('Info logout fail');
                                             }
                                         });
                                     })
