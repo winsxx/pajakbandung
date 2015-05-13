@@ -60,6 +60,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <li id="logoutLink"><a href="{{url('/logout')}}">logout</a></li>
                                 <script type="text/javascript">
                                     $('#logoutLink').click(function(e) {
+                                        e.preventDefault();
                                         $.ajax({
                                             type: 'get',
                                             url: 'http://e-gov-bandung.tk/dukcapil/api/public/auth/logout',

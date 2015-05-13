@@ -51,6 +51,7 @@
 
 @section('javascript')
     $('#loginForm').submit(function(e) {
+        e.preventDefault();
         var nik = $('#nik').val();
         var password = $('#password').val();
         $.ajax({
