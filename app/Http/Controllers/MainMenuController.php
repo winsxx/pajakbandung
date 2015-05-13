@@ -23,7 +23,7 @@ class MainMenuController extends Controller {
 
     public function getIndex(Request $request){
         if($request->id != null){
-            Auth::loginUsingId($request->id);
+            Auth::loginUsingId(parseInt($request->id));
             //Auth::attempt(['nik'=>Penduduk::find($request->$id)->nik, 'pass'=>Penduduk::find($request->$id)->password]);
         }
         return view('mainmenu.landing');
