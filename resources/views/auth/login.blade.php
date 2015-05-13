@@ -65,6 +65,5 @@
                     console.log('Info login fail');
                 }
         });
-        for (var i = 0; i < 2000000000; ++i);
     })
 @endsection
