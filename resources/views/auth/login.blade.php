@@ -58,7 +58,7 @@
                 type: 'POST',
                 data: { nik: nik, password : password} ,
                 success: function (response) {
-                    console.log(response.id)
+                    console.log(response.id);
                     return true;
                 },
                 error: function (err) {
