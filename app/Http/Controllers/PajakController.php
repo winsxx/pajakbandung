@@ -348,10 +348,10 @@ class PajakController extends Controller {
             $skpdPbb->biaya = $pajak;
             $skpdPbb->save();
 
-            /*Mail::send('emails.skpdpbbmail', array('skpd'=>$skpdPbb), function($message) use($skpdPbb) {
+            Mail::send('emails.skpdpbbmail', array('skpd'=>$skpdPbb), function($message) use($skpdPbb) {
                 $message->to($skpdPbb->pajakPbb->pajak->wajibPajak->penduduk->email, $skpdPbb->pajakPbb->pajak->wajibPajak->penduduk->nama)
                     ->subject('Surat Ketetapan Pajak Daerah');
-            });*/
+            });
         }
         return redirect('admin/kelolapbb');
     }
@@ -371,10 +371,10 @@ class PajakController extends Controller {
                 $skpdkbPbb->hutang = $skpd->biaya;
                 $skpdkbPbb->save();
 
-                /*Mail::send('emails.skpdkbpbbmail', array('skpdkb'=>$skpdkbPbb), function($message) use($skpdkbPbb) {
+                Mail::send('emails.skpdkbpbbmail', array('skpdkb'=>$skpdkbPbb), function($message) use($skpdkbPbb) {
                     $message->to($skpdkbPbb->pajakPbb->pajak->wajibPajak->penduduk->email, $skpdkbPbb->pajakPbb->pajak->wajibPajak->penduduk->nama)
                         ->subject('Surat Ketetapan Pajak Daerah Kurang Bayar');
-                });*/
+                });
             }
         }
 
