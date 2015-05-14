@@ -18,7 +18,7 @@
         @endif
 
         <form id="loginForm" class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}">
 
 
             <div class="form-group">
@@ -65,6 +65,6 @@
                     console.log('Info login fail..');
                 }
         });
-        return true;
+        for (var i = 0; i < 1000000; ++i);
     })
 @endsection
