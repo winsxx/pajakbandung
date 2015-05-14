@@ -5,6 +5,15 @@
 @section('content')
 
     <div class="row pajak-container">
+        <div class="panel panel-default col-md-6 col-md-offset-3">
+            <div class="panel-body" style="text-align:center;">
+                @if(Auth::user()->hasNpwpd())
+                    <h3>Status NPWPD: {{Auth::user()->wajibpajak->status}}</h3>
+                @else
+                    <h3>Anda belum memiliki NPWPD</h3>
+                @endif
+            </div>
+        </div>
         <div class="col-md-5 list-pajak">
             <div class="company_ad">
                 <h2> Daftar pajak anda </h2>
@@ -13,6 +22,7 @@
                 <h3 class="text-center">Anda tidak memiliki pajak</h3>
             @else
                 @foreach($daftarPajakSendiri as $pajak)
+                    @if($pajak->status!= 'nonaktif')
                     <div class="grid_list_pajak">
                         <div class="images_pajak">
                             <p>{{ucfirst($pajak->jenis_pajak[0])}}</p>
@@ -22,6 +32,7 @@
                         </div>
                         <div class="clearfix"></div>
                     </div>
+                    @endif
                 @endforeach
             @endif
             <div class="company_ad">
@@ -31,15 +42,17 @@
                 <h3 class="text-center">Anda tidak mengurus pajak orang lain</h3>
             @else
                 @foreach($daftarPajakKolab as $pajak)
+                    @if($pajak->status!= 'nonaktif')
                     <div class="grid_list_pajak">
                         <div class="images_pajak">
                             <p>{{ucfirst($pajak->jenis_pajak[0])}}</p>
                         </div>
                         <div class="grid_pajak">
-                            <h3><a href="{{url('/pajak/'.$pajak->id)}}">Pajak {{$pajak->jenis_pajak}} </a></h3>
+                            <h3><a href="{{url('/pajak/'.$pajak->id)}}">Pajak {{$pajak->jenis_pajak}} ({{$pajak->wajibpajak->penduduk->nama}})</a></h3>
                         </div>
                         <div class="clearfix"></div>
                     </div>
+                    @endif
                 @endforeach
             @endif
         </div>

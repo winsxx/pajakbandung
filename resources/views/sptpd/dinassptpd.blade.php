@@ -52,7 +52,8 @@
                             @if(! $sptpd->statusSspdPerSptpd() && $sptpd->terbit_skpdkb == false)
                                 | <a href="{{url('/admin/pajak/'.$sptpd->no_sptpd.'/kirimskpdkb')}}">kirim SKPDKB</a>
                             @endif
-                            | <a href="{{url("/admin/pajak/".$sptpd->no_sptpd."/hapusptpd")}}">hapus</a>
+                            | <a href="{{url("/admin/pajak/".$sptpd->no_sptpd."/hapusptpd")}}"
+                                 onclick="return confirm('Apakah yakin untuk menghapus?')">hapus</a>
                         </td>
                     </tr>
                     <?php $i++;?>

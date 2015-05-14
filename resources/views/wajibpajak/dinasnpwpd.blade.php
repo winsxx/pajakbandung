@@ -30,7 +30,8 @@
                         <td>{{$wajibpajak->status}} </td>
                         <td class="vcenter" style="text-align:right;">
                             <a href="#">lihat berkas</a> | <a href="{{url('/pajak/'.$wajibpajak->npwpd.'/tutupnpwpd')}}">tutup</a> |
-                            <a href="{{url('/pajak/'.$wajibpajak->npwpd.'/hapusnpwpd')}}">hapus</a>
+                            <a href="{{url('/pajak/'.$wajibpajak->npwpd.'/hapusnpwpd')}}"
+                               onclick="return confirm('Apakah yakin untuk menghapus?')">hapus</a>
                         </td>
                     </tr>
                 @endforeach

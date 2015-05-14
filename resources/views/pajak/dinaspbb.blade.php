@@ -10,10 +10,16 @@
     <div class="row details"><!-- start details -->
         <div class="row grids_btm top">
         <a href="{{url("admin/skpd/pbb")}}">
-            <button class="btn btn-default">Terbitkan SKPD baru</button>
+            <button class="btn btn-default"
+                    onclick="return confirm('Apakah yakin untuk menerbitkan SKPD?')">
+                Terbitkan SKPD baru
+            </button>
         </a>
         <a href="{{url("admin/skpdkb/pbb")}}">
-            <button class="btn btn-default">Terbitkan SKPDKB baru</button>
+            <button class="btn btn-default"
+                    onclick="return confirm('Apakah yakin untuk menerbitkan SKPDKB?')">
+                Terbitkan SKPDKB baru
+            </button>
         </a>
         </div>
         <div class="row grids_btm top">
