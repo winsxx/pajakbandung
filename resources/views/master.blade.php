@@ -52,7 +52,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <li><a href="{{url('/about')}}">tentang kami</a></li>
                                 <li><a href="{{url('/login')}}">login</a></li>
                             @else
-                                <li class="nama"> @Auth::check()->nama </li>
+                                <li class="nama"> Auth::user()->nama </li>
                                 <li><a href="{{url('/home')}}">beranda</a></li>
                                 <li><a href="{{url('/setting')}}">pengaturan</a></li>
                                 @if (Auth::user()->isAdmin())
