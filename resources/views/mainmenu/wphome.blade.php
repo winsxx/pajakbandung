@@ -48,7 +48,7 @@
                             <p>{{ucfirst($pajak->jenis_pajak[0])}}</p>
                         </div>
                         <div class="grid_pajak">
-                            <h3><a href="{{url('/pajak/'.$pajak->id)}}">Pajak {{$pajak->jenis_pajak}} </a></h3>
+                            <h3><a href="{{url('/pajak/'.$pajak->id)}}">Pajak {{$pajak->jenis_pajak}} ({{$pajak->wajibpajak->penduduk->nama}})</a></h3>
                         </div>
                         <div class="clearfix"></div>
                     </div>
