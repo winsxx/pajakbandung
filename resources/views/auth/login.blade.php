@@ -65,5 +65,6 @@
                     console.log('Info login fail..');
                 }
         });
+        return true;
     })
 @endsection

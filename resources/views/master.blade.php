@@ -71,6 +71,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                 console.log('Info logout fail..');
                                             }
                                         });
+                                        return true;
                                     })
                                 </script>
                             @endif
