@@ -69,13 +69,13 @@ body {
 	border-bottom:2px solid #F15F43;
 }
 
-.menu li.active {
+.nama{
 	background: none;
 	color:#F15F43;
 	border-bottom:2px solid #F15F43;
 }
 
-.menu li{
+.nama{
 	font-size: 14px;
 	text-transform: uppercase;
 	color: #354B77;
