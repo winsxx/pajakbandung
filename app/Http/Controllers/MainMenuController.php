@@ -17,7 +17,11 @@ class MainMenuController extends Controller {
 
     public function getWpHome(){
         $daftarPajakKolab = Auth::user()->kolaborasipajak;
-        $daftarPajakSendiri =  Auth::user()->wajibpajak->pajak;
+        if(Auth::user()->hasNpwpd())
+            $daftarPajakSendiri =  Auth::user()->wajibpajak->pajak;
+        else
+            $daftarPajakSendiri =[];
+        if(count($daftarPajakKolab)==0 && count($daftarPajakSendiri)==0) return redirect('land');
         return view('mainmenu.wphome', compact('daftarPajakKolab','daftarPajakSendiri'));
     }
 
