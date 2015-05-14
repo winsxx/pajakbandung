@@ -284,10 +284,10 @@ class PajakController extends Controller {
         $sptpdTerkait->nilai_skpd = $sptpdTerkait->sptpdLengkap()->totalPajak();
         $sptpdTerkait->save();
 
-        /*Mail::send('emails.skpdmail', array('sptpd'=>$sptpdTerkait), function($message) use($sptpdTerkait) {
+        Mail::send('emails.skpdmail', array('sptpd'=>$sptpdTerkait), function($message) use($sptpdTerkait) {
             $message->to($sptpdTerkait->pajak->wajibPajak->penduduk->email, $sptpdTerkait->pajak->wajibPajak->penduduk->nama)
                 ->subject('Surat Ketetapan Pajak Daerah');
-        });*/
+        });
 
         return redirect('admin/kelolasptpd');
     }
@@ -295,10 +295,10 @@ class PajakController extends Controller {
     public function  getKirimSkpdkb($id){
         $sptpdTerkait = Sptpd::find($id);
         if((! $sptpdTerkait->terbit_skpdkb) && $sptpdTerkait->terbit_skpd){
-            /*Mail::send('emails.skpdkbmail', array('sptpd'=>$sptpdTerkait), function($message) use($sptpdTerkait) {
+            Mail::send('emails.skpdkbmail', array('sptpd'=>$sptpdTerkait), function($message) use($sptpdTerkait) {
                 $message->to($sptpdTerkait->pajak->wajibPajak->penduduk->email, $sptpdTerkait->pajak->wajibPajak->penduduk->nama)
                     ->subject('Surat Ketetapan Pajak Daerah Kurang Bayar');
-            });*/
+            });
             $sptpdTerkait->terbit_skpdkb = true;
             $sptpdTerkait->save();
         }
