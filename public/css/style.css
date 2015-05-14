@@ -68,6 +68,25 @@ body {
 	color:#F15F43;
 	border-bottom:2px solid #F15F43;
 }
+
+.nama{
+	background: none;
+	color:#F15F43;
+	border-bottom:2px solid #F15F43;
+}
+
+.nama{
+	font-size: 14px;
+	text-transform: uppercase;
+	color: #354B77;
+	border-radius: 0px;
+	font-weight: 700;
+	padding-bottom: 5px;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
 .menu li a{
 	font-size: 14px;
 	text-transform: uppercase;
