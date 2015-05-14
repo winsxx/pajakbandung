@@ -68,6 +68,13 @@ body {
 	color:#F15F43;
 	border-bottom:2px solid #F15F43;
 }
+
+.menu li.active {
+	background: none;
+	color:#F15F43;
+	border-bottom:2px solid #F15F43;
+}
+
 .menu li{
 	font-size: 14px;
 	text-transform: uppercase;
