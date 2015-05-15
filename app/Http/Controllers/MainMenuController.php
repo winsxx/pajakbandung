@@ -24,12 +24,12 @@ class MainMenuController extends Controller {
 
         $daftarPajakSendiriAktif = [];
         foreach($daftarPajakSendiri as $pajak){
-            if ($pajak->status != 'nonaktif') $daftarPajakSendiriAktif += $pajak;
+            if ($pajak->status != 'nonaktif') array_push($daftarPajakSendiriAktif, $pajak);
         }
 
         $daftarPajakKolabAktif = [];
         foreach($daftarPajakKolab as $pajak){
-            if ($pajak->status != 'nonaktif') $daftarPajakKolabAktif += $pajak;
+            if ($pajak->status != 'nonaktif') array_push($daftarPajakKolabAktif, $pajak);
         }
 
         if(count($daftarPajakKolabAktif)==0 && count($daftarPajakSendiriAktif)==0 && !(Auth::user()->hasNpwpd())) return redirect('land');
