@@ -273,6 +273,14 @@ class PajakController extends Controller {
         return redirect('admin/kelolapajak');
     }
 
+    public function getAktifkanPajak($id){
+        $pajak_terkait = Pajak::findOrFail($id);
+        $pajak_terkait->status = "aktif";
+
+        $pajak_terkait->save();
+        return redirect('admin/kelolapajak');
+    }
+
     public function getHapusPajak($id){
         Pajak::destroy($id);
         return redirect('admin/kelolapajak');

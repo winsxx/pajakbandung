@@ -45,7 +45,8 @@ Kelola Pajak
                         </td>
                         <td class="vcenter" style="text-align:right;">
                             @if($pajak->status == "nonaktif")
-                                <a href="{{url("admin/pajak/".$pajak->id."/hapuspajak")}}"
+                                <a href="{{url("admin/pajak/".$pajak->id."/aktifkanpajak")}}">aktifkan</a>
+                                | <a href="{{url("admin/pajak/".$pajak->id."/hapuspajak")}}"
                                    onclick="return confirm('Apakah yakin untuk menghapus?')">hapus</a>
                             @else
                                 <a href="{{url("admin/pajak/".$pajak->id."/tutuppajak")}}">tutup</a>
