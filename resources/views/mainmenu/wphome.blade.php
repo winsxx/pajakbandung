@@ -18,11 +18,10 @@
             <div class="company_ad">
                 <h2> Daftar pajak anda </h2>
             </div>
-            @if (count($daftarPajakSendiri) == 0)
+            @if (count($daftarPajakSendiriAktif) == 0)
                 <h3 class="text-center">Anda tidak memiliki pajak</h3>
             @else
-                @foreach($daftarPajakSendiri as $pajak)
-                    @if($pajak->status!= 'nonaktif')
+                @foreach($daftarPajakSendiriAktif as $pajak)
                     <div class="grid_list_pajak">
                         <div class="images_pajak">
                             <p>{{ucfirst($pajak->jenis_pajak[0])}}</p>
@@ -32,17 +31,15 @@
                         </div>
                         <div class="clearfix"></div>
                     </div>
-                    @endif
                 @endforeach
             @endif
             <div class="company_ad">
                 <h2> Daftar pajak sebagai pengurus </h2>
             </div>
-            @if (count($daftarPajakKolab) == 0)
+            @if (count($daftarPajakKolabAktif) == 0)
                 <h3 class="text-center">Anda tidak mengurus pajak orang lain</h3>
             @else
-                @foreach($daftarPajakKolab as $pajak)
-                    @if($pajak->status!= 'nonaktif')
+                @foreach($daftarPajakKolabAktif as $pajak)
                     <div class="grid_list_pajak">
                         <div class="images_pajak">
                             <p>{{ucfirst($pajak->jenis_pajak[0])}}</p>
@@ -52,7 +49,6 @@
                         </div>
                         <div class="clearfix"></div>
                     </div>
-                    @endif
                 @endforeach
             @endif
         </div>
