@@ -21,8 +21,19 @@ class MainMenuController extends Controller {
             $daftarPajakSendiri =  Auth::user()->wajibpajak->pajak;
         else
             $daftarPajakSendiri = [];
-        if(count($daftarPajakKolab)==0 && count($daftarPajakSendiri)==0 && !(Auth::user()->hasNpwpd())) return redirect('land');
-        return view('mainmenu.wphome', compact('daftarPajakKolab','daftarPajakSendiri'));
+
+        $daftarPajakSendiriAktif = [];
+        foreach($daftarPajakSendiri as $pajak){
+            if ($pajak->status != 'nonaktif') $daftarPajakSendiriAktif += $pajak;
+        }
+
+        $daftarPajakKolabAktif = [];
+        foreach($daftarPajakKolab as $pajak){
+            if ($pajak->status != 'nonaktif') $daftarPajakKolabAktif += $pajak;
+        }
+
+        if(count($daftarPajakKolabAktif)==0 && count($daftarPajakSendiriAktif)==0 && !(Auth::user()->hasNpwpd())) return redirect('land');
+        return view('mainmenu.wphome', compact('daftarPajakKolabAktif','daftarPajakSendiriAktif'));
     }
 
     public function getIndex(Request $request){
